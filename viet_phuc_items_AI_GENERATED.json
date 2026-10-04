@@ -1,0 +1,208 @@
+{
+  "warning": "DỮ LIỆU TỰ SINH: suy luận của AI, chưa có nguồn xác thực, cần chuyên gia duyệt trước khi dùng.",
+  "items": [
+    {
+      "item_id": "ao_tu_than_001",
+      "provenance": "AI_INFERRED",
+      "era_mapping": {
+        "value": [
+          "Nguyễn"
+        ],
+        "reasoning": "Nguồn tốt nhất nói áo phổ biến từ thập niên 1920-30 và dùng đến đầu thế kỷ XX, tức cuối triều Nguyễn/thời Pháp thuộc; enum era chưa có mục Pháp thuộc.",
+        "confidence": "thap"
+      },
+      "suitable_body_types": {
+        "value": [
+          "Dáng quả lê",
+          "Dáng chữ nhật"
+        ],
+        "reasoning": "Áo dài quá gối, vạt rộng che hông; thắt lưng hoặc thắt hai tà trước tạo cảm giác có eo.",
+        "confidence": "thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Giày thể thao hiện đại",
+          "Quần jean",
+          "Khăn rằn (biểu tượng Nam Bộ)",
+          "Áo Nhật Bình và phụ kiện cung đình"
+        ],
+        "reasoning": "Bộ tứ thân là trang phục dân gian Bắc Bộ có bộ đi kèm khá cố định; trộn phụ kiện Nam Bộ hoặc cung đình làm sai đặc trưng vùng và giai tầng.",
+        "confidence": "trung_binh"
+      },
+      "incompatible_colors": {
+        "value": [],
+        "reasoning": "Không đủ cơ sở suy luận quy tắc kỵ màu cho tứ thân.",
+        "confidence": "rat_thap"
+      },
+      "user_example_check": {
+        "claim": "Áo tứ thân truyền thống bắt buộc phải có dải yếm và dây xà tích",
+        "verdict": "Yếm được nhiều nguồn nói 'phải có'. Dây xà tích chỉ có nguồn cho trang phục liền chị quan họ (thắt lưng hoa lý), chưa có nguồn nói áo tứ thân dân gian nói chung bắt buộc."
+      }
+    },
+    {
+      "item_id": "ao_yem_001",
+      "provenance": "AI_INFERRED",
+      "suitable_body_types": {
+        "value": [],
+        "reasoning": "Không đủ cơ sở để gán vóc dáng cho yếm.",
+        "confidence": "rat_thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Bikini/áo hai dây hiện đại làm ngoại y"
+        ],
+        "reasoning": "Yếm truyền thống thường mặc trong áo tứ thân hoặc áo dài; dùng làm áo độc lập với chất liệu mỏng bị nhà nghiên cứu phê phán (đã có nguồn ở file chính).",
+        "confidence": "thap"
+      },
+      "note": "Ý nghĩa 'đào = lẳng lơ' từ một blog mâu thuẫn với hình ảnh yếm đào tiêu biểu; chưa đủ cơ sở cấm màu đào."
+    },
+    {
+      "item_id": "ao_giao_linh_001",
+      "provenance": "AI_INFERRED",
+      "suitable_body_types": {
+        "value": [],
+        "reasoning": "Không có dữ liệu.",
+        "confidence": "rat_thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Cổ thẳng kéo kín kiểu Minh/Triều Tiên",
+          "Giày thể thao hiện đại"
+        ],
+        "reasoning": "Nguồn đã chỉ ra cổ giao lĩnh Lê khác Minh; việc coi đây là mục cảnh báo là suy luận.",
+        "confidence": "thap"
+      },
+      "traditional_material": {
+        "value": [
+          "lụa",
+          "gấm (tầng lớp cao)",
+          "vải bông hoặc đay (dân thường)"
+        ],
+        "reasoning": "Không có nguồn về chất liệu; suy theo phân tầng xã hội thời Lê.",
+        "confidence": "rat_thap"
+      }
+    },
+    {
+      "item_id": "ao_ngu_than_tay_thung_001",
+      "provenance": "AI_INFERRED",
+      "suitable_body_types": {
+        "value": [
+          "Dáng cao",
+          "Dáng chữ nhật"
+        ],
+        "reasoning": "Tay rộng dài chấm đất và thân dài tạo phong thái đường bệ; người thấp nhỏ dễ bị 'chìm' trong form rộng. Đây là suy luận thẩm mỹ, không phải quy chuẩn lịch sử.",
+        "confidence": "thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Giày thể thao hiện đại",
+          "Quần jean",
+          "Áo Nhật Bình"
+        ],
+        "reasoning": "Áo tấc là lễ phục trang trọng; phối đồ thường ngày hiện đại làm lệch ngữ cảnh.",
+        "confidence": "trung_binh"
+      },
+      "incompatible_colors": {
+        "value": [
+          "Vàng tươi/vàng cam (màu dành cho hoàng gia)"
+        ],
+        "reasoning": "Suy từ việc các nguồn gắn vàng với hoàng hậu và hoàng thất; chưa có nguồn quy định màu cho ngũ thân nam dân gian.",
+        "confidence": "thap"
+      }
+    },
+    {
+      "item_id": "ao_ngu_than_tay_chen_001",
+      "provenance": "AI_INFERRED",
+      "suitable_body_types": {
+        "value": [
+          "Dáng cao",
+          "Dáng chữ nhật",
+          "Dáng tam giác ngược"
+        ],
+        "reasoning": "Cổ đứng, thân dài quá gối 5-7 cm, tay hẹp gọn tạo đường dọc; khớp với ví dụ của bạn (nam 1.8 m, 75 kg) về mặt thẩm mỹ, nhưng không có nguồn nào quy định thông số cơ thể.",
+        "confidence": "thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Giày thể thao hiện đại",
+          "Quần jean",
+          "Nón lá",
+          "Khăn rằn"
+        ],
+        "reasoning": "Phụ kiện dân gian hoặc hiện đại không thuộc bộ ngũ thân triều Nguyễn.",
+        "confidence": "thap"
+      }
+    },
+    {
+      "item_id": "ao_nhat_binh_001",
+      "provenance": "AI_INFERRED",
+      "era_mapping_note": "Một blog dẫn mốc 1807 cho 'Khâm định Đại Nam hội điển sự lệ'. Theo hiểu biết của AI, bộ sách này được biên soạn muộn hơn nhiều (giữa thế kỷ XIX). Cần đối chiếu bản gốc trước khi dùng mốc 1807. Confidence: thap.",
+      "suitable_body_types": {
+        "value": [
+          "Dáng cân đối"
+        ],
+        "reasoning": "Áo to bản, tạo hình chữ nhật trước ngực, dáng uy nghi; hợp người mặc có chiều cao vừa đủ để không bị lấn át.",
+        "confidence": "rat_thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Giày sneaker hiện đại",
+          "Quần jean",
+          "Mũ/nón hiện đại",
+          "Khăn rằn",
+          "Nón lá"
+        ],
+        "reasoning": "Nhật Bình là lễ phục cung đình có bộ phụ kiện quy định (khăn vành, kim ước, trâm); phối đồ hiện đại hoặc dân gian là sai đặc trưng. Ví dụ 'Nhật Bình không đi cùng sneaker' của bạn phù hợp với logic này nhưng không có nguồn trực tiếp.",
+        "confidence": "trung_binh"
+      },
+      "incompatible_colors": {
+        "value": [
+          "Người không phải hoàng hậu không mặc vàng/cam; đỏ dành cho công chúa"
+        ],
+        "reasoning": "Suy từ các nguồn nói màu theo cấp bậc (hoàng hậu vàng/cam, công chúa đỏ, nhị giai xích đào). Cần tra quy chế gốc để chốt.",
+        "confidence": "thap"
+      }
+    },
+    {
+      "item_id": "ao_ba_ba_001",
+      "provenance": "AI_INFERRED",
+      "suitable_body_types": {
+        "value": [
+          "Mọi dáng (form thoải mái)"
+        ],
+        "reasoning": "Áo dùng cho lao động sông nước nên thường thoải mái; không có nguồn về vóc dáng.",
+        "confidence": "rat_thap"
+      },
+      "incompatible_items": {
+        "value": [
+          "Khăn mỏ quạ",
+          "Nón quai thao",
+          "Áo yếm kiểu Bắc Bộ"
+        ],
+        "reasoning": "Trộn bộ phụ kiện Bắc Bộ vào bà ba làm sai đặc trưng vùng miền.",
+        "confidence": "thap"
+      },
+      "incompatible_colors": {
+        "value": [],
+        "reasoning": "Không có cơ sở.",
+        "confidence": "rat_thap"
+      }
+    }
+  ],
+  "global_rules": [
+    {
+      "rule_id": "region_mixing",
+      "provenance": "AI_INFERRED",
+      "value": "Không trộn phụ kiện khác vùng (khăn rằn Nam Bộ, khăn mỏ quạ Bắc Bộ, phụ kiện cung đình Huế) trong một bộ.",
+      "reasoning": "Suy từ việc các nguồn gắn mỗi phụ kiện với một vùng hoặc giai tầng.",
+      "confidence": "thap"
+    },
+    {
+      "rule_id": "era_enum_gap",
+      "provenance": "AI_INFERRED",
+      "value": "Enum era (Lý, Trần, Lê, Nguyễn) chưa có mục cho thế kỷ XX/Pháp thuộc và thời chúa Nguyễn Đàng Trong; đề xuất thêm 'Chúa Nguyễn' và 'Đầu thế kỷ XX'.",
+      "reasoning": "Áo tứ thân và bà ba có cột mốc chính ở thế kỷ XIX-XX; ngũ thân ra đời 1744 thời chúa.",
+      "confidence": "trung_binh"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+SUCCESS: Wrote 31083 bytes to js\data.js
+Items count: 20
+First item: Áo tứ thân
+Categories: Áo khoác ngoài, Áo lót trong, Quần/Váy, Phụ kiện đầu, Phụ kiện thân, Giày dép

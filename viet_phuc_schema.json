@@ -1,0 +1,79 @@
+{
+  "version": "2.0",
+  "date": "2026-09-30",
+  "files": {
+    "viet_phuc_items.json": "Dữ liệu có nguồn, nạp vào DB. Trường không có nguồn để trống.",
+    "viet_phuc_sources.json": "Bảng nguồn, liên kết qua items[].source_ids",
+    "viet_phuc_items_AI_GENERATED.json": "Dữ liệu AI tự suy luận, ghép theo item_id, luôn gắn provenance=AI_INFERRED, không trộn vào file có nguồn"
+  },
+  "enums": {
+    "category": [
+      "Áo khoác ngoài",
+      "Áo lót trong",
+      "Quần/Váy",
+      "Phụ kiện đầu",
+      "Giày dép",
+      "Phụ kiện thân"
+    ],
+    "category_note": "'Phụ kiện thân' (thắt lưng, dây xà tích) là đề xuất bổ sung.",
+    "region": [
+      "Bắc Bộ",
+      "Trung Bộ",
+      "Nam Bộ"
+    ],
+    "era": [
+      "Lý",
+      "Trần",
+      "Lê",
+      "Nguyễn"
+    ],
+    "era_gap": "Chưa có 'Chúa Nguyễn' và 'Đầu thế kỷ XX'; era của tứ thân và bà ba đang để trống vì nguồn chỉ nêu thế kỷ XIX-XX.",
+    "events": [
+      "Sinh hoạt đời thường",
+      "Lễ hội",
+      "Cưới hỏi",
+      "Lễ nghi",
+      "Lễ tết",
+      "Đại lễ",
+      "Sắc phong",
+      "Tiếp khách",
+      "Biểu diễn"
+    ],
+    "source_tier": {
+      "cao": "sách, nghiên cứu, bảo tàng (hiện chưa có nguồn nào)",
+      "trung_binh": "báo chí, Wikipedia có dẫn nguồn",
+      "thap": "blog thương mại, cửa hàng cho thuê"
+    },
+    "source_tier_note": "Tier gán theo tên miền, là đánh giá của AI, cần người duyệt."
+  },
+  "field_groups": {
+    "identity": [
+      "item_id",
+      "name",
+      "aliases",
+      "category"
+    ],
+    "filters": [
+      "region",
+      "era",
+      "events",
+      "suitable_body_types",
+      "color_tags"
+    ],
+    "rules": [
+      "required_matches (chỉ món nguồn nói 'phải có')",
+      "common_pairings (item_id)",
+      "other_pairings_text (món chưa có mục riêng)",
+      "incompatible_items",
+      "incompatible_colors",
+      "red_flags"
+    ],
+    "cultural_context": [
+      "historical_meaning",
+      "traditional_material",
+      "construction",
+      "notes",
+      "conflicts"
+    ]
+  }
+}

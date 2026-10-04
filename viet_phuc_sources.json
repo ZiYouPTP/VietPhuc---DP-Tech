@@ -1,0 +1,238 @@
+{
+  "sources": [
+    {
+      "source_id": "src_001",
+      "url": "https://www.diendan.org/phe-binh-nghien-cuu/ao-tu-than-khan-mo-qua",
+      "publisher": "diendan.org",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_002",
+      "url": "https://hoilhpn.org.vn/CmsView-EcoIT-portlet/html/print_cms.jsp?articleId=34539",
+      "publisher": "hoilhpn.org.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_003",
+      "url": "https://diendandoanhnghiep.vn/cam-xuc-xuan-tan-man-ve-nep-ao-tu-than-xua-10086361.html",
+      "publisher": "diendandoanhnghiep.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_004",
+      "url": "https://baotayninh.vn/phu-nu-kinh-bac-voi-chiec-khan-mo-qua-a7878.html",
+      "publisher": "baotayninh.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_005",
+      "url": "https://sevenam.vn/ao-tu-than/",
+      "publisher": "sevenam.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_006",
+      "url": "https://ruza.vn/ao-tu-than/",
+      "publisher": "ruza.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_007",
+      "url": "https://baophapluat.vn/dung-nhan-danh-cach-tan-de-lam-bien-dang-trang-phuc-truyen-thong-post479239.html",
+      "publisher": "baophapluat.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_008",
+      "url": "https://bktt.vn/%C3%81o_y%E1%BA%BFm",
+      "publisher": "bktt.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_009",
+      "url": "https://sites.google.com/site/cauchuyenvanhocnghethuat/vhnt-124",
+      "publisher": "sites.google.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_010",
+      "url": "https://theciu.vn/blog/ao-yem",
+      "publisher": "theciu.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_011",
+      "url": "https://shopchothuetrangphuc.com/tin-tuc/ao-tu-than-non-quai-thao-net-duyen-dang-cua-phu-nu-kinh-bac.html",
+      "publisher": "shopchothuetrangphuc.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_012",
+      "url": "https://vi.wikipedia.org/wiki/Trang_ph%E1%BB%A5c_Vi%E1%BB%87t_Nam",
+      "publisher": "vi.wikipedia.org",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_013",
+      "url": "https://en.wikipedia.org/wiki/%C3%81o_giao_l%C4%A9nh",
+      "publisher": "en.wikipedia.org",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_014",
+      "url": "https://cophong.vn/ao-giao-linh-trang-phuc-truyen-thong-cua-nguoi-viet/",
+      "publisher": "cophong.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_015",
+      "url": "https://honguyetquan.com/giao-linh-trang-phuc-co-viet-nam",
+      "publisher": "honguyetquan.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_016",
+      "url": "https://mega.vietnamplus.vn/doc-dao-ao-ngu-than-ban-sac-van-hoa-viet-5419.html",
+      "publisher": "mega.vietnamplus.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_017",
+      "url": "https://vietphuc.net/tim-hieu-ve-cac-loai-viet-phuc-thong-dung-nhat-binh-ao-tac-ngu-than-tay-chen-giao-linh-vien-linh-doi-kham",
+      "publisher": "vietphuc.net",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_018",
+      "url": "https://www.aodaicosau.com/2021/01/phan-tich-cau-tao-ao-ngu-than-lap-linh.html",
+      "publisher": "aodaicosau.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_019",
+      "url": "https://bbcosplay.com/ao-ngu-than/",
+      "publisher": "bbcosplay.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_020",
+      "url": "https://ivymoda.com/tin-tuc/bai-viet/ao-ngu-than-548",
+      "publisher": "ivymoda.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_021",
+      "url": "https://namtuyen.com/ao-dai-ngu-than-viet-nam-nguon-goc-y-nghia-va-gia-tri-van-hoa-truyen-thong",
+      "publisher": "namtuyen.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_022",
+      "url": "https://mingstudio.com.vn/ao-dai-ngu-than-xua-va-ve-dep-cua-trang-phuc-truyen-thong-viet/",
+      "publisher": "mingstudio.com.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_023",
+      "url": "https://cotranghoangcung.com/y-nghia-cua-ao-dai-ngu-than/",
+      "publisher": "cotranghoangcung.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_024",
+      "url": "https://routine.vn/tin-thoi-trang/ao-ngu-than-la-gi",
+      "publisher": "routine.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_025",
+      "url": "http://vanhoanghethuat.vn/hoa-van-trang-tri-tren-ao-nhat-binh-cua-doan-huy-hoang-thai-hau-trieu-nguyen-1802-1945.htm",
+      "publisher": "vanhoanghethuat.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_026",
+      "url": "https://phunuvietnam.vn/ao-nhat-binh-ngay-cang-duoc-ua-chuong-20221210103051442.htm",
+      "publisher": "phunuvietnam.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_027",
+      "url": "https://tulinhboutique.com/blogs/news/ao-dai-nhat-binh-van-hoa-cung-dinh-trieu-nguyen",
+      "publisher": "tulinhboutique.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_028",
+      "url": "https://marcfashion.vn/blogs/mac-dep/ao-nhat-binh",
+      "publisher": "marcfashion.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_029",
+      "url": "https://cardina.vn/blogs/kien-thuc-thoi-trang/ao-nhat-binh-la-gi",
+      "publisher": "cardina.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_030",
+      "url": "https://thanhnien.vn/ba-ba-khan-ran-bieu-tuong-cua-dat-va-nguoi-phuong-nam-185230426180249809.htm",
+      "publisher": "thanhnien.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_031",
+      "url": "https://vanhoavaphattrien.vn/ao-ba-ba-vi-sao-khong-la-ao-ba-tu-a6961.html",
+      "publisher": "vanhoavaphattrien.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_032",
+      "url": "https://thoitrangnamphuong.com/tin-tuc/lich-su-nguon-goc-ao-ba-ba-viet-nam-cap-nhat-moi-nhat-205115.html",
+      "publisher": "thoitrangnamphuong.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_033",
+      "url": "https://huonglua.com.vn/blogs/news/ao-ba-ba-viet-nam",
+      "publisher": "huonglua.com.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_034",
+      "url": "https://anhminhtextile.com/ao-ba-ba",
+      "publisher": "anhminhtextile.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_035",
+      "url": "https://insidevietnam.tempisite.com/ao-tu-than-net-duyen-cua-phu-nu-kinh-bac-xua",
+      "publisher": "insidevietnam.tempisite.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_036",
+      "url": "https://www.vacne.org.vn/ao-tu-than-khan-mo-qua-net-duyen-kinh-bac/27074.html",
+      "publisher": "vacne.org.vn",
+      "tier": "trung_binh"
+    },
+    {
+      "source_id": "src_037",
+      "url": "https://trangphuchonghanh.com/huong-dan-cach-mac-ao-tu-than-dung-va-dep-cho-ai-chua-biet-mac-bid101.html",
+      "publisher": "trangphuchonghanh.com",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_038",
+      "url": "https://cardina.vn/blogs/kien-thuc-thoi-trang/ao-ngu-than",
+      "publisher": "cardina.vn",
+      "tier": "thap"
+    },
+    {
+      "source_id": "src_039",
+      "url": "https://www.webtretho.vn/f/doc-bao-gium-ban/ao-dai-ngu-than-truyen-thong-cot-cach-thanh-tao-va-xu-huong-phuc-hung-co-phuc-duong-dai",
+      "publisher": "webtretho.vn",
+      "tier": "thap"
+    }
+  ]
+}
