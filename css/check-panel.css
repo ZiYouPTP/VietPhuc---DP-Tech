@@ -1,0 +1,81 @@
+/* ════════════════════════════════════════════════════
+   check-panel.css
+   Giao diện kiểm tra phối đồ & nhãn nguồn dữ liệu.
+   Dùng lại design tokens trong index.html (--bg*, --gold, --son, --t1...).
+   Quy ước màu: XANH LÁ = có nguồn | HỔ PHÁCH + viền NÉT ĐỨT = gợi ý của AI.
+════════════════════════════════════════════════════ */
+
+:root{
+  --src:#52be80;--srcBg:rgba(39,174,96,0.1);--srcBd:rgba(39,174,96,0.32);
+  --aiC:#e0b560;--aiBg:rgba(224,181,96,0.08);--aiBd:rgba(224,181,96,0.4);
+}
+
+/* Khung giữa cuộn được khi panel dài (trước đây overflow:hidden làm mất nội dung) */
+.avatar-area{overflow-y:auto;justify-content:safe center}
+.avatar-frame{flex-shrink:0}
+
+/* ── Nhãn nguồn dữ liệu ───────────────────────────── */
+.prov{display:inline-flex;align-items:center;font-size:0.52rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:1px 7px;border-radius:99px;margin-left:6px;vertical-align:middle}
+.prov-src{color:var(--src);background:var(--srcBg);border:1px solid var(--srcBd)}
+.prov-ai{color:var(--aiC);background:var(--aiBg);border:1px dashed var(--aiBd)}
+
+/* ── Panel khung giữa ─────────────────────────────── */
+.check-panel{
+  position:relative;width:100%;max-width:520px;max-height:36vh;overflow-y:auto;flex-shrink:0;
+  background:rgba(10,13,22,0.72);border:1px solid var(--bdr);border-radius:var(--r2);
+  padding:10px 13px;animation:fadeIn 0.25s ease;text-align:left
+}
+.check-try{margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+.check-try-t{font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--t3);margin-bottom:5px}
+.check-try-chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{
+  padding:3px 9px;border-radius:99px;font-size:0.6rem;font-weight:600;font-family:'Inter',sans-serif;
+  border:1px solid var(--bdr);background:transparent;color:var(--t2);cursor:pointer;transition:all 0.14s
+}
+.chip:hover{border-color:rgba(255,255,255,0.18);color:var(--t1)}
+.chip.on{background:var(--aiBg);border-color:var(--aiBd);color:var(--aiC)}
+
+.check-ok{font-size:0.64rem;color:var(--t2);line-height:1.55;margin-top:6px}
+.check-cov{font-size:0.6rem;color:var(--t3);line-height:1.5;margin-top:6px}
+.check-disc{font-size:0.56rem;color:var(--t3);line-height:1.5;margin-top:8px;padding-top:6px;border-top:1px dashed var(--bdr)}
+
+/* ── Kết quả kiểm tra (dùng cả ở panel và trong chat) ── */
+.chk-sec{margin-top:8px}
+.chk-sec:first-child{margin-top:0}
+.chk-t{font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.chk-t-src{color:var(--src)}
+.chk-t-ai{color:var(--aiC)}
+.chk-item{margin-top:5px;padding:7px 10px;border-radius:var(--r1);font-size:0.66rem;line-height:1.55}
+.chk-src{background:var(--srcBg);border-left:2px solid var(--src);color:#b9e3c8}
+.chk-ai{background:var(--aiBg);border:1px dashed var(--aiBd);color:#e8d3a6}
+.chk-ai.chk-warn{border-color:rgba(231,76,60,0.5);background:rgba(231,76,60,0.07);color:#ecc0b8}
+.chk-who{font-size:0.58rem;font-weight:700;color:var(--src);margin-bottom:2px}
+.chk-item-h{display:flex;align-items:center;gap:7px;margin-bottom:2px}
+.sev{font-size:0.54rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:1px 7px;border-radius:3px}
+.sev-warn{background:rgba(231,76,60,0.25);color:#f1948a}
+.sev-info{background:rgba(224,181,96,0.2);color:var(--aiC)}
+.chk-conf{font-size:0.54rem;color:var(--t3)}
+.chk-why{margin-top:4px;padding:5px 8px;border-radius:var(--r1);background:rgba(0,0,0,0.25);font-size:0.62rem;color:var(--t2);line-height:1.55}
+.chk-compact .chk-item{font-size:0.64rem}
+.chk-compact{margin-top:8px}
+
+/* ── Danh sách nguồn ──────────────────────────────── */
+.src-wrap{margin-top:3px}
+.src-list{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.src-link{display:flex;align-items:center;gap:7px;font-size:0.6rem;color:var(--t2);text-decoration:none;padding:2px 0}
+.src-link:hover .src-pub{color:var(--goldL);text-decoration:underline}
+.tier{font-size:0.5rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;padding:1px 6px;border-radius:3px;flex-shrink:0}
+.tier-cao{background:rgba(39,174,96,0.25);color:var(--greenL)}
+.tier-trung_binh{background:rgba(74,143,191,0.22);color:var(--blueL)}
+.tier-thap{background:rgba(255,255,255,0.07);color:var(--t3)}
+
+/* ── Danh sách trang phục: gợi ý mềm (không chặn) ──── */
+.item-card.conflict{border-color:var(--aiBd);border-style:dashed}
+.item-card.conflict .incomp-badge{background:rgba(224,181,96,0.85);color:#1b1405}
+
+/* ── Ngăn kéo chi tiết ────────────────────────────── */
+.dr-cf{margin-top:6px;padding:7px 10px;border-radius:var(--r1);background:rgba(201,168,76,0.07);border-left:2px solid var(--gold);font-size:0.67rem;color:#d8c58f;line-height:1.55}
+.dr-ai-row{margin-top:8px}
+.dr-ai-l{font-size:0.58rem;font-weight:600;color:var(--t2);margin-bottom:4px}
+.dr-pill-ai{background:var(--aiBg);border:1px dashed var(--aiBd);color:var(--aiC)}
+.dr-ai-why{font-size:0.62rem;color:var(--t3);line-height:1.5;margin-top:4px}

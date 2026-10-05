@@ -8,6 +8,7 @@ const { Catalog, AvatarArea, Chatbot, ItemDrawer } = window;
 const App = () => {
   const [db] = useState(window.DB);
   const [wearing, setWearing] = useState([]);
+  const [externalTags, setExternalTags] = useState([]);
   const [analysis, setAnalysis] = useState(null);
   const [messages, setMessages] = useState([
     {
@@ -35,8 +36,8 @@ const App = () => {
   }, [db]);
 
   useEffect(() => {
-    setAnalysis(window.OutfitAnalyzer.analyze(wearing));
-  }, [wearing]);
+    setAnalysis(window.OutfitAnalyzer.analyze(wearing, { externalTags }));
+  }, [wearing, externalTags]);
 
   const toggleItem = (id) => {
     setWearing(prev =>
@@ -50,22 +51,29 @@ const App = () => {
 
   const clearAll = () => {
     setWearing([]);
+    setExternalTags([]);
   };
 
-  const handleSendMessage = (text) => {
+  const toggleExternal = (tag) => {
+    setExternalTags(prev =>
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
+
+  // outfit: cho phép truyền bộ đồ mới nhất, tránh dùng wearing cũ trong closure
+  const handleSendMessage = (text, outfit = wearing) => {
     if (!text.trim()) return;
     setMessages(prev => [...prev, { role: 'user', text }]);
-    if (aiEngine) aiEngine.processMessage(text, wearing);
+    if (aiEngine) aiEngine.processMessage(text, outfit, { externalTags });
   };
 
   const handleAskSuggestion = (id) => {
     const item = db.getById(id);
     if (!item) return;
-    if (!wearing.includes(id)) {
-      setWearing(prev => [...prev, id]);
-    }
+    const nextWearing = wearing.includes(id) ? wearing : [...wearing, id];
+    setWearing(nextWearing);
     const txt = `Tôi vừa mặc thử ${item.name}. Bạn thấy sao?`;
-    handleSendMessage(txt);
+    handleSendMessage(txt, nextWearing);
   };
 
   return (
@@ -102,6 +110,8 @@ const App = () => {
           analysis={analysis}
           onViewItemDetails={setDrawerItem}
           onClearAll={clearAll}
+          externalTags={externalTags}
+          onToggleExternal={toggleExternal}
         />
 
         <Chatbot

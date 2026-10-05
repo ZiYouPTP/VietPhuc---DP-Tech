@@ -20,13 +20,13 @@ class AIStyleEngine {
     this.useRealAI = this.apiKey.length > 0;
   }
 
-  async processMessage(msg, currentOutfit) {
+  async processMessage(msg, currentOutfit, opts = {}) {
     this.onStartTyping();
     this.conversationHistory.push({ role: 'user', text: msg });
 
     if (this.useRealAI && this.apiKey) {
       try {
-        const response = await this._callGeminiAPI(msg, currentOutfit);
+        const response = await this._callGeminiAPI(msg, currentOutfit, opts);
         this.conversationHistory.push({ role: 'ai', text: response.text });
         this.onResponse(response);
         return;
@@ -37,29 +37,50 @@ class AIStyleEngine {
 
     // Simulate network delay for mock
     await new Promise(r => setTimeout(r, 900 + Math.random() * 700));
-    const response = this._generateMockResponse(msg.toLowerCase(), currentOutfit);
+    const response = this._generateMockResponse(msg.toLowerCase(), currentOutfit, opts);
     this.conversationHistory.push({ role: 'ai', text: response.text });
     this.onResponse(response);
   }
 
-  async _callGeminiAPI(userMsg, currentOutfit) {
+  async _callGeminiAPI(userMsg, currentOutfit, opts = {}) {
+    const db = this.db;
+    const analysis = this.analyzer.analyze(currentOutfit, opts);
+    const check = analysis ? analysis.check : null;
+
     const outfitContext = currentOutfit.length > 0
       ? currentOutfit.map(id => {
-          const item = this.db.getById(id);
-          return item ? `${item.name} (${item.category}, ${item.filters?.region?.join('/')})` : id;
-        }).join(', ')
+          const item = db.getById(id);
+          if (!item) return `- ${id}`;
+          const meaning = (item.cultural_context?.historical_meaning || '').slice(0, 400);
+          const conflicts = (item.cultural_context?.conflicts || []).join(' | ');
+          return `- ${item.name} (${item.category}, ${item.filters?.region?.join('/') || 'không rõ vùng'})`
+            + (meaning ? `\n  Nguồn gốc/ý nghĩa (có nguồn): ${meaning}` : '')
+            + (conflicts ? `\n  Chỗ các nguồn chưa thống nhất: ${conflicts}` : '');
+        }).join('\n')
       : 'Chưa chọn trang phục nào';
 
-    const analysis = this.analyzer.analyze(currentOutfit);
-    const analysisText = analysis
-      ? `Điểm tương thích: ${analysis.score}/100. Cảnh báo: ${analysis.warnings.join('; ') || 'Không có'}`
-      : 'Chưa có bộ đồ để phân tích';
+    const extLabels = (opts.externalTags || [])
+      .map(t => (db.getExternalTags().find(e => e.tag === t) || {}).label || t);
+
+    const sourcedText = check && check.advisories.length
+      ? check.advisories.map(a => `- [CÓ NGUỒN] ${a.item_name}: ${a.text}`).join('\n')
+      : 'Không có';
+    const aiText = check && check.warnings.length
+      ? check.warnings.map(w => `- [SUY LUẬN CỦA AI, CHƯA XÁC THỰC, mức ${w.severity}] ${w.message} (lý do: ${w.reasoning})`).join('\n')
+      : 'Không có';
 
     const systemPrompt = `Bạn là AI Stylist chuyên về trang phục truyền thống Việt Nam (Việt Phục).
-Bộ đồ người dùng đang mặc: ${outfitContext}
-Đánh giá bộ đồ: ${analysisText}
-Hãy trả lời ngắn gọn, chuyên nghiệp bằng tiếng Việt. Nếu gợi ý trang phục cụ thể, hãy đề cập tên đúng.
-Không bịa thông tin lịch sử. Nếu không chắc, hãy nói rõ.`;
+Bộ đồ người dùng đang mặc:
+${outfitContext}
+Người dùng đang thử phối thêm đồ hiện đại: ${extLabels.join(', ') || 'không'}
+Lưu ý văn hóa CÓ NGUỒN:
+${sourcedText}
+Điểm cần cân nhắc do AI suy luận (CHƯA có nguồn xác thực):
+${aiText}
+Quy tắc trả lời:
+- Trả lời ngắn gọn, chuyên nghiệp bằng tiếng Việt, nêu đúng tên trang phục.
+- Khi nhắc một cảnh báo, phải nói rõ đó là lưu ý có nguồn hay chỉ là suy luận chưa xác thực. Với suy luận, dùng cách nói "có thể chưa phù hợp", không khẳng định "sai".
+- Không bịa thông tin lịch sử. Nếu các nguồn chưa thống nhất hoặc bạn không chắc, hãy nói rõ.`;
 
     const body = {
       contents: [
@@ -80,16 +101,52 @@ Không bịa thông tin lịch sử. Nếu không chắc, hãy nói rõ.`;
 
     const data = await res.json();
     const text = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Xin lỗi, tôi không có câu trả lời.';
-    return { text, suggestedItems: [], warning: null, cultural_note: null };
+    const hasCheck = check && (check.warnings.length > 0 || check.advisories.length > 0);
+    return { text, suggestedItems: [], warning: null, cultural_note: null, check: hasCheck ? check : null };
   }
 
-  _generateMockResponse(text, currentOutfit) {
+  _truncate(str, n) {
+    if (!str || str.length <= n) return str || '';
+    const cut = str.slice(0, n);
+    return cut.slice(0, cut.lastIndexOf(' ')) + '...';
+  }
+
+  _generateMockResponse(text, currentOutfit, opts = {}) {
     const res = { text: '', suggestedItems: [], warning: null, cultural_note: null };
 
     // Chào hỏi
     if (text.includes('chào') || text.includes('hello') || text.includes('xin chào')) {
       res.text = 'Chào bạn! 👋 Mình là **Việt Phục AI Stylist**.\n\nMình có thể giúp bạn:\n• Phối đồ truyền thống theo vùng miền\n• Tìm hiểu ý nghĩa lịch sử trang phục\n• Kiểm tra tính tương thích của bộ đồ\n\nBạn muốn phối đồ cho dịp nào hoặc vùng miền nào?';
       res.suggestedItems = ['ao_tu_than_001', 'ao_ngu_than_tay_chen_001', 'ao_nhat_binh_001'];
+      return res;
+    }
+
+    // Kiểm tra bộ đồ (dùng DB.checkOutfit qua OutfitAnalyzer)
+    const explicitCheck = ['kiểm tra', 'tương thích'].some(w => text.includes(w));
+    const implicitCheck = ['thấy sao', 'ổn không', 'được không', 'chuẩn không', 'đúng không'].some(w => text.includes(w));
+    if (explicitCheck || (implicitCheck && currentOutfit.length > 0)) {
+      if (currentOutfit.length === 0) {
+        res.text = 'Bạn hãy chọn trang phục từ danh sách bên trái, mình sẽ kiểm tra bộ đồ giúp bạn nhé!';
+        return res;
+      }
+      const analysis = this.analyzer.analyze(currentOutfit, opts);
+      const check = analysis.check;
+      const names = currentOutfit.map(id => this.db.getById(id)?.name).filter(Boolean);
+      const n = check.warnings.length;
+      if (n === 0) {
+        res.text = `Mình đã kiểm tra bộ đồ **${names.join('**, **')}**: chưa phát hiện điểm bất thường theo dữ liệu hiện có.\n\nLưu ý: bộ luật kiểm tra của mình còn hạn chế, nên đây chưa phải xác nhận bộ đồ chuẩn tuyệt đối.`;
+      } else {
+        res.text = `Mình thấy **${n}** điểm cần cân nhắc ở bộ đồ **${names.join('**, **')}**.\n\nCác điểm này là gợi ý do AI suy luận, chưa có nguồn xác thực, bạn nên xem như tham khảo.`;
+      }
+      if (check.counts.sourced_advisories > 0) {
+        res.text += `\n\nNgoài ra có ${check.counts.sourced_advisories} lưu ý văn hóa có nguồn bên dưới.`;
+      }
+      if (analysis.uncovered.length > 0) {
+        res.text += `\n\nChưa có luật kiểm tra riêng cho: ${analysis.uncovered.join(', ')}.`;
+      }
+      res.check = (n > 0 || check.advisories.length > 0) ? check : null;
+      const last = this.db.getById(currentOutfit[currentOutfit.length - 1]);
+      res.cultural_note = this._truncate(last?.cultural_context?.historical_meaning, 220) || null;
       return res;
     }
 
@@ -135,9 +192,9 @@ Không bịa thông tin lịch sử. Nếu không chắc, hãy nói rõ.`;
           const pairings = primary.rules.common_pairings.slice(0, 4);
           res.text = `Bạn đang mặc **${primary.name}**. Theo truyền thống, nên phối cùng:`;
           res.suggestedItems = pairings;
-          if (primary.rules.red_flags && primary.rules.red_flags.length > 0) {
-            res.warning = primary.rules.red_flags[0];
-          }
+          const chk = this.analyzer.analyze(currentOutfit, opts).check;
+          res.check = (chk.warnings.length > 0 || chk.advisories.length > 0) ? chk : null;
+          // red_flags đã nằm trong res.check (advisories), không lặp lại ở res.warning
           if (primary.cultural_context?.historical_meaning) {
             res.cultural_note = primary.cultural_context.historical_meaning.substring(0, 200) + '...';
           }

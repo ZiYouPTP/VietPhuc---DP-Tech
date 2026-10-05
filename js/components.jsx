@@ -3,7 +3,138 @@
  * @description Các React component cho Việt Phục AI Stylist
  */
 const { useState, useEffect, useRef, useCallback } = React;
-const { Search, Filter, ShieldAlert, Sparkles, Send, X, Info, BookOpen, Star, Zap, ChevronDown, Heart } = lucide;
+// lucide bản UMD (vanilla) xuất icon dạng IconNode (mảng), không dùng trực tiếp làm component React được.
+// toIcon() bọc từng icon thành component: <Search size={13} className="..."/>
+const toIcon = (node) => ({ size = 24, color = 'currentColor', strokeWidth = 2, className, style }) =>
+  React.createElement(
+    'svg',
+    {
+      xmlns: 'http://www.w3.org/2000/svg', width: size, height: size, viewBox: '0 0 24 24',
+      fill: 'none', stroke: color, strokeWidth, strokeLinecap: 'round', strokeLinejoin: 'round',
+      className, style,
+    },
+    (node || []).map(([tag, attrs], i) => React.createElement(tag, { key: i, ...attrs }))
+  );
+const Search = toIcon(lucide.Search), Filter = toIcon(lucide.Filter), ShieldAlert = toIcon(lucide.ShieldAlert),
+  Sparkles = toIcon(lucide.Sparkles), Send = toIcon(lucide.Send), X = toIcon(lucide.X), Info = toIcon(lucide.Info),
+  BookOpen = toIcon(lucide.BookOpen), Star = toIcon(lucide.Star), Zap = toIcon(lucide.Zap),
+  ChevronDown = toIcon(lucide.ChevronDown), Heart = toIcon(lucide.Heart);
+
+// ─── Thành phần dùng chung: nguồn dữ liệu & kết quả kiểm tra ───────
+const TIER_RANK = { cao: 0, trung_binh: 1, thap: 2 };
+const TIER_LABEL = { cao: 'Nguồn cao', trung_binh: 'Nguồn trung bình', thap: 'Nguồn thấp' };
+const CONF_LABEL = { trung_binh: 'độ tin cậy trung bình', thap: 'độ tin cậy thấp', rat_thap: 'độ tin cậy rất thấp' };
+
+/** Nhãn phân biệt dữ liệu có nguồn và dữ liệu AI suy luận */
+const ProvenanceBadge = ({ kind }) => kind === 'SOURCED'
+  ? <span className="prov prov-src" title="Có nguồn tham khảo">Có nguồn</span>
+  : <span className="prov prov-ai" title="Do AI suy luận, chưa có nguồn xác thực">Gợi ý của AI</span>;
+
+const SourceList = ({ sourceIds, defaultOpen = false }) => {
+  const [open, setOpen] = useState(defaultOpen);
+  const sources = (sourceIds || [])
+    .map(id => window.DB.getSourceById(id))
+    .filter(Boolean)
+    .sort((a, b) => TIER_RANK[a.tier] - TIER_RANK[b.tier]);
+  if (sources.length === 0) return null;
+  return (
+    <div className="src-wrap">
+      <button className="link-btn" onClick={() => setOpen(!open)}>
+        {open ? 'Ẩn nguồn' : `Xem ${sources.length} nguồn`}
+      </button>
+      {open && (
+        <div className="src-list">
+          {sources.map(s => (
+            <a key={s.source_id} className="src-link" href={s.url} target="_blank" rel="noopener noreferrer">
+              <span className={`tier tier-${s.tier}`}>{TIER_LABEL[s.tier] || s.tier}</span>
+              <span className="src-pub">{s.publisher}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const WarningItem = ({ w }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`chk-item chk-ai chk-${w.severity}`}>
+      <div className="chk-item-h">
+        <span className={`sev sev-${w.severity}`}>{w.severity === 'warn' ? 'Nên tránh' : 'Cân nhắc'}</span>
+        {CONF_LABEL[w.confidence] && <span className="chk-conf">{CONF_LABEL[w.confidence]}</span>}
+      </div>
+      <div className="chk-msg">{w.message}</div>
+      {w.reasoning && (
+        <button className="link-btn" onClick={() => setOpen(!open)}>
+          {open ? 'Ẩn lý do' : 'Vì sao AI gợi ý vậy?'}
+        </button>
+      )}
+      {open && <div className="chk-why">{w.reasoning}</div>}
+    </div>
+  );
+};
+
+/** Hiển thị kết quả DB.checkOutfit(): lưu ý có nguồn tách riêng khỏi gợi ý của AI */
+const CheckResult = ({ check, compact }) => {
+  if (!check) return null;
+  const { warnings, advisories } = check;
+  if (warnings.length === 0 && advisories.length === 0) return null;
+  return (
+    <div className={`chk ${compact ? 'chk-compact' : ''}`}>
+      {advisories.length > 0 && (
+        <div className="chk-sec">
+          <div className="chk-t chk-t-src"><BookOpen size={10}/> Lưu ý văn hóa <ProvenanceBadge kind="SOURCED"/></div>
+          {advisories.map(a => (
+            <div key={a.advisory_id} className="chk-item chk-src">
+              <div className="chk-who">{a.item_name}</div>
+              <div className="chk-msg">{a.text}</div>
+              <SourceList sourceIds={a.source_ids}/>
+            </div>
+          ))}
+        </div>
+      )}
+      {warnings.length > 0 && (
+        <div className="chk-sec">
+          <div className="chk-t chk-t-ai"><ShieldAlert size={10}/> Điểm cần cân nhắc <ProvenanceBadge kind="AI_INFERRED"/></div>
+          {warnings.map((w, i) => <WarningItem key={i} w={w}/>)}
+        </div>
+      )}
+    </div>
+  );
+};
+
+/** Panel kiểm tra bộ đồ ở khung giữa, kèm nút thử phối cùng đồ hiện đại */
+const OutfitCheckPanel = ({ analysis, externalTags, onToggleExternal }) => {
+  const tags = window.DB.getExternalTags();
+  const check = analysis.check;
+  return (
+    <div className="check-panel">
+      <div className="check-try">
+        <div className="check-try-t">Thử phối cùng đồ hiện đại</div>
+        <div className="check-try-chips">
+          {tags.map(t => (
+            <button
+              key={t.tag}
+              className={`chip ${externalTags.includes(t.tag) ? 'on' : ''}`}
+              onClick={() => onToggleExternal(t.tag)}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <CheckResult check={check}/>
+      {check.warnings.length === 0 && (
+        <div className="check-ok">Chưa phát hiện cặp không hợp theo các luật hiện có (số luật còn hạn chế).</div>
+      )}
+      {analysis.uncovered.length > 0 && (
+        <div className="check-cov">Chưa có luật kiểm tra riêng cho: {analysis.uncovered.join(', ')}.</div>
+      )}
+      <div className="check-disc">{window.DB.getAiDisclaimer()}</div>
+    </div>
+  );
+};
 
 // ─── Sidebar Trái: Danh sách Trang Phục ───────────────────────────
 const Catalog = ({ items, categories, wearing, onToggleItem, getIncompatibleIds }) => {
@@ -72,6 +203,7 @@ const Catalog = ({ items, categories, wearing, onToggleItem, getIncompatibleIds 
           <div className="item-grid">
             {filteredItems.map(item => {
               const isSel = wearing.includes(item.item_id);
+              // Gợi ý của AI (chưa xác thực): chỉ đánh dấu, không chặn người dùng chọn
               const isIncomp = !isSel && incompIds.has(item.item_id);
               const rgnClass = window.StyleUtils.regionClass(item.filters?.region);
               const rgnLabel = window.StyleUtils.regionLabel(item.filters?.region);
@@ -79,9 +211,9 @@ const Catalog = ({ items, categories, wearing, onToggleItem, getIncompatibleIds 
               return (
                 <div
                   key={item.item_id}
-                  className={`item-card ${isSel ? 'sel' : ''} ${isIncomp ? 'incomp' : ''}`}
-                  onClick={() => !isIncomp && onToggleItem(item.item_id)}
-                  title={isIncomp ? 'Không tương thích với đồ đang mặc' : item.name}
+                  className={`item-card ${isSel ? 'sel' : ''} ${isIncomp ? 'conflict' : ''}`}
+                  onClick={() => onToggleItem(item.item_id)}
+                  title={isIncomp ? 'Gợi ý của AI (chưa xác thực): có thể không hợp với đồ đang mặc. Bạn vẫn có thể chọn.' : item.name}
                 >
                   {isSel && <div className="sel-badge">✓</div>}
                   {isIncomp && <div className="incomp-badge"><ShieldAlert size={10}/></div>}
@@ -107,7 +239,7 @@ const Catalog = ({ items, categories, wearing, onToggleItem, getIncompatibleIds 
 };
 
 // ─── Khung Giữa: Avatar & Outfit ────────────────────────────────
-const AvatarArea = ({ wearing, onRemoveItem, analysis, onViewItemDetails, onClearAll }) => {
+const AvatarArea = ({ wearing, onRemoveItem, analysis, onViewItemDetails, onClearAll, externalTags = [], onToggleExternal = () => {} }) => {
   const primaryItem = wearing.length > 0 ? window.DB.getById(wearing[0]) : null;
   const scoreObj = analysis ? window.OutfitAnalyzer.scoreToLabel(analysis.score) : null;
 
@@ -145,7 +277,7 @@ const AvatarArea = ({ wearing, onRemoveItem, analysis, onViewItemDetails, onClea
           </div>
           {/* Điểm tương thích */}
           {scoreObj && (
-            <div className="score-badge">
+            <div className="score-badge" title="Ước lượng từ các luật gợi ý của AI, không phải kết luận lịch sử">
               <div className={`score-val ${scoreObj.cssClass}`}>{analysis.score}</div>
               <div className="score-max">/100</div>
             </div>
@@ -168,12 +300,13 @@ const AvatarArea = ({ wearing, onRemoveItem, analysis, onViewItemDetails, onClea
           </div>
         )}
 
-        {/* Cảnh báo */}
-        {analysis && analysis.warnings.length > 0 && (
-          <div className="warn-panel">
-            <div className="warn-title"><ShieldAlert size={12}/> Cảnh báo phối đồ</div>
-            {analysis.warnings.map((w, i) => <div key={i} className="warn-item">• {w}</div>)}
-          </div>
+        {/* Kiểm tra phối đồ: lưu ý có nguồn tách riêng khỏi gợi ý của AI */}
+        {analysis && (
+          <OutfitCheckPanel
+            analysis={analysis}
+            externalTags={externalTags}
+            onToggleExternal={onToggleExternal}
+          />
         )}
       </div>
 
@@ -184,7 +317,7 @@ const AvatarArea = ({ wearing, onRemoveItem, analysis, onViewItemDetails, onClea
         </button>
         {scoreObj && (
           <div className="score-box-inline">
-            <div className="score-lbl">Độ chuẩn xác</div>
+            <div className="score-lbl">Độ phù hợp (ước lượng)</div>
             <div className={`score-val-sm ${scoreObj.cssClass}`}>{analysis.score}/100 — {scoreObj.label}</div>
           </div>
         )}
@@ -323,6 +456,9 @@ const Chatbot = ({ messages, isTyping, onSendMessage, onAskSuggestion, aiEngine 
                 </div>
               )}
 
+              {/* Kết quả kiểm tra bộ đồ */}
+              <CheckResult check={m.check} compact/>
+
               {/* Ghi chú văn hóa */}
               {m.cultural_note && (
                 <div className="mcult">
@@ -385,6 +521,15 @@ const ItemDrawer = ({ item, isOpen, onClose }) => {
   const hasRedFlags = item.rules?.red_flags?.length > 0;
   const hasConstruction = item.cultural_context?.construction;
   const hasMaterials = item.cultural_context?.traditional_material?.length > 0;
+  const conflicts = item.cultural_context?.conflicts || [];
+  const ai = window.DB.getAiLayer(item.item_id);
+  const AI_FIELDS = [
+    ['suitable_body_types', 'Vóc dáng gợi ý'],
+    ['incompatible_items', 'Nên tránh phối cùng'],
+    ['incompatible_colors', 'Màu cần lưu ý'],
+    ['traditional_material', 'Chất liệu (suy đoán)'],
+  ];
+  const aiRows = ai ? AI_FIELDS.filter(([k]) => ai[k] && ai[k].value && ai[k].value.length > 0) : [];
 
   return (
     <div className={`drawer ${isOpen ? 'open' : ''}`}>
@@ -449,10 +594,37 @@ const ItemDrawer = ({ item, isOpen, onClose }) => {
 
       {hasRedFlags && (
         <div className="dr-section">
-          <div className="dr-st" style={{color:'var(--sonL)'}}>⚠️ Lưu ý đặc biệt</div>
+          <div className="dr-st" style={{color:'var(--sonL)'}}>⚠️ Lưu ý đặc biệt <ProvenanceBadge kind="SOURCED"/></div>
           {item.rules.red_flags.map((rf, i) => <div key={i} className="dr-rf">{rf}</div>)}
         </div>
       )}
+
+      {conflicts.length > 0 && (
+        <div className="dr-section">
+          <div className="dr-st">🔀 Các nguồn chưa thống nhất</div>
+          {conflicts.map((c, i) => <div key={i} className="dr-cf">{c}</div>)}
+        </div>
+      )}
+
+      {aiRows.length > 0 && (
+        <div className="dr-section">
+          <div className="dr-st">🤖 Gợi ý của AI <ProvenanceBadge kind="AI_INFERRED"/></div>
+          {aiRows.map(([k, label]) => (
+            <div key={k} className="dr-ai-row">
+              <div className="dr-ai-l">{label}</div>
+              <div className="dr-pills">
+                {ai[k].value.map(v => <span key={v} className="dr-pill dr-pill-ai">{v}</span>)}
+              </div>
+              {ai[k].reasoning && <div className="dr-ai-why">{ai[k].reasoning}</div>}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="dr-section">
+        <div className="dr-st">📎 Nguồn tham khảo</div>
+        <SourceList sourceIds={item.source_ids}/>
+      </div>
 
       {item.rules?.common_pairings?.length > 0 && (
         <div className="dr-section">

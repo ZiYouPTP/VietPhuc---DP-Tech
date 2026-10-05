@@ -6,57 +6,42 @@
 // ─────────────────────────────────────────────
 /**
  * @class OutfitAnalyzer
- * @description Phân tích tính tương thích của bộ đồ.
- *   - Kiểm tra cặp không hợp
- *   - Kiểm tra trộn vùng miền
- *   - Tính điểm tương thích 0-100
+ * @description Phân tích bộ đồ dựa trên DB.checkOutfit().
+ *   - Cảnh báo CÓ NGUỒN (advisories) chỉ để thông tin, không trừ điểm.
+ *   - Cảnh báo AI_INFERRED (warnings) mới trừ điểm: 'warn' -20, 'info' -5.
+ *   - Điểm chỉ là ước lượng từ các luật gợi ý của AI, không phải kết luận lịch sử.
  */
 class OutfitAnalyzer {
+  static PENALTY = { warn: 20, info: 5 };
+
   /**
    * @param {string[]} wearing - Mảng item_id đang mặc
-   * @returns {{ score: number, warnings: string[] } | null}
+   * @param {{externalTags?: string[], colors?: Object}} [opts]
+   * @returns {{ score: number, check: object, warnings: string[], uncovered: string[] } | null}
    */
-  static analyze(wearing) {
+  static analyze(wearing, opts = {}) {
     if (!wearing || wearing.length === 0) return null;
 
+    const check = window.DB.checkOutfit(wearing, {
+      externalTags: opts.externalTags || [],
+      colors: opts.colors || {},
+    });
+
     let score = 100;
-    const warningSet = new Set();
-
-    // 1. Kiểm tra cặp không tương thích
-    for (const wId of wearing) {
-      const item = window.DB.getById(wId);
-      if (!item) continue;
-
-      for (const otherId of wearing) {
-        if (otherId === wId) continue;
-        if (item.rules.incompatible_items.includes(otherId)) {
-          const other = window.DB.getById(otherId);
-          warningSet.add(`"${item.name}" không hợp với "${other ? other.name : otherId}"`);
-          score -= 25;
-        }
-      }
-    }
-
-    // 2. Kiểm tra trộn vùng miền
-    const regions = [...new Set(
-      wearing.flatMap(id => window.DB.getById(id)?.filters?.region || [])
-    )];
-    if (regions.length > 1) {
-      warningSet.add(`Đang trộn trang phục từ ${regions.join(' + ')} — có thể không phù hợp về mặt lịch sử`);
-      score -= 20;
-    }
-
-    // 3. Kiểm tra trộn triều đại
-    const eras = [...new Set(
-      wearing.flatMap(id => window.DB.getById(id)?.filters?.era || []).filter(Boolean)
-    )];
-    if (eras.length > 2) {
-      warningSet.add(`Bộ đồ trộn ${eras.length} triều đại khác nhau (${eras.join(', ')})`);
-      score -= 10;
-    }
-
+    check.warnings.forEach(w => { score -= OutfitAnalyzer.PENALTY[w.severity] || 0; });
     score = Math.max(0, Math.min(100, score));
-    return { score, warnings: [...warningSet] };
+
+    // Món chưa có dữ liệu AI nào: điểm số chưa nói được gì về các món này
+    const uncovered = wearing
+      .filter(id => window.DB.getById(id) && !window.DB.getAiLayer(id))
+      .map(id => window.DB.getById(id).name);
+
+    return {
+      score,
+      check,
+      uncovered,
+      warnings: check.warnings.map(w => w.message), // giữ cho code cũ cần chuỗi thuần
+    };
   }
 
   /**
@@ -64,24 +49,18 @@ class OutfitAnalyzer {
    * @returns {{ label: string, cssClass: string }}
    */
   static scoreToLabel(score) {
-    if (score >= 85) return { label: 'Xuất sắc', cssClass: 'score-g' };
-    if (score >= 60) return { label: 'Khá tốt',  cssClass: 'score-o' };
+    if (score >= 85) return { label: 'Khá ổn', cssClass: 'score-g' };
+    if (score >= 60) return { label: 'Cần cân nhắc', cssClass: 'score-o' };
     return                { label: 'Cần xem lại', cssClass: 'score-r' };
   }
 
   /**
-   * Lấy danh sách item_id không tương thích với bộ đồ hiện tại
+   * Món có thể không hợp với bộ đồ hiện tại (gợi ý của AI, chỉ để đánh dấu).
    * @param {string[]} wearing
    * @returns {Set<string>}
    */
   static getIncompatibleIds(wearing) {
-    const set = new Set();
-    for (const id of wearing) {
-      const item = window.DB.getById(id);
-      if (!item) continue;
-      item.rules.incompatible_items.forEach(iid => set.add(iid));
-    }
-    return set;
+    return window.DB.getSoftConflictIds(wearing || []);
   }
 }
 
