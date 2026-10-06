@@ -25,6 +25,8 @@ F_SCHEMA = BASE / "viet_phuc_schema.json"
 OUT_JS = BASE / "js" / "data.js"
 OUT_REPORT = BASE / "build_result.txt"
 
+# Loại bỏ cơ chế sinh ảnh AI (Pollinations.ai không dùng)
+
 
 def load(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -40,7 +42,7 @@ EMOJI = {
     "ao_nhat_binh_001": "🎏", "ao_ba_ba_001": "👚", "vay_dup_001": "👗",
     "quan_nai_den_001": "👖", "quan_trang_ong_rong_001": "👖",
     "khan_mo_qua_001": "🧣", "non_quai_thao_001": "🎩", "khan_dong_001": "🧢",
-    "khan_vanh_001": "👑", "kim_uoc_phat_001": "💎", "dai_lung_hoa_ly_001": "🎀",
+    "dai_lung_hoa_ly_001": "🎀",
     "toc_duoi_ga_001": "💇", "guoc_moc_001": "👡", "dep_cong_001": "👞",
     "khan_ran_001": "🧶",
 }
@@ -76,10 +78,6 @@ RULE_MAP = {
     "Nón quai thao": {"type": "item", "targets": ["non_quai_thao_001"]},
     "Áo yếm kiểu Bắc Bộ": {"type": "item", "targets": ["ao_yem_001"]},
     "Áo Nhật Bình": {"type": "item", "targets": ["ao_nhat_binh_001"]},
-    "Áo Nhật Bình và phụ kiện cung đình": {
-        "type": "item",
-        "targets": ["ao_nhat_binh_001", "khan_vanh_001", "kim_uoc_phat_001"],
-    },
     "Vàng tươi/vàng cam (màu dành cho hoàng gia)": {"type": "color", "colors": ["vàng", "cam"]},
     # Chủ ý để text: không thể kiểm bằng dữ liệu bộ đồ
     "Cổ thẳng kéo kín kiểu Minh/Triều Tiên": {"type": "text"},

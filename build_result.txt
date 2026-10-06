@@ -1,10 +1,12 @@
-SUCCESS: wrote 66145 bytes to js\data.js
-Items: 20 | Sources: 39 | AI records: 7
+SUCCESS: wrote 63715 bytes to js\data.js
+Items: 18 | Sources: 39 | AI records: 7
 Categories: Áo khoác ngoài, Áo lót trong, Quần/Váy, Phụ kiện đầu, Phụ kiện thân, Giày dép
 Luật kiểm tra được (AI_INFERRED): 24
-  theo loại match: color=1, external=13, item=8, text=2
+  theo loại match: color=1, external=13, item=7, text=3
   theo mức: info=12, warn=12
-Lưu ý văn hóa CÓ NGUỒN (red_flags): 10 ở 7 món
+Lưu ý văn hóa CÓ NGUỒN (red_flags): 9 ở 6 món
 Luật toàn cục hiện cho người dùng: ['region_mixing']
 Ghi chú dev (ẩn khỏi giao diện): ['era_enum_gap']
-Món chưa có bất kỳ dữ liệu AI: ['dai_lung_hoa_ly_001', 'dep_cong_001', 'guoc_moc_001', 'khan_dong_001', 'khan_mo_qua_001', 'khan_ran_001', 'khan_vanh_001', 'kim_uoc_phat_001', 'non_quai_thao_001', 'quan_nai_den_001', 'quan_trang_ong_rong_001', 'toc_duoi_ga_001', 'vay_dup_001']
+Món chưa có bất kỳ dữ liệu AI: ['dai_lung_hoa_ly_001', 'dep_cong_001', 'guoc_moc_001', 'khan_dong_001', 'khan_mo_qua_001', 'khan_ran_001', 'non_quai_thao_001', 'quan_nai_den_001', 'quan_trang_ong_rong_001', 'toc_duoi_ga_001', 'vay_dup_001']
+UNMAPPED (cần thêm vào RULE_MAP, hiện tạm là text, không tự kiểm tra):
+  - ao_tu_than_001.incompatible_items: Áo Nhật Bình và phụ kiện cung đình

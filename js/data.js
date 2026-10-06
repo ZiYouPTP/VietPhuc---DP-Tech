@@ -284,7 +284,7 @@ const PAYLOAD = {
     ],
     "construction": "Cổ lập lĩnh, 5 cúc bên phải; thân không chiết eo, vạt xòe cong; tay thụng rộng thêm khoảng 20-30 cm, dài bằng hoặc hơn tà áo; tay nối từ phần vải thân kéo dài đến nửa cánh tay; trải phẳng thì vai và tay thành một đường thẳng.",
     "notes": [
-     "Vùng: Đàng Trong, kinh thành Huế; từ thời Minh Mạng phổ biến cả nước",
+     "Vùng: Trung Bộ gốc; từ thời Minh Mạng phổ biến cả nước",
      "Niên đại: Ra đời 1744 (chúa Nguyễn Phúc Khoát). Wikipedia: Minh Mạng quy định năm 1830; namtuyen.com: phổ biến cả ba miền 1837-1945 như quốc phục."
     ],
     "conflicts": [
@@ -376,9 +376,7 @@ const PAYLOAD = {
     ],
     "events": [
      "Lễ tết",
-     "Cưới hỏi",
-     "Đại lễ",
-     "Sắc phong"
+     "Cưới hỏi"
     ],
     "suitable_body_types": [],
     "color_tags": [
@@ -391,10 +389,7 @@ const PAYLOAD = {
    },
    "rules": {
     "required_matches": [],
-    "common_pairings": [
-     "khan_vanh_001",
-     "kim_uoc_phat_001"
-    ],
+    "common_pairings": [],
     "other_pairings_text": [
      "trâm hoa"
     ],
@@ -413,7 +408,7 @@ const PAYLOAD = {
     ],
     "construction": "Đối khâm, dáng to bản; dải vải buộc hai vạt dưới ức; hoa văn chính hình tròn khép kín (phượng ổ, loan ổ); hoa văn phụ chữ thọ, chữ phúc, bát bửu, hoa dây, hoa lựu; chân áo có sóng nước (thủy ba).",
     "notes": [
-     "Vùng: Cung đình Huế; đối tượng là nữ",
+     "Vùng: Trung Bộ; đối tượng là nữ",
      "Niên đại: 1802-1945"
     ],
     "conflicts": [
@@ -939,96 +934,6 @@ const PAYLOAD = {
     "src_021"
    ],
    "emoji": "👖"
-  },
-  {
-   "item_id": "khan_vanh_001",
-   "name": "Khăn vành",
-   "aliases": [],
-   "category": "Phụ kiện đầu",
-   "filters": {
-    "region": [
-     "Trung Bộ"
-    ],
-    "era": [
-     "Nguyễn"
-    ],
-    "events": [
-     "Đại lễ"
-    ],
-    "suitable_body_types": [],
-    "color_tags": []
-   },
-   "rules": {
-    "required_matches": [],
-    "common_pairings": [
-     "ao_nhat_binh_001"
-    ],
-    "other_pairings_text": [],
-    "incompatible_items": [],
-    "incompatible_colors": [],
-    "red_flags": []
-   },
-   "cultural_context": {
-    "historical_meaning": "Hoàng hậu, phi tần, công chúa đội khăn vành khi mặc áo Nhật Bình (báo Phụ nữ VN).",
-    "traditional_material": [],
-    "construction": "",
-    "notes": [
-     "Vùng: Cung đình Huế"
-    ],
-    "conflicts": []
-   },
-   "source_ids": [
-    "src_026"
-   ],
-   "emoji": "👑"
-  },
-  {
-   "item_id": "kim_uoc_phat_001",
-   "name": "Mão kim ước phát và trâm hoa",
-   "aliases": [
-    "Kim ước",
-    "Kim phượng"
-   ],
-   "category": "Phụ kiện đầu",
-   "filters": {
-    "region": [
-     "Trung Bộ"
-    ],
-    "era": [
-     "Nguyễn"
-    ],
-    "events": [
-     "Đại lễ"
-    ],
-    "suitable_body_types": [],
-    "color_tags": []
-   },
-   "rules": {
-    "required_matches": [],
-    "common_pairings": [
-     "ao_nhat_binh_001"
-    ],
-    "other_pairings_text": [],
-    "incompatible_items": [],
-    "incompatible_colors": [],
-    "red_flags": [
-     "Số lượng theo cấp bậc: công chúa 1 thất phượng kim ước phát và 12 trâm hoa; cung tần nhị giai mũ ngũ phượng kim ước phát và 10 trâm hoa (tulinhboutique.com dẫn quy chế)."
-    ]
-   },
-   "cultural_context": {
-    "historical_meaning": "",
-    "traditional_material": [],
-    "construction": "",
-    "notes": [
-     "Vùng: Cung đình Huế"
-    ],
-    "conflicts": []
-   },
-   "source_ids": [
-    "src_027",
-    "src_026"
-   ],
-   "emoji": "💎"
   },
   {
    "item_id": "khan_ran_001",
@@ -1590,12 +1495,7 @@ const PAYLOAD = {
    "label": "Áo Nhật Bình và phụ kiện cung đình",
    "reasoning": "Bộ tứ thân là trang phục dân gian Bắc Bộ có bộ đi kèm khá cố định; trộn phụ kiện Nam Bộ hoặc cung đình làm sai đặc trưng vùng và giai tầng.",
    "match": {
-    "type": "item",
-    "targets": [
-     "ao_nhat_binh_001",
-     "khan_vanh_001",
-     "kim_uoc_phat_001"
-    ]
+    "type": "text"
    }
   },
   {
@@ -2040,18 +1940,6 @@ const PAYLOAD = {
     "source_ids": [
      "src_036",
      "src_004"
-    ],
-    "source_scope": "item"
-   }
-  ],
-  "kim_uoc_phat_001": [
-   {
-    "advisory_id": "kim_uoc_phat_001:red_flag:1",
-    "provenance": "SOURCED",
-    "text": "Số lượng theo cấp bậc: công chúa 1 thất phượng kim ước phát và 12 trâm hoa; cung tần nhị giai mũ ngũ phượng kim ước phát và 10 trâm hoa (tulinhboutique.com dẫn quy chế).",
-    "source_ids": [
-     "src_027",
-     "src_026"
     ],
     "source_scope": "item"
    }

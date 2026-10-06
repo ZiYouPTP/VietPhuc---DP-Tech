@@ -11,7 +11,6 @@ let state = {
   selectedWeather: 'sunny',
   lookbook: JSON.parse(localStorage.getItem('vietPhucLookbook') || '[]'),
   filterRegion: 'all',
-  currentMockupUrl: null,
 };
 
 // ============================================================
@@ -225,7 +224,7 @@ function setWeather(weather, btn) {
 }
 
 // ============================================================
-// GENERATE OUTFIT – AI mockup via Pollinations.ai
+// GENERATE OUTFIT
 // ============================================================
 function generateOutfit() {
   if (!state.selectedCostume) { showToast('⚠️ Hãy chọn loại trang phục trước!'); return; }
@@ -237,154 +236,45 @@ function generateOutfit() {
   const style = state.selectedStyle;
   const event = state.selectedEvent;
 
-  const btn = document.getElementById('btn-generate');
-  btn.innerHTML = '<span class="btn-spinner"></span> Đang sinh ảnh AI…';
-  btn.disabled = true;
-
   document.getElementById('outfit-placeholder').classList.add('hidden');
   document.getElementById('outfit-result').classList.remove('hidden');
 
-  const figCostume = document.getElementById('figure-costume');
-  figCostume.innerHTML = buildSkeleton(costume, colorData);
-
-  buildPollinationsUrl(costume, colorData, accessories, style, event)
-    .then(url => {
-      state.currentMockupUrl = url;
-      showMockupResult(url, costume, colorData, accessories, style, event);
-    })
-    .catch(() => showMockupResult(null, costume, colorData, accessories, style, event))
-    .finally(() => {
-      btn.innerHTML = '🎯 Tạo outfit ngay';
-      btn.disabled = false;
-    });
+  showOutfitResult(costume, colorData, accessories, style, event);
 }
 
-// ---- Build prompt & URL ----
-function buildPollinationsUrl(costume, colorData, accessories, style, event) {
-  const colorName = colorData?.name || 'red';
-  const accText = accessories.length
-    ? 'wearing ' + accessories.slice(0,3).map(a => a.name).join(', ')
-    : '';
-  const styleMap = {
-    traditional: 'authentic traditional Vietnamese style, historically accurate',
-    fusion: 'modern contemporary fusion Vietnamese fashion',
-    genz: 'Gen Z bold street fashion Vietnamese style'
-  };
-  const eventMap = {
-    festival: 'cultural festival vibrant setting',
-    tet: 'Vietnamese Tet New Year celebration',
-    wedding: 'elegant wedding ceremony',
-    school: 'proud graduation ceremony',
-    street: 'urban street fashion',
-    ceremony: 'solemn royal temple ceremony'
-  };
-
-  const prompt = encodeURIComponent([
-    `professional fashion editorial photo`,
-    `beautiful young Vietnamese woman wearing ${colorName} ${costume.name} Vietnamese traditional costume`,
-    `silk fabric intricate golden embroidery details`,
-    accText,
-    styleMap[style],
-    eventMap[event],
-    `full body portrait elegant graceful pose`,
-    `clean white studio background soft professional lighting`,
-    `ultra realistic 4K high fashion Vogue editorial quality`
-  ].filter(Boolean).join(', '));
-
-  const seed = Math.floor(Math.random() * 999999);
-  const url = `https://image.pollinations.ai/prompt/${prompt}?width=512&height=768&seed=${seed}&nologo=true&enhance=true&model=flux`;
-
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const t = setTimeout(() => reject('timeout'), 35000);
-    img.onload = () => { clearTimeout(t); resolve(url); };
-    img.onerror = () => { clearTimeout(t); reject('error'); };
-    img.src = url;
-  });
-}
-
-// ---- Skeleton while loading ----
-function buildSkeleton(costume, colorData) {
-  const hex = colorData?.hex || '#C0392B';
-  return `
-    <div class="mk-skeleton">
-      <div class="mks-figure">
-        <div class="mks-head"></div>
-        <div class="mks-body" style="background:linear-gradient(180deg,${hex}cc,${hex}55)">
-          <span style="font-size:52px;filter:drop-shadow(0 4px 12px ${hex}88)">${costume.emoji}</span>
-        </div>
-        <div class="mks-legs"></div>
-      </div>
-      <div class="mks-pulse" style="--hex:${hex}"></div>
-      <div class="mks-msg">
-        <div class="mks-dots"><i></i><i></i><i></i></div>
-        <span>Đang sinh ảnh AI cho <strong>${costume.name}</strong>…</span>
-        <small>Pollinations.ai · miễn phí · 10-25 giây</small>
-      </div>
-    </div>`;
-}
-
-// ---- Render final result ----
-function showMockupResult(imgUrl, costume, colorData, accessories, style, event) {
+// ---- Render outfit result ----
+function showOutfitResult(costume, colorData, accessories, style, event) {
   const figCostume = document.getElementById('figure-costume');
   const figAcc = document.getElementById('figure-accessories');
   const hex = colorData?.hex || '#C0392B';
   const styleLabel = { traditional: '🏮 Truyền thống', fusion: '✨ Fusion', genz: '🔥 Gen Z Bold' }[style];
 
-  if (imgUrl) {
-    figCostume.innerHTML = `
-      <div class="mk-result">
-        <div class="mk-photo-wrap">
-          <img class="mk-photo" src="${imgUrl}" alt="${costume.name} AI mockup"/>
-          <div class="mk-badge mk-badge-color" style="background:${hex}ee">
-            <span class="mk-dot"></span>${colorData?.name}
+
+  figCostume.innerHTML = `
+    <div class="mk-result">
+      <div class="mk-photo-wrap mk-fallback-wrap">
+        <div class="mk-fallback">
+          <div class="mkf-glow" style="background:radial-gradient(circle,${hex}55,transparent 70%)"></div>
+          <div class="mkf-head">👤</div>
+          <div class="mkf-body" style="background:linear-gradient(180deg,${hex}ee 0%,${hex}88 60%,${hex}44 100%);box-shadow:0 0 60px ${hex}55">
+            <span class="mkf-emoji">${costume.emoji}</span>
+            <div class="mkf-shine"></div>
           </div>
-          <div class="mk-badge mk-badge-style">${styleLabel}</div>
-          <div class="mk-badge mk-badge-ai">✨ AI</div>
-          <button class="mk-regen" onclick="generateOutfit()" title="Sinh ảnh khác">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            Tạo lại
-          </button>
+          <div class="mkf-feet"></div>
         </div>
-        <div class="mk-footer">
-          <div class="mk-footer-left">
-            <div class="mk-name">${costume.emoji} ${costume.name}</div>
-            <div class="mk-sub">${costume.regionLabel} · ${getEventLabel(event)}</div>
-          </div>
-          <button class="mk-save-btn" onclick="saveLook()" title="Lưu lookbook">💾 Lưu</button>
+        <div class="mk-badge mk-badge-color" style="background:${hex}ee">
+          <span class="mk-dot"></span>${colorData?.name}
         </div>
-      </div>`;
-  } else {
-    figCostume.innerHTML = `
-      <div class="mk-result">
-        <div class="mk-photo-wrap mk-fallback-wrap">
-          <div class="mk-fallback">
-            <div class="mkf-glow" style="background:radial-gradient(circle,${hex}55,transparent 70%)"></div>
-            <div class="mkf-head">👤</div>
-            <div class="mkf-body" style="background:linear-gradient(180deg,${hex}ee 0%,${hex}88 60%,${hex}44 100%);box-shadow:0 0 60px ${hex}55">
-              <span class="mkf-emoji">${costume.emoji}</span>
-              <div class="mkf-shine"></div>
-            </div>
-            <div class="mkf-feet"></div>
-          </div>
-          <div class="mk-badge mk-badge-color" style="background:${hex}ee">
-            <span class="mk-dot"></span>${colorData?.name}
-          </div>
-          <div class="mk-badge mk-badge-style">${styleLabel}</div>
-          <button class="mk-regen mk-regen-retry" onclick="generateOutfit()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-            Thử sinh ảnh AI lại
-          </button>
+        <div class="mk-badge mk-badge-style">${styleLabel}</div>
+      </div>
+      <div class="mk-footer">
+        <div class="mk-footer-left">
+          <div class="mk-name">${costume.emoji} ${costume.name}</div>
+          <div class="mk-sub">${costume.regionLabel} · ${getEventLabel(event)}</div>
         </div>
-        <div class="mk-footer">
-          <div class="mk-footer-left">
-            <div class="mk-name">${costume.emoji} ${costume.name}</div>
-            <div class="mk-sub">${costume.regionLabel} · ${getEventLabel(event)}</div>
-          </div>
-          <button class="mk-save-btn" onclick="saveLook()" title="Lưu lookbook">💾 Lưu</button>
-        </div>
-      </div>`;
-  }
+        <button class="mk-save-btn" onclick="saveLook()" title="Lưu lookbook">💾 Lưu</button>
+      </div>
+    </div>`;
 
   // Accessories bar
   figAcc.innerHTML = accessories.length
@@ -407,7 +297,7 @@ function showMockupResult(imgUrl, costume, colorData, accessories, style, event)
   document.getElementById('culture-content').innerHTML = `
     <p><strong>${costume.name}</strong> – ${costume.shortDesc}</p>
     <p style="margin-top:8px">${costume.culturalTips[0] || ''}</p>
-    ${costume.styleSuggestions[style] ? `<p style="margin-top:8px">🎯 Gợi ý ${styleLabel}: <em>${costume.styleSuggestions[style]}</em></p>` : ''}`;
+    ${costume.styleSuggestions[style] ? `<p style="margin-top:8px">🎧 Gợi ý ${styleLabel}: <em>${costume.styleSuggestions[style]}</em></p>` : ''}`;
 
   // Warnings
   const warns = [...costume.warnings];
@@ -443,7 +333,7 @@ function showMockupResult(imgUrl, costume, colorData, accessories, style, event)
         <div class="ci-desc">${desc}</div>
       </div>`).join('');
 
-  showToast(imgUrl ? '🎉 Ảnh AI sẵn sàng! Nhấn 💾 Lưu để vào lookbook.' : '✅ Outfit tạo xong! Nhấn "Tạo lại" để thử sinh ảnh AI.');
+  showToast('✅ Outfit đã tạo! Nhấn 💾 Lưu để vào lookbook.');
 }
 
 function getEventLabel(e) {
@@ -473,7 +363,6 @@ function saveLook() {
     event: state.selectedEvent,
     eventName: getEventLabel(state.selectedEvent),
     savedAt: new Date().toLocaleDateString('vi-VN'),
-    mockupUrl: state.currentMockupUrl || null,
   };
   state.lookbook.unshift(look);
   localStorage.setItem('vietPhucLookbook', JSON.stringify(state.lookbook));
@@ -489,9 +378,7 @@ function renderLookbook() {
   empty.classList.add('hidden'); actions.classList.remove('hidden');
   grid.innerHTML = state.lookbook.map(look => {
     const accEmojis = ACCESSORIES.filter(a => look.accessories.includes(a.id)).map(a=>a.emoji).slice(0,4);
-    const cover = look.mockupUrl
-      ? `<img src="${look.mockupUrl}" class="lb-photo" alt="${look.costumeName}" loading="lazy"/>`
-      : `<div class="lb-emoji-cover" style="background:linear-gradient(135deg,${look.color}44,${look.color}11)"><span style="font-size:56px">${look.costumeEmoji}</span></div>`;
+    const cover = `<div class="lb-emoji-cover" style="background:linear-gradient(135deg,${look.color}44,${look.color}11)"><span style="font-size:56px">${look.costumeEmoji}</span></div>`;
     return `
       <div class="lookbook-item">
         <div class="lookbook-item-cover">

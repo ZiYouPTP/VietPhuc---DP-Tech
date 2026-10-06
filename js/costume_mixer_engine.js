@@ -10,12 +10,12 @@
 // ============================================================
 const CANVAS_W = 512;
 const CANVAS_H = 768;
-const POLL_BASE = 'https://image.pollinations.ai/prompt';
 const MANIFEST_URL = '/assets/clothing_manifest.json';
 const BODIES = [
   '/assets/base_bodies/base_body_1.png',
   '/assets/base_bodies/base_body_2.png',
 ];
+// Lưu ý: Cơ chế sinh ảnh AI (Pollinations) đã bị xóa. Dùng manifest + local assets.
 
 /** Z-index order – lower renders first (below) */
 const Z_INDEX = {
@@ -202,38 +202,18 @@ function loadImage(src) {
   });
 }
 
-/** Build Pollinations.ai URL for a given item */
-function buildPollinationsUrl(item, seed = 42) {
-  const colors = item.filters?.color_tags?.slice(0, 3).join(', ') ?? 'traditional';
-  const catDesc = {
-    'Áo khoác ngoài': 'outer robe',
-    'Áo lót trong':   'inner undergarment',
-    'Quần/Váy':       'trousers or skirt',
-    'Phụ kiện đầu':   'headwear',
-    'Giày dép':       'footwear',
-    'Phụ kiện thân':  'belt or body ornament',
-  }[item.category] ?? 'garment';
-
-  const prompt = encodeURIComponent(
-    `${item.name} Vietnamese traditional ${catDesc}, ` +
-    `color ${colors}, flat lay product photo on pure white background, ` +
-    `no person, front view, full item visible, isolated on white, ` +
-    `ultra sharp 4K professional fashion photography`
-  );
-  return `${POLL_BASE}/${prompt}?width=${CANVAS_W}&height=${CANVAS_H}&seed=${seed}&nologo=true&model=flux`;
-}
-
-/** Resolve the image URL for an item: manifest > Pollinations */
-function resolveLayerUrl(itemId, seed = 0) {
+/** Resolve the image URL for an item: từ manifest (không sinh ảnh AI) */
+function resolveLayerUrl(itemId) {
   const m = state.manifest[itemId];
   if (m?.layer) {
-    // Serve pre-processed transparent PNG from local server
+    // Phục vụ PNG có nền trong suốt từ local server
     return '/' + m.layer.replace(/\\/g, '/');
   }
-  // Fallback: generate on-the-fly from Pollinations
+  // Nếu không có trong manifest: return null (không dùng fallback sinh ảnh)
   const item = state.items[itemId];
   if (!item) return null;
-  return buildPollinationsUrl(item, seed);
+  console.warn(`[Manifest] Không tìm thấy layer cho ${itemId} (${item.name}), bỏ qua`);
+  return null;
 }
 
 // ============================================================
