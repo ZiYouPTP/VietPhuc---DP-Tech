@@ -229,3 +229,8 @@ const EVENT_SUGGESTIONS = {
   street: { colors: ['#2C2C2C', '#9B59B6', '#87CEEB'], costumes: ['ao-dai', 'ao-ba-ba', 'ao-yem'], accessories: ['quat-lua', 'tui-tay', 'vong-tay'] },
   ceremony: { colors: ['#1A7A4C', '#2C2C2C', '#8B6914'], costumes: ['ao-ngu-than', 'ao-nhat-binh', 'ao-giao-linh'], accessories: ['khan-dong', 'vong-co', 'hai-cong'] },
 };
+
+// Editorial content remains unverified; empty sources are an explicit placeholder.
+for (const records of [COSTUMES, ACCESSORIES, COLORS, TIMELINE_DATA, CULTURE_RULES, REGIONS, MODERN_TRENDS, Object.values(WEATHER_TIPS), Object.values(EVENT_SUGGESTIONS)]) {
+  for (const record of records) { record.sources = []; record.needsVerification = true; }
+}

@@ -1,0 +1,1016 @@
+{
+  "schemaVersion": 2,
+  "createdAt": "2026-10-09",
+  "purpose": "Source inventory for offline preparation. Catalog integration awaits Mục 1B approval.",
+  "status": "draft",
+  "sources": [],
+  "needsVerification": true,
+  "bodyCanvases": {
+    "male": {
+      "file": "assets/base_bodies/base_body_1.png",
+      "width": 118,
+      "height": 308
+    },
+    "female": {
+      "file": "assets/base_bodies/base_body_2.png",
+      "width": 105,
+      "height": 290
+    }
+  },
+  "count": {
+    "uniqueImages": 15,
+    "uniquePng": 12,
+    "uniqueJpg": 3,
+    "physicalFiles": 15,
+    "duplicates": 0
+  },
+  "measurementMethod": "Pillow read-only inspection. Transparent means alpha<16. Visible bbox uses alpha>128; canvas matches compare width/height ratio within 2%, not garment fit.",
+  "missingOriginalItems": [
+    "quat-lua"
+  ],
+  "items": [
+    {
+      "file": "assets/aobaba.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 908625,
+      "sha256": "b71ff6efca79c716ca860d62dfe9a47808c34b1f162015d83e3c4a0e12b656dc",
+      "hasAlpha": true,
+      "transparentPercent": 77.43,
+      "visibleBBoxAlpha128": [
+        22,
+        376,
+        736,
+        1105
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 1,
+      "background": "transparent",
+      "proposedCatalogId": "ao-ba-ba",
+      "proposedName": {
+        "vi": "Áo bà ba",
+        "en": "Bà ba blouse"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, tay phải đã gập. Khung gần tỉ lệ body nữ; còn viền trắng/đỏ cần xem khi fit.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aodai-fit-body2.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 756,
+      "height": 2080,
+      "aspectRatio": "189:520",
+      "bytes": 1012893,
+      "sha256": "9d9ac6451aeae1345c1ddcbd110531c029cbed217f87b7282c8aa7e226e7939f",
+      "hasAlpha": true,
+      "transparentPercent": 61.01,
+      "visibleBBoxAlpha128": [
+        71,
+        289,
+        710,
+        1812
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.13,
+        "female": 0.385
+      },
+      "reviewNumber": 2,
+      "background": "transparent",
+      "proposedCatalogId": "ao-dai",
+      "proposedName": {
+        "vi": "Áo dài trắng",
+        "en": "White áo dài"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "Áo riêng trên canvas body nữ. File aodai.png đã bỏ; dùng aodai-fit-body2.png. Căn bằng kích thước và vị trí theo ảnh tham chiếu người dùng, giữ hình dáng áo.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aogiaolinh.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 776,
+      "height": 2025,
+      "aspectRatio": "776:2025",
+      "bytes": 1749380,
+      "sha256": "6be08459e996b6697c7b79dfeeb8308d5792b6c1e739bd4206dce81d9c531d51",
+      "hasAlpha": true,
+      "transparentPercent": 47.97,
+      "visibleBBoxAlpha128": [
+        44,
+        327,
+        747,
+        1953
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 0.024,
+        "female": 5.839
+      },
+      "reviewNumber": 3,
+      "background": "transparent",
+      "proposedCatalogId": "ao-giao-linh",
+      "proposedName": {
+        "vi": "Áo giao lĩnh",
+        "en": "Cross-collar robe"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "male"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, tay phải đã gập; khung gần body nam. Chưa xác nhận cổ, vai, eo và gấu đạt sai số fit 1–2%.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aonguthan_female.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 1515732,
+      "sha256": "534ed0927772c1ad7470be8a2b91f48ebf3b5925dfa642ed8f821a2eea380424",
+      "hasAlpha": true,
+      "transparentPercent": 48.14,
+      "visibleBBoxAlpha128": [
+        18,
+        275,
+        729,
+        1968
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 4,
+      "background": "transparent",
+      "proposedCatalogId": "ao-ngu-than",
+      "proposedName": {
+        "vi": "Áo ngũ thân — bản nữ",
+        "en": "Five-panel tunic — female canvas"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, khung nữ, tay phải gập. Cần kiểm tra mốc cổ và gấu khi ghép; không coi đúng canvas là fit đạt.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aonguthan_male.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 777,
+      "height": 2025,
+      "aspectRatio": "259:675",
+      "bytes": 1432512,
+      "sha256": "d5965dbcca98cde5bad93c209314111f7211d566cfcd604239710b9cf69b2189",
+      "hasAlpha": true,
+      "transparentPercent": 48.77,
+      "visibleBBoxAlpha128": [
+        33,
+        284,
+        739,
+        1868
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 0.153,
+        "female": 5.975
+      },
+      "reviewNumber": 5,
+      "background": "transparent",
+      "proposedCatalogId": "ao-ngu-than",
+      "proposedName": {
+        "vi": "Áo ngũ thân — bản nam",
+        "en": "Five-panel tunic — male canvas"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "male"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, khung nam, tay phải gập. Giữ riêng biến thể nam; cần QA mốc cổ/tay/gấu.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aonhatbinh.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 2000110,
+      "sha256": "ae6222cb13bc738abee6613008f8b7b5d2dadbfa7cf91898ca42e624f5656f3e",
+      "hasAlpha": true,
+      "transparentPercent": 49.77,
+      "visibleBBoxAlpha128": [
+        13,
+        382,
+        733,
+        1919
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 6,
+      "background": "transparent",
+      "proposedCatalogId": "ao-nhat-binh",
+      "proposedName": {
+        "vi": "Áo Nhật Bình",
+        "en": "Nhật Bình robe"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, vùng hở cổ đã trong suốt, tay phải gập và tay áo rộng. Khung gần body nữ; cần kiểm tra cổ, vai và cổ tay.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aotuthan.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 1438066,
+      "sha256": "da03d1b7981ae470454bd872d6c298ae32627798285eb03cf68fe42673cbf55c",
+      "hasAlpha": true,
+      "transparentPercent": 57.07,
+      "visibleBBoxAlpha128": [
+        20,
+        302,
+        738,
+        1825
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 7,
+      "background": "transparent",
+      "proposedCatalogId": "ao-tu-than",
+      "proposedName": {
+        "vi": "Áo tứ thân",
+        "en": "Four-panel tunic"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG áo riêng, thân trước mở, có dây buộc eo; tay phải gập. Khung gần body nữ; cần lớp trong và kiểm tra mốc eo.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/aoyiem.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 402702,
+      "sha256": "1603312283d7cafdf8990bd73b184bad0af80b503a3d3600367ebc23e3f24c77",
+      "hasAlpha": true,
+      "transparentPercent": 90.81,
+      "visibleBBoxAlpha128": [
+        153,
+        575,
+        603,
+        1189
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 8,
+      "background": "transparent",
+      "proposedCatalogId": "ao-yem",
+      "proposedName": {
+        "vi": "Áo yếm",
+        "en": "Yếm bodice"
+      },
+      "proposedSlot": "outer",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG món riêng, khung nữ. Điểm ảnh rõ trên cùng ở y≈575/2084, tương đương y≈80 trên body cao290; khác mốc cổ y≈48 của renderer, cần căn lại.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/guocmoc.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 754,
+      "height": 2084,
+      "aspectRatio": "377:1042",
+      "bytes": 397195,
+      "sha256": "af99f0ba6632bb0ffbff99deda33496d1aa97c518ff0374b3a8774611b4efbbf",
+      "hasAlpha": true,
+      "transparentPercent": 90.96,
+      "visibleBBoxAlpha128": [
+        37,
+        1694,
+        724,
+        2040
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.563,
+        "female": 0.073
+      },
+      "reviewNumber": 9,
+      "background": "transparent",
+      "proposedCatalogId": "guoc-moc",
+      "proposedName": {
+        "vi": "Guốc mộc",
+        "en": "Wooden clogs"
+      },
+      "proposedSlot": "footwear",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG đôi guốc riêng, khung gần nữ. Vùng rõ trải rộng khoảng 96 px khi quy về body rộng 105 px; cần thu và căn từng bàn chân, chưa fit đạt.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/khandong.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "width": 1024,
+      "height": 1536,
+      "aspectRatio": "2:3",
+      "bytes": 41077,
+      "sha256": "9eb1e8465d656f082c90cee6acaa5afdb570961388289502c507bb89de0ddf58",
+      "hasAlpha": false,
+      "transparentPercent": 0.0,
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "cornerRGB": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 74.011,
+        "female": 84.127
+      },
+      "reviewNumber": 10,
+      "background": "white",
+      "proposedCatalogId": "khan-dong",
+      "proposedName": {
+        "vi": "Khăn đóng (theo tên file)",
+        "en": "Wrapped headwear"
+      },
+      "proposedSlot": "headwear",
+      "status": "draft",
+      "canvasMatches": [],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "JPG nền trắng, không alpha. Cần duyệt tên khăn đóng/khăn vấn, tách nền và đặt theo đầu body ở bước tiếp theo.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/nonla.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "width": 1024,
+      "height": 1536,
+      "aspectRatio": "2:3",
+      "bytes": 86981,
+      "sha256": "48b3bbd463b4eabd191880e3542ba3cbfd5fa59df16d9c54b047f89f12fdab5f",
+      "hasAlpha": false,
+      "transparentPercent": 0.0,
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "cornerRGB": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 74.011,
+        "female": 84.127
+      },
+      "reviewNumber": 11,
+      "background": "white",
+      "proposedCatalogId": "non-la",
+      "proposedName": {
+        "vi": "Nón lá",
+        "en": "Conical hat"
+      },
+      "proposedSlot": "headwear",
+      "status": "draft",
+      "canvasMatches": [],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "JPG nền trắng, không alpha, có quai nón. Chưa phải lớp toàn body; cần tách nền và kiểm tra quai quanh mặt/cổ.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/nonquaithao.jpg",
+      "format": "JPEG",
+      "mode": "RGB",
+      "width": 1024,
+      "height": 1536,
+      "aspectRatio": "2:3",
+      "bytes": 129100,
+      "sha256": "74f30c4e7adc7e40bcefa6091b6fdc24510a0487797d8b92bed8934216a0b432",
+      "hasAlpha": false,
+      "transparentPercent": 0.0,
+      "visibleBBoxAlpha128": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "cornerRGB": [
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ],
+        [
+          255,
+          255,
+          255
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 74.011,
+        "female": 84.127
+      },
+      "reviewNumber": 12,
+      "background": "white",
+      "proposedCatalogId": "non-quai-thao",
+      "proposedName": {
+        "vi": "Nón quai thao",
+        "en": "Quai thao hat"
+      },
+      "proposedSlot": "headwear",
+      "status": "draft",
+      "canvasMatches": [],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "JPG nền trắng, không alpha, có hai dải quai. Chưa phải lớp toàn body; cần xem góc và fit trên đầu.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/quanbaba.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 1157793,
+      "sha256": "f9833880a6b511ea3885cbebbff653257066af73a44f2ad23f80bc6d20e30db0",
+      "hasAlpha": true,
+      "transparentPercent": 57.71,
+      "visibleBBoxAlpha128": [
+        63,
+        432,
+        708,
+        1891
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 13,
+      "background": "transparent",
+      "proposedCatalogId": "trousers",
+      "proposedName": {
+        "vi": "Quần bà ba (theo tên file)",
+        "en": "Bà ba trousers"
+      },
+      "proposedSlot": "bottom",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG quần riêng, khung gần nữ nhưng cạp bắt đầu khoảngy432/2084 → y60 trên body 290; vùng eo renderer khoảngy115. Cần dịch/căn lại trước khi dùng.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/vaydup.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1254,
+      "height": 1254,
+      "aspectRatio": "1:1",
+      "bytes": 1370535,
+      "sha256": "eb60f59f88f048a212103eec00a8ef9a9144a28a3a48cb82cfdc72298e8a4261",
+      "hasAlpha": true,
+      "transparentPercent": 51.69,
+      "visibleBBoxAlpha128": [
+        154,
+        26,
+        1101,
+        1216
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 161.017,
+        "female": 176.19
+      },
+      "reviewNumber": 14,
+      "background": "transparent",
+      "proposedCatalogId": "long-skirt",
+      "proposedName": {
+        "vi": "Váy đụp (theo tên file)",
+        "en": "Long gathered skirt"
+      },
+      "proposedSlot": "bottom",
+      "status": "draft",
+      "canvasMatches": [],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "PNG váy riêng, canvas vuông1254×1254, chưa phải lớp toàn body. Cần đặt lên khung body, căn eo và gấu. Id long-skirt chỉ là đề xuất: chưa có entry trong LAYER_ITEMS.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    },
+    {
+      "file": "assets/quan-aodai-fit-body2.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 755,
+      "height": 2084,
+      "aspectRatio": "755:2084",
+      "bytes": 768660,
+      "sha256": "ceb3e5f7532f1972bd919100a8062f4ec11cc104735abb61481eefad92b59999",
+      "hasAlpha": true,
+      "transparentPercent": 69.17,
+      "visibleBBoxAlpha128": [
+        133,
+        579,
+        638,
+        1895
+      ],
+      "cornerRGB": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "canvasRatioErrorPercent": {
+        "male": 5.438,
+        "female": 0.059
+      },
+      "reviewNumber": 15,
+      "background": "transparent",
+      "proposedCatalogId": "trousers",
+      "proposedName": {
+        "vi": "Quần áo dài trắng ngà",
+        "en": "Ivory áo dài trousers"
+      },
+      "proposedSlot": "bottom",
+      "status": "draft",
+      "canvasMatches": [
+        "female"
+      ],
+      "supportedGenders": [],
+      "layerFiles": null,
+      "fit": null,
+      "nameSlotReview": "pending",
+      "preparationNotes": "Ảnh mới người dùng bổ sung, canvas body nữ. Căn cạp quần và ống quần bằng scale/offset; giữ nguyên tỉ lệ món, không kéo riêng từng đoạn.",
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "verificationNote": "TODO: duyệt tên/slot; bổ sung nguồn kiểm chứng trước khi đưa ra nhận định văn hóa."
+      }
+    }
+  ],
+  "duplicateFiles": []
+}

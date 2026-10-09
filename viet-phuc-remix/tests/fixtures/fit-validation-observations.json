@@ -1,0 +1,23 @@
+{
+  "method": "Independent visual estimates from source PNG scaled as a whole canvas onto its native male/female body; garment cuff openings and collar seams were observed on a 10px grid. No production images were altered.",
+  "coordinateSpace": "Native body pixels: female 105x290, male 118x308",
+  "uncertaintyPx": [2, 4],
+  "certifiesFit": false,
+  "warning": "Mapping manually chosen source anchors to target anchors can give zero algebraic residual without proving the silhouette fits. Judge independent actual composited pixels, shoulder coverage, cuff openings, hems, and alpha edges.",
+  "candidates": [
+    {"file":"aodai.png","gender":"female","neck":[45,48],"shoulderL":[22,54],"shoulderR":[70,55],"narrowWaist":[45,96],"hem":[48,251],"cuffL":[14,133],"cuffR":[77,115],"notes":"Good initial whole-canvas fit; modest horizontal drift at collar and bent cuff. Fabric waist need not equal anatomical waist."},
+    {"file":"aobaba.png","gender":"female","neck":[46,57],"shoulderL":[22,60],"shoulderR":[71,60],"narrowWaist":[45,106],"hem":[46,151],"cuffL":[9,131],"cuffR":[82,121],"notes":"Neckline modestly low. Right cuff broad and farther right than body wrist; recheck after fit."},
+    {"file":"aonguthan_female.png","gender":"female","neck":[47,47],"shoulderL":[20,54],"shoulderR":[71,53],"narrowWaist":[47,101],"hem":[46,273],"cuffL":[14,133],"cuffR":[76,118],"notes":"Initial hem covers feet; lower-panel shortening is safer than shrinking whole body canvas."},
+    {"file":"aonguthan_male.png","gender":"male","neck":[57,50],"shoulderL":[29,59],"shoulderR":[82,59],"narrowWaist":[54,113],"hem":[55,282],"cuffL":[19,156],"cuffR":[84,132],"notes":"Hem near ankles, left cuff below wrist; compare sleeves visually after bounded fit."},
+    {"file":"aotuthan.png","gender":"female","neck":[48,48],"shoulderL":[25,57],"shoulderR":[69,59],"tiedWaist":[49,101],"hem":[49,253],"cuffL":[12,142],"cuffR":[81,123],"notes":"Pose already plausible; open front needs inner layer. Tie position is a garment feature, not proof of anatomical waist."},
+    {"file":"aonhatbinh.png","gender":"female","neck":[45,54],"shoulderL":[23,66],"shoulderR":[70,66],"waist":[48,106],"hem":[49,267],"cuffL":[12,158],"cuffR":[75,133],"notes":"Initial shoulders have bare upper caps; wide sleeves cover hands. Needs independent shoulder QA before promotion."},
+    {"file":"aogiaolinh.png","gender":"male","neckL":[49,50],"neckR":[65,50],"shoulderL":[31,67],"shoulderR":[88,68],"waistTie":[41,106],"hem":[59,296],"cuffL":[17,164],"cuffR":[81,139],"notes":"Initial shoulders expose upper body caps; hem extends beyond ankles and broad cuff center is below wrist. Draft unless visually corrected."}
+  ],
+  "repositionRequired": [
+    {"file":"aoyiem.png","notes":"Top neck ties around body y80, not y52; do not use original full canvas unchanged."},
+    {"file":"quanbaba.png","notes":"Waistband starts around body y60, not waist y115; preserve trouser silhouette when moving and resizing onto lower body."},
+    {"file":"vaydup.png","notes":"Square canvas currently places waistband at head height; crop object and place waistband on waist and hem above foot."},
+    {"file":"guocmoc.png","notes":"Both shoes span almost full body width; fit each foot separately instead of global full-canvas scaling."}
+  ],
+  "evidence": ["fit-validation-original.png", "fit-validation-body-grid.png", "fit-validation-top-grid.png"]
+}

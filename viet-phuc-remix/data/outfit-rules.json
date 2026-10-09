@@ -1,0 +1,2715 @@
+{
+  "schemaVersion": 1,
+  "status": "needsVerification",
+  "sources": [],
+  "needsVerification": true,
+  "verificationTodo": "TODO: người dùng duyệt dữ liệu trước khi tích hợp catalog. Chưa có nguồn lịch sử hay palette C2.",
+  "scope": "application-preview-presets",
+  "slotIds": [
+    "inner",
+    "bottom",
+    "outer",
+    "panels",
+    "belt",
+    "headwear",
+    "hair",
+    "hairAdornment",
+    "earrings",
+    "necklace",
+    "bracelet",
+    "handAccessory",
+    "footwear"
+  ],
+  "formalityIds": [
+    "casual",
+    "formal",
+    "versatile"
+  ],
+  "genderIds": [
+    "male",
+    "female"
+  ],
+  "outfitSets": [
+    {
+      "id": "ao-dai",
+      "name": {
+        "vi": "Áo dài",
+        "en": "Áo dài"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-dai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "trousers"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "belt",
+          "allowedItemIds": [
+            "day-lung"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la",
+            "khan-dong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc",
+            "hai-cong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "non-quai-thao"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "versatile",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-dai-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-dai-trousers",
+          "items": [
+            {
+              "id": "ao-dai",
+              "slot": "outer"
+            },
+            {
+              "id": "trousers",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "user-brief",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-tu-than",
+      "name": {
+        "vi": "Áo tứ thân",
+        "en": "Áo tứ thân"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-tu-than"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "trousers",
+            "skirt"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "belt",
+          "allowedItemIds": [
+            "day-lung"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la",
+            "non-quai-thao"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "khan-dong",
+        "hai-cong"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "versatile",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-tu-than-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-tu-than-trousers",
+          "items": [
+            {
+              "id": "ao-tu-than",
+              "slot": "outer"
+            },
+            {
+              "id": "trousers",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "user-brief",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        },
+        {
+          "id": "ao-tu-than-skirt",
+          "items": [
+            {
+              "id": "ao-tu-than",
+              "slot": "outer"
+            },
+            {
+              "id": "skirt",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "user-brief",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-ngu-than",
+      "name": {
+        "vi": "Áo ngũ thân",
+        "en": "Áo ngũ thân"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-ngu-than"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "trousers"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la",
+            "khan-dong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc",
+            "hai-cong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "non-quai-thao",
+        "day-lung"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "formal",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-ngu-than-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-ngu-than-trousers",
+          "items": [
+            {
+              "id": "ao-ngu-than",
+              "slot": "outer"
+            },
+            {
+              "id": "trousers",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "application-styling-proposal",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-ba-ba",
+      "name": {
+        "vi": "Áo bà ba",
+        "en": "Áo bà ba"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-ba-ba"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "trousers"
+          ],
+          "requiredColorFamilies": [
+            "black",
+            "brown"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "user-brief",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "non-quai-thao",
+        "khan-dong",
+        "hai-cong",
+        "day-lung"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "casual",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-ba-ba-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#70422d",
+          "#1a1a1a",
+          "#f3e8d0",
+          "#8a252d"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-ba-ba-trousers",
+          "items": [
+            {
+              "id": "ao-ba-ba",
+              "slot": "outer"
+            },
+            {
+              "id": "trousers",
+              "slot": "bottom",
+              "colorFamily": "black"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "user-brief",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-nhat-binh",
+      "name": {
+        "vi": "Áo Nhật Bình",
+        "en": "Nhật Bình robe"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-nhat-binh"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "skirt"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "khan-dong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "hai-cong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "non-la",
+        "non-quai-thao",
+        "guoc-moc",
+        "day-lung"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "formal",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-nhat-binh-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-nhat-binh-skirt",
+          "items": [
+            {
+              "id": "ao-nhat-binh",
+              "slot": "outer"
+            },
+            {
+              "id": "skirt",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "application-styling-proposal",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-yem",
+      "name": {
+        "vi": "Áo yếm",
+        "en": "Yếm top"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "trousers",
+            "skirt"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "belt",
+          "allowedItemIds": [
+            "day-lung"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la",
+            "non-quai-thao"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "khan-dong",
+        "hai-cong"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "casual",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-yem-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-yem-trousers",
+          "items": [
+            {
+              "id": "ao-yem",
+              "slot": "outer"
+            },
+            {
+              "id": "trousers",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "application-styling-proposal",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        },
+        {
+          "id": "ao-yem-skirt",
+          "items": [
+            {
+              "id": "ao-yem",
+              "slot": "outer"
+            },
+            {
+              "id": "skirt",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "application-styling-proposal",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    },
+    {
+      "id": "ao-giao-linh",
+      "name": {
+        "vi": "Áo giao lĩnh",
+        "en": "Giao lĩnh robe"
+      },
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "requiredSlots": [
+        {
+          "slot": "outer",
+          "allowedItemIds": [
+            "ao-giao-linh"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Cấu trúc tối thiểu của bộ phối mẫu; cần kiểm chứng văn hóa."
+        },
+        {
+          "slot": "bottom",
+          "allowedItemIds": [
+            "skirt"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: kiểm chứng váy/quần theo vùng, thời kỳ và bối cảnh."
+        }
+      ],
+      "optionalSlots": [
+        {
+          "slot": "inner",
+          "allowedItemIds": [
+            "inner-yem"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "belt",
+          "allowedItemIds": [
+            "day-lung"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "headwear",
+          "allowedItemIds": [
+            "non-la",
+            "khan-dong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "hairAdornment",
+          "allowedItemIds": [
+            "tram-cai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "earrings",
+          "allowedItemIds": [
+            "bong-tai"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "necklace",
+          "allowedItemIds": [
+            "vong-co"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "bracelet",
+          "allowedItemIds": [
+            "vong-tay"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "handAccessory",
+          "allowedItemIds": [
+            "tui-tay",
+            "quat-lua"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        },
+        {
+          "slot": "footwear",
+          "allowedItemIds": [
+            "guoc-moc",
+            "hai-cong"
+          ],
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "origin": "application-styling-proposal",
+          "verificationTodo": "TODO: Phụ kiện tùy chọn trong ứng dụng; không phải quy tắc lịch sử đã xác nhận."
+        }
+      ],
+      "forbiddenSlots": [],
+      "forbiddenItemIds": [
+        "non-quai-thao"
+      ],
+      "exclusionPolicy": {
+        "ruleType": "application-preset",
+        "historicalClaim": false,
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Giữ các chặn phối mẫu hiện có. Riêng dây lưng áo dài được cho phép theo yêu cầu mới của người dùng."
+      },
+      "layerOrder": [
+        "inner",
+        "bottom",
+        "outer",
+        "panels",
+        "belt",
+        "headwear",
+        "hair",
+        "hairAdornment",
+        "earrings",
+        "necklace",
+        "bracelet",
+        "handAccessory",
+        "footwear"
+      ],
+      "formality": "versatile",
+      "occasions": [
+        "tet",
+        "wedding",
+        "graduation",
+        "festival",
+        "daily",
+        "ceremony"
+      ],
+      "contextPolicy": {
+        "scope": "application-preset",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: Mức trang trọng là đề xuất của ứng dụng, cần người dùng duyệt cho lễ nghi cụ thể."
+      },
+      "palette": {
+        "id": "ao-giao-linh-provisional",
+        "status": "needsVerification",
+        "isProvisional": true,
+        "maxDistinctColors": 4,
+        "colors": [
+          "#8a252d",
+          "#f3e8d0",
+          "#1a1a1a",
+          "#c7a665"
+        ],
+        "hueSeparation": null,
+        "forbiddenAdjacentPairs": [],
+        "sources": [],
+        "needsVerification": true,
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: chưa có palette mục C2 trong tài liệu được cung cấp. Bốn mã màu này chỉ là bản nháp UI; không có cặp màu lịch sử bị cấm được suy đoán."
+      },
+      "combinations": [
+        {
+          "id": "ao-giao-linh-skirt",
+          "items": [
+            {
+              "id": "ao-giao-linh",
+              "slot": "outer"
+            },
+            {
+              "id": "skirt",
+              "slot": "bottom"
+            }
+          ],
+          "scope": "minimal-app-preview",
+          "origin": "application-styling-proposal",
+          "sources": [],
+          "needsVerification": true,
+          "status": "needsVerification",
+          "verificationTodo": "TODO: kiểm chứng tổ hợp tối thiểu này; đây chỉ là đề xuất phối mẫu."
+        }
+      ],
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: nguồn cho tên, cấu tạo, tổ hợp và bối cảnh."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: duyệt tổ hợp theo nguồn; các giới là khả năng xem trên body, không khẳng định lịch sử."
+    }
+  ],
+  "itemRules": [
+    {
+      "id": "ao-dai",
+      "name": {
+        "vi": "Áo dài",
+        "en": "Áo dài"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-tu-than",
+      "name": {
+        "vi": "Áo tứ thân",
+        "en": "Áo tứ thân"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-ngu-than",
+      "name": {
+        "vi": "Áo ngũ thân",
+        "en": "Áo ngũ thân"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-ba-ba",
+      "name": {
+        "vi": "Áo bà ba",
+        "en": "Áo bà ba"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-nhat-binh",
+      "name": {
+        "vi": "Áo Nhật Bình",
+        "en": "Nhật Bình robe"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-yem",
+      "name": {
+        "vi": "Áo yếm",
+        "en": "Yếm top"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "ao-giao-linh",
+      "name": {
+        "vi": "Áo giao lĩnh",
+        "en": "Giao lĩnh robe"
+      },
+      "slot": "outer",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn văn hóa trước khi xác nhận bản phối."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: thêm nguồn về cấu tạo và cách phối cho loại áo này."
+    },
+    {
+      "id": "inner-yem",
+      "name": {
+        "vi": "Yếm mặc trong",
+        "en": "Inner yếm"
+      },
+      "slot": "inner",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "trousers",
+      "name": {
+        "vi": "Quần",
+        "en": "Trousers"
+      },
+      "slot": "bottom",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "skirt",
+      "name": {
+        "vi": "Váy",
+        "en": "Skirt"
+      },
+      "slot": "bottom",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "non-la",
+      "name": {
+        "vi": "Nón lá",
+        "en": "Conical hat"
+      },
+      "slot": "headwear",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "non-quai-thao",
+      "name": {
+        "vi": "Nón quai thao",
+        "en": "Quai thao hat"
+      },
+      "slot": "headwear",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "khan-dong",
+      "name": {
+        "vi": "Khăn đóng",
+        "en": "Wrapped headpiece"
+      },
+      "slot": "headwear",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "tram-cai",
+      "name": {
+        "vi": "Trâm cài",
+        "en": "Hairpin"
+      },
+      "slot": "hairAdornment",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "vong-co",
+      "name": {
+        "vi": "Vòng cổ",
+        "en": "Necklace"
+      },
+      "slot": "necklace",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "bong-tai",
+      "name": {
+        "vi": "Bông tai",
+        "en": "Earrings"
+      },
+      "slot": "earrings",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "vong-tay",
+      "name": {
+        "vi": "Vòng tay",
+        "en": "Bracelet"
+      },
+      "slot": "bracelet",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "tui-tay",
+      "name": {
+        "vi": "Túi tay",
+        "en": "Handbag"
+      },
+      "slot": "handAccessory",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "quat-lua",
+      "name": {
+        "vi": "Quạt lụa",
+        "en": "Silk fan"
+      },
+      "slot": "handAccessory",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "guoc-moc",
+      "name": {
+        "vi": "Guốc mộc",
+        "en": "Wooden clogs"
+      },
+      "slot": "footwear",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "hai-cong",
+      "name": {
+        "vi": "Hài cong",
+        "en": "Curved-toe shoes"
+      },
+      "slot": "footwear",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    },
+    {
+      "id": "day-lung",
+      "name": {
+        "vi": "Dây lưng",
+        "en": "Sash"
+      },
+      "slot": "belt",
+      "supportedGenders": [
+        "male",
+        "female"
+      ],
+      "genderPolicy": {
+        "scope": "body-preview-only",
+        "historicalUse": null,
+        "unknownGenderPolicy": "allow-preview-with-warning",
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+      },
+      "culturalInfo": {
+        "sources": [],
+        "needsVerification": true,
+        "status": "needsVerification",
+        "origin": "application-styling-proposal",
+        "verificationTodo": "TODO: bổ sung nguồn và duyệt tên món."
+      },
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: kiểm chứng món và cách phối trong từng bộ; tên là nhãn mẫu của ứng dụng."
+    }
+  ],
+  "occasions": [
+    {
+      "id": "tet",
+      "name": {
+        "vi": "Tết",
+        "en": "Tết"
+      },
+      "kind": "celebration",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    },
+    {
+      "id": "wedding",
+      "name": {
+        "vi": "Đám cưới",
+        "en": "Wedding"
+      },
+      "kind": "ceremonial",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    },
+    {
+      "id": "graduation",
+      "name": {
+        "vi": "Tốt nghiệp",
+        "en": "Graduation"
+      },
+      "kind": "celebration",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    },
+    {
+      "id": "festival",
+      "name": {
+        "vi": "Lễ hội",
+        "en": "Festival"
+      },
+      "kind": "celebration",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    },
+    {
+      "id": "daily",
+      "name": {
+        "vi": "Đi chơi / cà phê",
+        "en": "Outing / café"
+      },
+      "kind": "daily",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    },
+    {
+      "id": "ceremony",
+      "name": {
+        "vi": "Lễ nghi",
+        "en": "Ceremony"
+      },
+      "kind": "ceremonial",
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Ngữ cảnh do ứng dụng phân loại; chưa xác nhận nghi thức cụ thể."
+    }
+  ],
+  "exclusiveGroups": [
+    {
+      "id": "head-choice",
+      "slots": [
+        "headwear",
+        "hairAdornment"
+      ],
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "origin": "application-styling-proposal",
+      "verificationTodo": "TODO: Giữ quy tắc phụ kiện đội đầu của bản phối mẫu đang có; cần duyệt."
+    }
+  ],
+  "contextRules": {
+    "blockCasualInCeremonial": true,
+    "warnFormalInDaily": true,
+    "sources": [],
+    "needsVerification": true,
+    "status": "needsVerification",
+    "origin": "application-styling-proposal",
+    "verificationTodo": "TODO: Quy tắc trải nghiệm ứng dụng, không phải điều cấm lịch sử."
+  },
+  "messages": {
+    "unknown-outfit": {
+      "vi": "Bộ trang phục không có trong dữ liệu quy tắc.",
+      "en": "This outfit set is not in the rules data."
+    },
+    "unknown-item": {
+      "vi": "Món không có trong dữ liệu quy tắc.",
+      "en": "This item is not in the rules data."
+    },
+    "invalid-slot": {
+      "vi": "Slot của món không khớp dữ liệu.",
+      "en": "The item slot does not match the rules data."
+    },
+    "duplicate-slot": {
+      "vi": "Chỉ chọn một món trong mỗi slot.",
+      "en": "Choose only one item per slot."
+    },
+    "missing-required-slot": {
+      "vi": "Bộ phối còn thiếu món bắt buộc.",
+      "en": "A required item is missing."
+    },
+    "required-item-mismatch": {
+      "vi": "Món chưa phù hợp với slot bắt buộc của bộ phối mẫu.",
+      "en": "The item does not match the required slot in this preset."
+    },
+    "required-color-family": {
+      "vi": "Quần của bộ bà ba mẫu cần thuộc nhóm đen hoặc nâu.",
+      "en": "The trousers in this bà ba preset should be black or brown."
+    },
+    "color-family-unknown": {
+      "vi": "Chưa có nhóm màu để kiểm tra yêu cầu đen/nâu.",
+      "en": "No color family is available to check the black/brown requirement."
+    },
+    "forbidden-slot": {
+      "vi": "Slot chưa được dùng trong bộ phối mẫu này.",
+      "en": "This slot is not used in this outfit preset."
+    },
+    "forbidden-item": {
+      "vi": "Món chưa được dùng trong bộ phối mẫu này.",
+      "en": "This item is not used in this outfit preset."
+    },
+    "slot-not-allowed": {
+      "vi": "Slot chưa được khai báo cho bộ phối mẫu.",
+      "en": "The slot is not declared for this outfit preset."
+    },
+    "unsupported-gender": {
+      "vi": "Món chưa hỗ trợ body đã chọn.",
+      "en": "The item does not support the selected body."
+    },
+    "unknown-gender": {
+      "vi": "Giới body chưa được nhận diện.",
+      "en": "The body gender is not recognized."
+    },
+    "gender-needs-verification": {
+      "vi": "Hai body chỉ dùng để xem thử; cách dùng theo giới trong văn hóa cần kiểm chứng.",
+      "en": "Both bodies are supported for preview; cultural gender use needs verification."
+    },
+    "unknown-occasion": {
+      "vi": "Bối cảnh chưa có trong dữ liệu quy tắc.",
+      "en": "The occasion is not in the rules data."
+    },
+    "occasion-not-listed": {
+      "vi": "Bối cảnh chưa nằm trong gợi ý của bộ phối mẫu.",
+      "en": "The occasion is not listed for this outfit preset."
+    },
+    "casual-in-ceremony": {
+      "vi": "Bộ phối mẫu thường nhật chưa được dùng trong bối cảnh lễ nghi.",
+      "en": "This casual preset is not enabled for a ceremonial context."
+    },
+    "formal-in-daily": {
+      "vi": "Bạn đang dùng bộ phối trang trọng cho bối cảnh đời thường.",
+      "en": "You are using a formal preset in an everyday context."
+    },
+    "layer-order-missing": {
+      "vi": "Slot đang dùng chưa có thứ tự lớp.",
+      "en": "A used slot is missing from the layer order."
+    },
+    "too-many-colors": {
+      "vi": "Bộ phối có quá số màu nổi bật được gợi ý.",
+      "en": "The outfit exceeds the suggested number of prominent colors."
+    },
+    "palette-provisional": {
+      "vi": "Palette C2 chưa được cung cấp; màu hiện tại là gợi ý tạm.",
+      "en": "The C2 palette was not provided; these colors are provisional."
+    },
+    "adjacent-color-pair": {
+      "vi": "Cặp màu ở hai lớp liền nhau cần được xem lại theo dữ liệu đã khai báo.",
+      "en": "Review this adjacent color pair according to the declared rule."
+    },
+    "exclusive-group": {
+      "vi": "Các món này đang cùng nhóm chọn một trong bộ phối mẫu.",
+      "en": "These items share an exclusive selection group in this preset."
+    },
+    "cultural-needs-verification": {
+      "vi": "Tổ hợp này chưa được kiểm chứng văn hóa.",
+      "en": "This combination has not been culturally verified."
+    }
+  }
+}
