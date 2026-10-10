@@ -1,0 +1,295 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Kiểm biến thể màu giới hạn</title><style>body{font:16px system-ui;background:#f6f2ec;color:#25212a;margin:24px}h1{font-size:26px}.row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}figure{margin:0;background:white;padding:10px}img{width:100%;height:400px;object-fit:contain}.mask{background:#ddd}section{margin:28px 0}pre{white-space:pre-wrap;font-size:12px}@media(max-width:700px){.row{grid-template-columns:repeat(2,1fr)}img{height:300px}}</style><h1>Ảnh gốc → mask → biến thể màu</h1><p>Chỉ đổi vải áo chính. Da, nền, tóc, quần và phụ kiện giữ nguyên. Đây là bản chỉnh màu cho demo, chưa phải chứng nhận phục dựng hoặc quy tắc màu theo sự kiện.</p><section><h2>ao-ngu-than / female</h2><p>combination-045e317b8c6515d8 · guoc-moc, khan-dong</p><div class="row"><figure><img src="../../../assets/derived/outfits/asset-045e317b8c6515d8-dcee155bf1db.webp"><figcaption>Ảnh gốc · burgundy</figcaption></figure><figure><img class="mask" src="masks/asset-045e317b8c6515d8.png"><figcaption>Mask vùng vải · trắng là vùng đổi màu</figcaption></figure><figure><img src="asset-045e317b8c6515d8--navy.webp"><figcaption>navy · approved</figcaption></figure><figure><img src="asset-045e317b8c6515d8--plum.webp"><figcaption>plum · approved</figcaption></figure></div><details><summary>Metadata và kiểm pixel</summary><pre>[
+  {
+    &quot;id&quot;: &quot;color-variant-b5ff57fb4e15cbea&quot;,
+    &quot;sourceCombinationId&quot;: &quot;combination-045e317b8c6515d8&quot;,
+    &quot;sourceAssetId&quot;: &quot;asset-045e317b8c6515d8&quot;,
+    &quot;sourceFile&quot;: &quot;assets/web/female-ao-ngu-than/female-ao-ngu-than-khan-dong-guoc-moc.webp&quot;,
+    &quot;sourceSha256&quot;: &quot;dcee155bf1db2113759182ff9db0b6cc29772c47ad67e763cab3ce1a7ee1b071&quot;,
+    &quot;baseImageFile&quot;: &quot;assets/derived/outfits/asset-045e317b8c6515d8-dcee155bf1db.webp&quot;,
+    &quot;baseImageSha256&quot;: &quot;0a5ab02f1faecb541ab830136350884133e0ced0a5adfbb7366013119af8623b&quot;,
+    &quot;costumeId&quot;: &quot;ao-ngu-than&quot;,
+    &quot;gender&quot;: &quot;female&quot;,
+    &quot;accessories&quot;: [
+      &quot;guoc-moc&quot;,
+      &quot;khan-dong&quot;
+    ],
+    &quot;originalColorId&quot;: &quot;burgundy&quot;,
+    &quot;targetPrimaryColorId&quot;: &quot;navy&quot;,
+    &quot;secondaryColorIds&quot;: [
+      &quot;ivory&quot;
+    ],
+    &quot;demoEventIds&quot;: [
+      &quot;tet&quot;,
+      &quot;le-hoi&quot;,
+      &quot;truong&quot;,
+      &quot;street&quot;
+    ],
+    &quot;selectionRationale&quot;: &quot;Female ngũ thân with existing headwear and clogs demonstrates exact accessory preservation. Add dark navy and muted plum; retain original burgundy headwear and ivory trousers.&quot;,
+    &quot;generated&quot;: true,
+    &quot;status&quot;: &quot;approved&quot;,
+    &quot;artifact&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/asset-045e317b8c6515d8--navy.webp&quot;,
+      &quot;sha256&quot;: &quot;797081c1829d2e969b4c75c25ea6b1016fc6bb5b1c5c5d719579a4117d85f59b&quot;,
+      &quot;bytes&quot;: 179656,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080,
+      &quot;format&quot;: &quot;WEBP&quot;,
+      &quot;mimeType&quot;: &quot;image/webp&quot;
+    },
+    &quot;mask&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/masks/asset-045e317b8c6515d8.png&quot;,
+      &quot;sha256&quot;: &quot;e3f76a24355e4381317653bba359510c6bc68b2a4dec8cb55ae34993d7c9c84e&quot;,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080
+    },
+    &quot;recipe&quot;: {
+      &quot;id&quot;: &quot;masked-hsl-v1&quot;,
+      &quot;version&quot;: 1,
+      &quot;parameters&quot;: {
+        &quot;targetHue&quot;: 0.61,
+        &quot;saturationScale&quot;: 0.82,
+        &quot;lightnessScale&quot;: 0.78,
+        &quot;maskSpecHash&quot;: &quot;dca6a2c2736d2f3bd8c633166b61f1514f9779609bb39b5275c8af47bfd58b48&quot;
+      },
+      &quot;sha256&quot;: &quot;e4b14e021314641f0369776873ca01782f135d9268f73bb4d02ccdde0dbf909c&quot;
+    },
+    &quot;quality&quot;: {
+      &quot;status&quot;: &quot;approved&quot;,
+      &quot;checks&quot;: {
+        &quot;outsideMaskUnchanged&quot;: true,
+        &quot;protectedRegionsUnchanged&quot;: true,
+        &quot;sameGeometry&quot;: true,
+        &quot;lightnessCorrelation&quot;: 0.999937,
+        &quot;maskCoverage&quot;: 0.210813,
+        &quot;changedPixels&quot;: 163928,
+        &quot;textureAndFoldsPreserved&quot;: true,
+        &quot;passed&quot;: true
+      },
+      &quot;reviewMethod&quot;: &quot;visual-and-pixel-review&quot;,
+      &quot;reviewedAt&quot;: &quot;2026-10-10&quot;,
+      &quot;notes&quot;: [
+        &quot;Root and independent visual review of all four full images and masks: clean cloth boundaries; body, headwear, trousers, clogs and background retained; folds and seams preserved. Encoded pixel checks passed. Approved for contemporary demo only.&quot;
+      ]
+    }
+  },
+  {
+    &quot;id&quot;: &quot;color-variant-532a268f3dda680e&quot;,
+    &quot;sourceCombinationId&quot;: &quot;combination-045e317b8c6515d8&quot;,
+    &quot;sourceAssetId&quot;: &quot;asset-045e317b8c6515d8&quot;,
+    &quot;sourceFile&quot;: &quot;assets/web/female-ao-ngu-than/female-ao-ngu-than-khan-dong-guoc-moc.webp&quot;,
+    &quot;sourceSha256&quot;: &quot;dcee155bf1db2113759182ff9db0b6cc29772c47ad67e763cab3ce1a7ee1b071&quot;,
+    &quot;baseImageFile&quot;: &quot;assets/derived/outfits/asset-045e317b8c6515d8-dcee155bf1db.webp&quot;,
+    &quot;baseImageSha256&quot;: &quot;0a5ab02f1faecb541ab830136350884133e0ced0a5adfbb7366013119af8623b&quot;,
+    &quot;costumeId&quot;: &quot;ao-ngu-than&quot;,
+    &quot;gender&quot;: &quot;female&quot;,
+    &quot;accessories&quot;: [
+      &quot;guoc-moc&quot;,
+      &quot;khan-dong&quot;
+    ],
+    &quot;originalColorId&quot;: &quot;burgundy&quot;,
+    &quot;targetPrimaryColorId&quot;: &quot;plum&quot;,
+    &quot;secondaryColorIds&quot;: [
+      &quot;ivory&quot;
+    ],
+    &quot;demoEventIds&quot;: [
+      &quot;tet&quot;,
+      &quot;le-hoi&quot;,
+      &quot;truong&quot;,
+      &quot;street&quot;
+    ],
+    &quot;selectionRationale&quot;: &quot;Female ngũ thân with existing headwear and clogs demonstrates exact accessory preservation. Add dark navy and muted plum; retain original burgundy headwear and ivory trousers.&quot;,
+    &quot;generated&quot;: true,
+    &quot;status&quot;: &quot;approved&quot;,
+    &quot;artifact&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/asset-045e317b8c6515d8--plum.webp&quot;,
+      &quot;sha256&quot;: &quot;5c18fe31e36ab3a361af16869d2bc7b37bf3f451c65715611a655b255cf6e850&quot;,
+      &quot;bytes&quot;: 176922,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080,
+      &quot;format&quot;: &quot;WEBP&quot;,
+      &quot;mimeType&quot;: &quot;image/webp&quot;
+    },
+    &quot;mask&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/masks/asset-045e317b8c6515d8.png&quot;,
+      &quot;sha256&quot;: &quot;e3f76a24355e4381317653bba359510c6bc68b2a4dec8cb55ae34993d7c9c84e&quot;,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080
+    },
+    &quot;recipe&quot;: {
+      &quot;id&quot;: &quot;masked-hsl-v1&quot;,
+      &quot;version&quot;: 1,
+      &quot;parameters&quot;: {
+        &quot;targetHue&quot;: 0.9,
+        &quot;saturationScale&quot;: 0.65,
+        &quot;lightnessScale&quot;: 0.82,
+        &quot;maskSpecHash&quot;: &quot;dca6a2c2736d2f3bd8c633166b61f1514f9779609bb39b5275c8af47bfd58b48&quot;
+      },
+      &quot;sha256&quot;: &quot;69849e2bcda1a0ea49229e7b5d297dea1229fc6a0d3074d5dc82e3e77af30896&quot;
+    },
+    &quot;quality&quot;: {
+      &quot;status&quot;: &quot;approved&quot;,
+      &quot;checks&quot;: {
+        &quot;outsideMaskUnchanged&quot;: true,
+        &quot;protectedRegionsUnchanged&quot;: true,
+        &quot;sameGeometry&quot;: true,
+        &quot;lightnessCorrelation&quot;: 0.999939,
+        &quot;maskCoverage&quot;: 0.210813,
+        &quot;changedPixels&quot;: 163928,
+        &quot;textureAndFoldsPreserved&quot;: true,
+        &quot;passed&quot;: true
+      },
+      &quot;reviewMethod&quot;: &quot;visual-and-pixel-review&quot;,
+      &quot;reviewedAt&quot;: &quot;2026-10-10&quot;,
+      &quot;notes&quot;: [
+        &quot;Root and independent visual review of all four full images and masks: clean cloth boundaries; body, headwear, trousers, clogs and background retained; folds and seams preserved. Encoded pixel checks passed. Approved for contemporary demo only.&quot;
+      ]
+    }
+  }
+]</pre></details></section><section><h2>ao-ngu-than / male</h2><p>combination-40b8acd6f4660464 · guoc-moc, khan-dong</p><div class="row"><figure><img src="../../../assets/derived/outfits/asset-40b8acd6f4660464-bf39fcd88988.webp"><figcaption>Ảnh gốc · burgundy</figcaption></figure><figure><img class="mask" src="masks/asset-40b8acd6f4660464.png"><figcaption>Mask vùng vải · trắng là vùng đổi màu</figcaption></figure><figure><img src="asset-40b8acd6f4660464--navy.webp"><figcaption>navy · approved</figcaption></figure><figure><img src="asset-40b8acd6f4660464--plum.webp"><figcaption>plum · approved</figcaption></figure></div><details><summary>Metadata và kiểm pixel</summary><pre>[
+  {
+    &quot;id&quot;: &quot;color-variant-d1910865b404b954&quot;,
+    &quot;sourceCombinationId&quot;: &quot;combination-40b8acd6f4660464&quot;,
+    &quot;sourceAssetId&quot;: &quot;asset-40b8acd6f4660464&quot;,
+    &quot;sourceFile&quot;: &quot;assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc-khandong.webp&quot;,
+    &quot;sourceSha256&quot;: &quot;bf39fcd88988766f6f028ba4dfa2527d1b7796fc212b1ddefd35058febce923b&quot;,
+    &quot;baseImageFile&quot;: &quot;assets/derived/outfits/asset-40b8acd6f4660464-bf39fcd88988.webp&quot;,
+    &quot;baseImageSha256&quot;: &quot;94e602645a6cbb6815e1b561cebb0ad636bc14c2cef4dcd9110ef5b826929195&quot;,
+    &quot;costumeId&quot;: &quot;ao-ngu-than&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;accessories&quot;: [
+      &quot;guoc-moc&quot;,
+      &quot;khan-dong&quot;
+    ],
+    &quot;originalColorId&quot;: &quot;burgundy&quot;,
+    &quot;targetPrimaryColorId&quot;: &quot;navy&quot;,
+    &quot;secondaryColorIds&quot;: [
+      &quot;ivory&quot;
+    ],
+    &quot;demoEventIds&quot;: [
+      &quot;tet&quot;,
+      &quot;le-hoi&quot;,
+      &quot;truong&quot;,
+      &quot;street&quot;
+    ],
+    &quot;selectionRationale&quot;: &quot;Male ngũ thân with headwear and clogs shares the same small navy/plum demo palette; original burgundy remains first choice.&quot;,
+    &quot;generated&quot;: true,
+    &quot;status&quot;: &quot;approved&quot;,
+    &quot;artifact&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/asset-40b8acd6f4660464--navy.webp&quot;,
+      &quot;sha256&quot;: &quot;77655eb649ddaf3a270070629e4d75db1121985bb578978f1faaa9be2f177bf1&quot;,
+      &quot;bytes&quot;: 198904,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080,
+      &quot;format&quot;: &quot;WEBP&quot;,
+      &quot;mimeType&quot;: &quot;image/webp&quot;
+    },
+    &quot;mask&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/masks/asset-40b8acd6f4660464.png&quot;,
+      &quot;sha256&quot;: &quot;593174153a818cd7635be2a09e148d757851ded7bbb4eb387dcf428452aab78a&quot;,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080
+    },
+    &quot;recipe&quot;: {
+      &quot;id&quot;: &quot;masked-hsl-v1&quot;,
+      &quot;version&quot;: 1,
+      &quot;parameters&quot;: {
+        &quot;targetHue&quot;: 0.61,
+        &quot;saturationScale&quot;: 0.82,
+        &quot;lightnessScale&quot;: 0.78,
+        &quot;maskSpecHash&quot;: &quot;61fd8c87b3fc37fbd3ed6ca259684823e372c80a1fd0d5000cfe85634e7fe9be&quot;
+      },
+      &quot;sha256&quot;: &quot;54662ad788d3bb10fb900e197b6d58ec66cddb30a297d50ca53bfccc350aa9fa&quot;
+    },
+    &quot;quality&quot;: {
+      &quot;status&quot;: &quot;approved&quot;,
+      &quot;checks&quot;: {
+        &quot;outsideMaskUnchanged&quot;: true,
+        &quot;protectedRegionsUnchanged&quot;: true,
+        &quot;sameGeometry&quot;: true,
+        &quot;lightnessCorrelation&quot;: 0.999938,
+        &quot;maskCoverage&quot;: 0.234437,
+        &quot;changedPixels&quot;: 182298,
+        &quot;textureAndFoldsPreserved&quot;: true,
+        &quot;passed&quot;: true
+      },
+      &quot;reviewMethod&quot;: &quot;visual-and-pixel-review&quot;,
+      &quot;reviewedAt&quot;: &quot;2026-10-10&quot;,
+      &quot;notes&quot;: [
+        &quot;Root and independent visual review of all four full images and masks: clean cloth boundaries; body, headwear, trousers, clogs and background retained; folds and seams preserved. Encoded pixel checks passed. Approved for contemporary demo only.&quot;
+      ]
+    }
+  },
+  {
+    &quot;id&quot;: &quot;color-variant-45bceac159cf690c&quot;,
+    &quot;sourceCombinationId&quot;: &quot;combination-40b8acd6f4660464&quot;,
+    &quot;sourceAssetId&quot;: &quot;asset-40b8acd6f4660464&quot;,
+    &quot;sourceFile&quot;: &quot;assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc-khandong.webp&quot;,
+    &quot;sourceSha256&quot;: &quot;bf39fcd88988766f6f028ba4dfa2527d1b7796fc212b1ddefd35058febce923b&quot;,
+    &quot;baseImageFile&quot;: &quot;assets/derived/outfits/asset-40b8acd6f4660464-bf39fcd88988.webp&quot;,
+    &quot;baseImageSha256&quot;: &quot;94e602645a6cbb6815e1b561cebb0ad636bc14c2cef4dcd9110ef5b826929195&quot;,
+    &quot;costumeId&quot;: &quot;ao-ngu-than&quot;,
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;accessories&quot;: [
+      &quot;guoc-moc&quot;,
+      &quot;khan-dong&quot;
+    ],
+    &quot;originalColorId&quot;: &quot;burgundy&quot;,
+    &quot;targetPrimaryColorId&quot;: &quot;plum&quot;,
+    &quot;secondaryColorIds&quot;: [
+      &quot;ivory&quot;
+    ],
+    &quot;demoEventIds&quot;: [
+      &quot;tet&quot;,
+      &quot;le-hoi&quot;,
+      &quot;truong&quot;,
+      &quot;street&quot;
+    ],
+    &quot;selectionRationale&quot;: &quot;Male ngũ thân with headwear and clogs shares the same small navy/plum demo palette; original burgundy remains first choice.&quot;,
+    &quot;generated&quot;: true,
+    &quot;status&quot;: &quot;approved&quot;,
+    &quot;artifact&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/asset-40b8acd6f4660464--plum.webp&quot;,
+      &quot;sha256&quot;: &quot;387794289f994366abd2a8458aad6d5bc16d6e054463c14ff476bba5fddda002&quot;,
+      &quot;bytes&quot;: 195506,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080,
+      &quot;format&quot;: &quot;WEBP&quot;,
+      &quot;mimeType&quot;: &quot;image/webp&quot;
+    },
+    &quot;mask&quot;: {
+      &quot;file&quot;: &quot;assets/generated/color-variants/masks/asset-40b8acd6f4660464.png&quot;,
+      &quot;sha256&quot;: &quot;593174153a818cd7635be2a09e148d757851ded7bbb4eb387dcf428452aab78a&quot;,
+      &quot;width&quot;: 720,
+      &quot;height&quot;: 1080
+    },
+    &quot;recipe&quot;: {
+      &quot;id&quot;: &quot;masked-hsl-v1&quot;,
+      &quot;version&quot;: 1,
+      &quot;parameters&quot;: {
+        &quot;targetHue&quot;: 0.9,
+        &quot;saturationScale&quot;: 0.65,
+        &quot;lightnessScale&quot;: 0.82,
+        &quot;maskSpecHash&quot;: &quot;61fd8c87b3fc37fbd3ed6ca259684823e372c80a1fd0d5000cfe85634e7fe9be&quot;
+      },
+      &quot;sha256&quot;: &quot;190334869f5df400921d16681f9b8c99fe0549eaf282adc092cac051b6e2067c&quot;
+    },
+    &quot;quality&quot;: {
+      &quot;status&quot;: &quot;approved&quot;,
+      &quot;checks&quot;: {
+        &quot;outsideMaskUnchanged&quot;: true,
+        &quot;protectedRegionsUnchanged&quot;: true,
+        &quot;sameGeometry&quot;: true,
+        &quot;lightnessCorrelation&quot;: 0.99994,
+        &quot;maskCoverage&quot;: 0.234437,
+        &quot;changedPixels&quot;: 182298,
+        &quot;textureAndFoldsPreserved&quot;: true,
+        &quot;passed&quot;: true
+      },
+      &quot;reviewMethod&quot;: &quot;visual-and-pixel-review&quot;,
+      &quot;reviewedAt&quot;: &quot;2026-10-10&quot;,
+      &quot;notes&quot;: [
+        &quot;Root and independent visual review of all four full images and masks: clean cloth boundaries; body, headwear, trousers, clogs and background retained; folds and seams preserved. Encoded pixel checks passed. Approved for contemporary demo only.&quot;
+      ]
+    }
+  }
+]</pre></details></section></html>
