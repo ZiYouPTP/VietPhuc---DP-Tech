@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-10",
+  "inspectedSourceFiles": [
+    "assets/web/female-ao-dai/female-ao-dai.webp",
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-khan-dong-guoc-moc.webp",
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc-khandong.webp",
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-non-la-guoc-moc.webp"
+  ],
+  "selectionNotes": [
+    "Scanned all 47 catalog records; initially tested three exact combinations, retained only two ngũ thân combinations after rejecting the áo dài mask for visible edge halos.",
+    "Recolor changes the main robe only, preserving trousers, body, headwear, shoes and existing background.",
+    "Demo event IDs are editorial product choices for contemporary styling, not verified cultural restrictions."
+  ],
+  "skippedSources": [
+    {
+      "sourceFile": "assets/web/female-ao-giao-linh/female-ao-giao-linh-non-la-guoc-moc.webp",
+      "reason": "Human skin, hat strings, hair ornaments and intricate fabric make precise mask review more costly; no variant generated."
+    },
+    {
+      "sourceFile": "assets/web/female-ao-dai/female-ao-dai.webp",
+      "reason": "Two initial burgundy/navy candidates showed conspicuous ivory edge halos and incomplete cloth mask. Discarded; original ivory remains the only available color.",
+      "discardedCandidateColors": [
+        "burgundy",
+        "navy"
+      ],
+      "discardedCandidateCount": 2
+    }
+  ],
+  "entries": [
+    {
+      "sourceCombinationId": "combination-045e317b8c6515d8",
+      "rationale": "Female ngũ thân with existing headwear and clogs demonstrates exact accessory preservation. Add dark navy and muted plum; retain original burgundy headwear and ivory trousers.",
+      "demoEventIds": [
+        "tet",
+        "le-hoi",
+        "truong",
+        "street"
+      ],
+      "mask": {
+        "method": "red-fabric-with-outline",
+        "outline": [
+          [
+            0.23,
+            0.145
+          ],
+          [
+            0.79,
+            0.145
+          ],
+          [
+            0.79,
+            0.843
+          ],
+          [
+            0.23,
+            0.843
+          ]
+        ],
+        "exclude": [],
+        "protectedRegions": {
+          "headAndHeadwear": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0.144
+            ],
+            [
+              0,
+              0.144
+            ]
+          ],
+          "leftHand": [
+            [
+              0.305,
+              0.46
+            ],
+            [
+              0.328,
+              0.46
+            ],
+            [
+              0.328,
+              0.493
+            ],
+            [
+              0.305,
+              0.493
+            ]
+          ],
+          "rightHand": [
+            [
+              0.546,
+              0.365
+            ],
+            [
+              0.6,
+              0.365
+            ],
+            [
+              0.6,
+              0.386
+            ],
+            [
+              0.546,
+              0.386
+            ]
+          ],
+          "trousersAndFootwear": [
+            [
+              0,
+              0.847
+            ],
+            [
+              1,
+              0.847
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "leftBackground": [
+            [
+              0,
+              0
+            ],
+            [
+              0.22,
+              0
+            ],
+            [
+              0.22,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "rightBackground": [
+            [
+              0.8,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0.8,
+              1
+            ]
+          ]
+        }
+      },
+      "targets": [
+        {
+          "colorId": "navy",
+          "parameters": {
+            "targetHue": 0.61,
+            "saturationScale": 0.82,
+            "lightnessScale": 0.78
+          }
+        },
+        {
+          "colorId": "plum",
+          "parameters": {
+            "targetHue": 0.9,
+            "saturationScale": 0.65,
+            "lightnessScale": 0.82
+          }
+        }
+      ]
+    },
+    {
+      "sourceCombinationId": "combination-40b8acd6f4660464",
+      "rationale": "Male ngũ thân with headwear and clogs shares the same small navy/plum demo palette; original burgundy remains first choice.",
+      "demoEventIds": [
+        "tet",
+        "le-hoi",
+        "truong",
+        "street"
+      ],
+      "mask": {
+        "method": "red-fabric-with-outline",
+        "outline": [
+          [
+            0.23,
+            0.127
+          ],
+          [
+            0.79,
+            0.127
+          ],
+          [
+            0.79,
+            0.84
+          ],
+          [
+            0.23,
+            0.84
+          ]
+        ],
+        "exclude": [],
+        "protectedRegions": {
+          "headAndHeadwear": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0.126
+            ],
+            [
+              0,
+              0.126
+            ]
+          ],
+          "leftHand": [
+            [
+              0.302,
+              0.47
+            ],
+            [
+              0.326,
+              0.47
+            ],
+            [
+              0.326,
+              0.498
+            ],
+            [
+              0.302,
+              0.498
+            ]
+          ],
+          "rightHand": [
+            [
+              0.55,
+              0.38
+            ],
+            [
+              0.59,
+              0.38
+            ],
+            [
+              0.59,
+              0.402
+            ],
+            [
+              0.55,
+              0.402
+            ]
+          ],
+          "trousersAndFootwear": [
+            [
+              0,
+              0.845
+            ],
+            [
+              1,
+              0.845
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "leftBackground": [
+            [
+              0,
+              0
+            ],
+            [
+              0.22,
+              0
+            ],
+            [
+              0.22,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          "rightBackground": [
+            [
+              0.8,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0.8,
+              1
+            ]
+          ]
+        }
+      },
+      "targets": [
+        {
+          "colorId": "navy",
+          "parameters": {
+            "targetHue": 0.61,
+            "saturationScale": 0.82,
+            "lightnessScale": 0.78
+          }
+        },
+        {
+          "colorId": "plum",
+          "parameters": {
+            "targetHue": 0.9,
+            "saturationScale": 0.65,
+            "lightnessScale": 0.82
+          }
+        }
+      ]
+    }
+  ]
+}

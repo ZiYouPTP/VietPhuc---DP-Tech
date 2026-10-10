@@ -1,0 +1,1317 @@
+{
+  "schemaVersion": 1,
+  "entries": {
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-guoc-moc.webp": {
+      "sourceSha256": "442342873d73a86c83e599ec7eef3b3ef2ff75d9de615e9824649e8041561f3b",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-hai-theu.webp": {
+      "sourceSha256": "954611f45758ff509e8ce2702792c543637245368ed49841e5e623681b413047",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-khan_dong.webp": {
+      "sourceSha256": "4487ee25b02c756ab58e47f14efe44e42d0987c3717ef79d376ece48f4f0139b",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-khan-dong-guoc-moc.webp": {
+      "sourceSha256": "f4046a88443417ece8115df6b1eb8378d08491541e546afc048cfdb6d05eeba3",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-non-la-guoc-moc.webp": {
+      "sourceSha256": "7c08c5301b373b6143ed6b7f99d4607c2cc3879cb64764476f2270781679651a",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-non-la-hai-theu.webp": {
+      "sourceSha256": "0142e4b264c5d36dd785b9fc97f3196afcd1a162c4ea80bbc37047eacad14903",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh.",
+        "Biến thể này là ảnh người mẫu; các biến thể bà ba còn lại là mannequin. Không khẳng định nguồn tạo ảnh hoặc danh tính người mẫu."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba-non-la.webp": {
+      "sourceSha256": "25e9e86c40900c7a40fab884add326dc06182c2c017eccbd672dd765f3a2661f",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ba-ba/female-ao-ba-ba.webp": {
+      "sourceSha256": "2a28794a87819212a68cef432142cca49c939681a6515011406c8b625280924e",
+      "costumeId": "ao-ba-ba",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Cả áo và quần thuộc nhóm hồng; khác biệt bóng sáng/họa tiết giữa các ảnh không được suy thành chất liệu đã xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai-giay-cao-got.webp": {
+      "sourceSha256": "64c181092f60f2cae1d88702e068ae6f724798838ddc2bdb4f1c43f344c1c901",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [
+        "giay-cao-got"
+      ],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai-guoc-moc.webp": {
+      "sourceSha256": "2d3faac6666ba684d994168501ae972dd40a9702e3a3b0b6483129e26682790d",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai-non-la-giay-cao-got.webp": {
+      "sourceSha256": "96771986fc364f77a3f3b86c5df2837199c66a62c9318561dad83b2786e48620",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [
+        "giay-cao-got",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai-non-la-guoc-moc.webp": {
+      "sourceSha256": "c738646ffe99c7ed3cd66c1743a74bee82a55769bc350f38dacb4757588e7c83",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai-non-la.webp": {
+      "sourceSha256": "6765388a332ddc8dbf32ac6a9e276f14116e69375864624d36d0ff66b7724fe9",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-dai/female-ao-dai.webp": {
+      "sourceSha256": "51ffd927d5c4e3baedb7a59da8a53c7c6e1a7d2df4a980cffcb6dc8c0abae1a2",
+      "costumeId": "ao-dai",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "ivory",
+        "secondaryIds": [],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo và quần thuộc nhóm trắng ngà. Nhóm màu chỉ là mô tả thị giác; không phải mã RGB đo từ ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-hai-theu.webp": {
+      "sourceSha256": "e0c49911d3124c57a04358e29a3cddacddb4f4014b6fadf5aa2c0c5088ba679c",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-non-la-guoc-moc.webp": {
+      "sourceSha256": "6b53caaac8132066d6deb3edd124bf0b8294f19e8f326c817248770feee91262",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la",
+        "tram-cai"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ.",
+        "Tên file không ghi trâm cài nhưng ảnh gốc nhìn rõ món cài tóc với thân trâm và cụm hoa, cùng kiểu trâm ở các ảnh tram-cai. Tổ hợp thực tế gồm nón lá + trâm cài + guốc mộc.",
+        "Ảnh còn có bông tai đính sẵn. Bông tai không thuộc catalog tương tác theo yêu cầu; không được chọn, thêm hoặc xóa bằng metadata."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-non-la-hai-theu.webp": {
+      "sourceSha256": "dd74723d83e8f73fdfa41d65ba2dbdc8ab9e4a6a8f2f1c652b6c288411205cc8",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-tram-cai-guoc-moc.webp": {
+      "sourceSha256": "18c34db0f0ab0156146cc1ff83f873ec688c97e78cdd1b21ba5481b9f9e444e8",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "tram-cai"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh-tram-cai-hai-theu.webp": {
+      "sourceSha256": "7618969a154b56a89e4d5537d619235ad76775c5b8cbcbce712e6dcaf1d6bf1f",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu",
+        "tram-cai"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ.",
+        "Ảnh còn có bông tai đính sẵn. Bông tai không thuộc catalog tương tác theo yêu cầu; không được chọn, thêm hoặc xóa bằng metadata."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-giao-linh/female-ao-giao-linh.webp": {
+      "sourceSha256": "fee7cff5066a3cb257490241526e91ef0b9e485cca00a7272a1910478f7d70f4",
+      "costumeId": "ao-giao-linh",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-guoc-moc.webp": {
+      "sourceSha256": "a74f57ed827ddeb272520a0925b5867193b86d651906f2c35627069749457ee8",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-khan-dong-guoc-moc.webp": {
+      "sourceSha256": "dcee155bf1db2113759182ff9db0b6cc29772c47ad67e763cab3ce1a7ee1b071",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-khan-dong.webp": {
+      "sourceSha256": "8bdc6b97475935d0573679d315882abc2aa9194e29404d8087573b4b423e7bdf",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-non-la-guoc.webp": {
+      "sourceSha256": "63679d4182318e26b61bf290517fba13ae31099a8b11e9557360a47184dee3c7",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than-non-la.webp": {
+      "sourceSha256": "f731c90426f01d80bbd57a7b54c46f8d9431fe36b5d666c1e9aede4db5e66629",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-ngu-than/female-ao-ngu-than.webp": {
+      "sourceSha256": "a12a42fef796bd280eff70f9c46db0242c29d06d5344e49356eb208c1b5f9ad8",
+      "costumeId": "ao-ngu-than",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-nhat-binh/female-ao-nhat-binh-hai-theu.webp": {
+      "sourceSha256": "db7008b910551094f63c743d2ab0e38d843a122f5d6dc12798fd8d748c29323d",
+      "costumeId": "ao-nhat-binh",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory",
+          "gold",
+          "blue",
+          "green"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô có hoa và viền vàng; lớp trong/quần ngà; dải tay có xanh lam và xanh lục. Màu phụ mô tả các phần trang phục nhìn thấy, không mô tả nền."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-nhat-binh/female-ao-nhat-binh-khan-vanh-hai-theu.webp": {
+      "sourceSha256": "4ff60da2aadccb7068f45d6513c1eea001db7849b889d790aea5a6d52bd1f09c",
+      "costumeId": "ao-nhat-binh",
+      "gender": "female",
+      "accessoryIds": [
+        "hai-theu",
+        "khan-vanh"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory",
+          "gold",
+          "blue",
+          "green"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô có hoa và viền vàng; lớp trong/quần ngà; dải tay có xanh lam và xanh lục. Màu phụ mô tả các phần trang phục nhìn thấy, không mô tả nền.",
+        "Khăn vành có màu xanh lam; màu này của phụ kiện được ghi ở chú thích, không đổi màu chính của trang phục."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-nhat-binh/female-ao-nhat-binh-khan-vanh.webp": {
+      "sourceSha256": "64b2832d88a5c484b033ea8610ebd7591ba90c2ad6ceddb3187a9d58c56b5884",
+      "costumeId": "ao-nhat-binh",
+      "gender": "female",
+      "accessoryIds": [
+        "khan-vanh"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory",
+          "gold",
+          "blue",
+          "green"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô có hoa và viền vàng; lớp trong/quần ngà; dải tay có xanh lam và xanh lục. Màu phụ mô tả các phần trang phục nhìn thấy, không mô tả nền.",
+        "Khăn vành có màu xanh lam; màu này của phụ kiện được ghi ở chú thích, không đổi màu chính của trang phục."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-nhat-binh/female-ao-nhat-binh.webp": {
+      "sourceSha256": "d9dc9a5a02e893361155963aebbe732664d9d7d8ebb412072415be34056607d7",
+      "costumeId": "ao-nhat-binh",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory",
+          "gold",
+          "blue",
+          "green"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô có hoa và viền vàng; lớp trong/quần ngà; dải tay có xanh lam và xanh lục. Màu phụ mô tả các phần trang phục nhìn thấy, không mô tả nền."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-tu-than/female-ao-tu-than-guoc-moc.webp": {
+      "sourceSha256": "063d68a0ba58a5b81afd147a5a0c5cf745d04ff68447f531f12d881d4fc2531d",
+      "costumeId": "ao-tu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "pink"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo ngoài và váy đỏ đô, lớp áo trong hồng. Dải vải buộc eo đã có sẵn trong ảnh và không phải lựa chọn phụ kiện riêng."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-tu-than/female-ao-tu-than-non-quai-thao-guoc-moc.webp": {
+      "sourceSha256": "de1be3dfd41c78b66ac0f3e9fa86641e7d6f8348c75cb8034cf07a878577a0b3",
+      "costumeId": "ao-tu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-quai-thao"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "pink"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo ngoài và váy đỏ đô, lớp áo trong hồng. Dải vải buộc eo đã có sẵn trong ảnh và không phải lựa chọn phụ kiện riêng."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-tu-than/female-ao-tu-than-non-quai-thao.webp": {
+      "sourceSha256": "788a16fda6fee47737c4e589ed8bd11051ed83acda0ec7a69e123559902bb29d",
+      "costumeId": "ao-tu-than",
+      "gender": "female",
+      "accessoryIds": [
+        "non-quai-thao"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "pink"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo ngoài và váy đỏ đô, lớp áo trong hồng. Dải vải buộc eo đã có sẵn trong ảnh và không phải lựa chọn phụ kiện riêng."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-tu-than/female-ao-tu-than.webp": {
+      "sourceSha256": "1dad6966236bd454c17fcf691259872faeba9fb287623d5a035dfa54e5a03b39",
+      "costumeId": "ao-tu-than",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "pink"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo ngoài và váy đỏ đô, lớp áo trong hồng. Dải vải buộc eo đã có sẵn trong ảnh và không phải lựa chọn phụ kiện riêng."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-yem-guoc-moc.webp": {
+      "sourceSha256": "3b861c28d3e11409a1824656ab5fcfe920a5d8ca81fd9589b5ef7a44285ccc12",
+      "costumeId": "ao-yem",
+      "gender": "female",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [
+          "burgundy"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Màu chính mô tả áo yếm hồng; váy đi kèm thuộc nhóm đỏ đô. Đây là bộ hoàn chỉnh trong ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/female-ao-yem.webp": {
+      "sourceSha256": "9c9429e0305a41d7e4a3ee7c9978c684cf60bc4cd52cc27b7d900baab328f23e",
+      "costumeId": "ao-yem",
+      "gender": "female",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "pink",
+        "secondaryIds": [
+          "burgundy"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Màu chính mô tả áo yếm hồng; váy đi kèm thuộc nhóm đỏ đô. Đây là bộ hoàn chỉnh trong ảnh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-giao-linh/male-ao-giao-linh-guoc-moc-non-la.webp": {
+      "sourceSha256": "6f5543121117f72f2435cad2b91677a6480d59e27bbb4a1df6496e8c8e31b0b0",
+      "costumeId": "ao-giao-linh",
+      "gender": "male",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-giao-linh/male-ao-giao-linh-guoc-moc.webp": {
+      "sourceSha256": "ea7c36c8b91abbf2e1fba21007dcb81de7416fba1933f2eddf53b37977c843cc",
+      "costumeId": "ao-giao-linh",
+      "gender": "male",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-giao-linh/male-ao-giao-linh-khan-dong.webp": {
+      "sourceSha256": "b3c1ba5661f32e5816a66ad85ccaed8ef2c47df689cccd12c03fd4dc2dcd9321",
+      "costumeId": "ao-giao-linh",
+      "gender": "male",
+      "accessoryIds": [
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-giao-linh/male-ao-giao-linh-nonla.webp": {
+      "sourceSha256": "8f2539e9164b0105c7ec02d8b37bf5223fe366b355cff7544972e4b9efcfeabd",
+      "costumeId": "ao-giao-linh",
+      "gender": "male",
+      "accessoryIds": [
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-giao-linh/male-ao-giao-linh.webp": {
+      "sourceSha256": "49582f8f510e84c856ddd5f04506c1c20f637462ec83aedcc880482c0fb487fe",
+      "costumeId": "ao-giao-linh",
+      "gender": "male",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo đỏ đô và quần ngà; dây buộc trên áo có sẵn trong ảnh, không phải phụ kiện có thể thêm/bỏ."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc-khandong.webp": {
+      "sourceSha256": "bf39fcd88988766f6f028ba4dfa2527d1b7796fc212b1ddefd35058febce923b",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [
+        "guoc-moc",
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc-nonla.webp": {
+      "sourceSha256": "8bd48557cd8b5325470aedb45262723e3056f1b12d23d71b7fbbe288e3244e63",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [
+        "guoc-moc",
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-guocmoc.webp": {
+      "sourceSha256": "1eefe8427cc39ab4dbb8fd15ba03d7a94db2a42568eb286653a056fa38a654de",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [
+        "guoc-moc"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-khan-dong.webp": {
+      "sourceSha256": "167f8ba70962bae6faaa5e15dcd48733ee45d3364d7c6e0d5d87342ce0a15a9b",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [
+        "khan-dong"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà.",
+        "Khăn đóng có màu đỏ đô; tên phụ kiện theo nhãn dataset, hình thức và tính chính xác văn hóa chưa được xác minh."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than-nonla.webp": {
+      "sourceSha256": "470b12fcd06c437ce83529aaed0a29bf93021b1aaffa95311cff3bcde8da9f29",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [
+        "non-la"
+      ],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    },
+    "assets/web/male-ao-ngu-than/male-ao-ngu-than.webp": {
+      "sourceSha256": "c9ce6905305e4807425e6c192451aa4387fd5bc2e5678069671bb730a04fd2c5",
+      "costumeId": "ao-ngu-than",
+      "gender": "male",
+      "accessoryIds": [],
+      "colors": {
+        "primaryId": "burgundy",
+        "secondaryIds": [
+          "ivory"
+        ],
+        "status": "visually-reviewed"
+      },
+      "appearanceStatus": "visually-reviewed",
+      "notes": [
+        "Áo thuộc nhóm đỏ đô, quần thuộc nhóm trắng ngà."
+      ],
+      "provenance": {
+        "method": "visual-review",
+        "reviewedAt": "2026-10-10"
+      },
+      "eventIds": null,
+      "styleIds": null,
+      "material": null,
+      "culturalSources": [],
+      "needsCulturalVerification": true
+    }
+  }
+}

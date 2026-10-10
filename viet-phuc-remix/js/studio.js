@@ -1,7 +1,6 @@
-import { BODY_PRESETS, drawBodyLook, bodyLookPNG, loadBodyDataURL } from './bodyCompositor.js';
+import { BODY_PRESETS, loadBodyDataURL } from './bodyCompositor.js';
 import { COSTUME_DETAILS, MATERIAL_NAMES, PATTERN_NAMES, LAYER_ITEMS, buildLayerPrompt } from './imagePrompt.js';
 import { loadLibrary, getLayer, layersForLook, importLayer, removeLayer } from './layerLibrary.js';
-import { drawFallback, fallbackPNG } from './fallback2d.js';
 import { mergeLookLayers } from './lookLayers.js';
 const $=id=>document.getElementById(id), rules=window.VietPhucCompatibility, startedAt=performance.now();
 const t=(key,params)=>window.VietPhucLocale.t(key,params);
@@ -13,10 +12,10 @@ const options=(items,kind)=>Object.keys(items).map(id=>'<option value="'+id+'">'
 $('studio-material').innerHTML=options(MATERIAL_NAMES,'material');$('studio-pattern').innerHTML=options(PATTERN_NAMES,'pattern');
 $('studio-layer-item').innerHTML=options(LAYER_ITEMS,'layer');
 function sanitize(next){
- let gender=next.body?.gender==='male'?'male':'female', costumeId=rules.sanitizeCostume(next.costumeId,gender);
- if(!costumeId){gender='female';costumeId=rules.sanitizeCostume(next.costumeId,gender);}
- const accessories=rules.sanitizeAccessories(next.accessories,{costumeId,gender});
- return {...next,costumeId,body:{gender},accessories,slots:{outer:costumeId,bottom:'trousers',inner:costumeId==='ao-tu-than'?'inner-yem':null,...rules.toStudioSlots(accessories,costumeId)}};
+ let gender=next.body?.gender==='male'?'male':'female', costumeId=next.costumeId;
+ if(!rules.getCostumeAvailability(costumeId,gender,{event:next.event}).available)costumeId=rules.sanitizeCostume(costumeId,gender,{event:next.event})||costumeId;
+ const accessories=rules.sanitizeAccessories(next.accessories,{costumeId,gender,event:next.event});
+ return {...next,costumeId,body:{gender},accessories,slots:{outer:costumeId,bottom:'trousers',inner:costumeId==='ao-tu-than'?'inner-yem':null,...rules.toStudioSlots(accessories,{costumeId,gender,event:next.event})}};
 }
 function snapshotConfig(){return structuredClone({...config,imageLayers:mergeLookLayers(config,layersForLook(config))});}
 function replaceSavedLayer(gender,id,layer){config.imageLayers=(config.imageLayers||[]).filter(item=>item.gender!==gender||item.id!==id);if(layer)config.imageLayers.push(layer);}
@@ -35,10 +34,11 @@ function syncLayerItems(){
 function render(){
  if(disposed)return;const start=performance.now(),next=snapshotConfig();
  const mapped=window.VietPhucPhotoMapping?.resolve(next);
- $('studio-fallback').innerHTML=mapped?window.VietPhucPhotoMapping.draw(next):bodyFailed?drawFallback(next):drawBodyLook(next);
- $('studio-fallback').dataset.renderer=mapped?'photo-mapping-2d':'body-compositor-2d';$('studio-fallback').dataset.renderMs=String(Math.round(performance.now()-start));
- $('studio-status').textContent=mapped?t('photo.status',{name:{key:'photo.'+mapped.key}}):bodyFailed?t('photo.fallback'):t('photo.bodyFallback',{gender:{key:'gender.'+config.body.gender}});
- $('studio-metrics').textContent=mapped?(mapped.exact?t('ui.a_matching_photo_is_available'):t('photo.missingCombination',{name:{key:'photo.'+mapped.key}})):(next.imageLayers.length?t('photo.layers',{count:next.imageLayers.length}):t('photo.unavailable'));
+ const result=window.VietPhucPhotoMapping?.search(next);
+ $('studio-fallback').innerHTML=mapped?window.VietPhucPhotoMapping.draw(next):'<p class="matching-empty" role="status">'+escape(t('matching.empty'))+'</p>';
+ $('studio-fallback').dataset.renderer=mapped?'photo-mapping-2d':'empty';$('studio-fallback').dataset.renderMs=String(Math.round(performance.now()-start));
+ if($('matching-insights'))$('matching-insights').innerHTML=window.VietPhucPhotoMapping?.insights(result)||'';
+ $('studio-capture').disabled=!mapped;
  $('studio-loading').hidden=true;syncLayerItems();updateLayerStatus();
  if(!$('studio-prompt-panel').hidden)$('studio-prompt-text').value=buildLayerPrompt(config,$('studio-layer-item').value);
 }
@@ -59,13 +59,16 @@ function download(data,filename){
 }
 async function captureSnapshot(transparent=false){
  const captured=snapshotConfig(),outfitMeta=structuredClone(window.VietPhucRemix.getOutfit());let image;
- try{image=window.VietPhucPhotoMapping?.resolve(captured)?await window.VietPhucPhotoMapping.exportPNG(captured):await bodyLookPNG(captured,transparent);}catch{image=await fallbackPNG(captured,transparent);window.showToast(t('photo.exportFallback'));}
- return {image,studioConfig:captured,outfitMeta};
+ if(!window.VietPhucPhotoMapping?.resolve(captured))throw new Error(t('matching.empty'));
+ image=await window.VietPhucPhotoMapping.exportPNG(captured);
+ const used=window.VietPhucPhotoMapping.resolve(captured);
+ if(!used)throw new Error(t('matching.empty'));
+ return {image,studioConfig:{...captured,sourceCombinationId:used.sourceCombinationId||used.combinationId,imageCombinationId:used.combinationId},outfitMeta};
 }
 $('studio-capture').addEventListener('click',async event=>{
  const button=event.currentTarget;button.disabled=true;
  try{const snapshot=await captureSnapshot($('studio-transparent').checked);download(snapshot.image,'viet-phuc-'+snapshot.studioConfig.costumeId+'-'+snapshot.studioConfig.body.gender+'.png');await window.saveLook(snapshot);}
- catch{window.showToast(t('photo.exportError'));}finally{button.disabled=false;}
+ catch{window.showToast(t('photo.exportError'));}finally{button.disabled=!window.VietPhucPhotoMapping?.resolve(snapshotConfig());}
 });
 $('studio-reference').addEventListener('click',async event=>{
  const gender=config.body.gender,button=event.currentTarget;button.disabled=true;
@@ -90,7 +93,7 @@ function refreshIllustrations(){
 window.VietPhucIllustration=(costumeId,color,gender=config.body.gender)=>{
  if(!rules.getCostumeAvailability(costumeId,gender).available)gender='female';
  const look=sanitize({costumeId,color:color||'#C0392B',body:{gender},accessories:[],material:COSTUME_DETAILS[costumeId]?.material,pattern:'plain'});
- return window.VietPhucPhotoMapping?.draw(look,true)||drawBodyLook({...look,imageLayers:layersForLook(look)});
+ return window.VietPhucPhotoMapping?.draw({...look,colorId:null},true)||'<p class="matching-empty">'+escape(t('matching.empty'))+'</p>';
 };
 window.VietPhucStudio={captureSnapshot,getConfig:()=>structuredClone(config),restore(next){config=sanitize({...config,...next});window.VietPhucRemix.setGender?.(config.body.gender,config.costumeId);revision++;sync();render();refreshIllustrations();},getMetrics:()=>({mode:'2d',revision,layers:layersForLook(config).length}),dispose(){disposed=true;}};
 applyOutfit(window.VietPhucRemix.getOutfit());refreshIllustrations();

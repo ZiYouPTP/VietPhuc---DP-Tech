@@ -124,7 +124,6 @@
     </div>
 
     <div class="costume-grid" id="costume-grid"></div>
-    <p class="color-note"><span data-i18n="ui.regional_labels_in_this_demo_await_source_verification">Nhãn vùng miền của bản demo đang chờ đối chiếu nguồn.</span></p>
   </div>
 </section>
 
@@ -151,6 +150,7 @@
             <button class="event-btn" id="event-street" data-event="street" onclick="selectEvent(this,'street')"><span data-i18n="event.street">Street style</span></button>
             <button class="event-btn" id="event-tho-cuong" data-event="ceremony" onclick="selectEvent(this,'ceremony')"><span data-i18n="ui.ceremony">Lễ tế/thờ cúng</span></button>
           </div>
+          <details class="event-scope-note"><summary data-i18n="eventScope.about">Bối cảnh phối đồ</summary><p data-i18n="eventScope.note">Danh sách dùng cho bản phối hiện đại; không xác nhận phục dựng hoặc nghi lễ.</p></details>
         </div>
 
         <div class="mixer-section" id="ms-costume">
@@ -160,19 +160,22 @@
           <p class="costume-body-status" id="costume-body-status" aria-live="polite"></p>
         </div>
 
-        <div class="mixer-section" id="ms-color">
-          <h3 class="mixer-section-title"><span data-i18n="ui.3_lookbook_colour_note_54">3. Màu ghi chú cho lookbook</span></h3>
-          <div class="color-picker-wrap">
-            <div class="color-swatches" id="color-swatches"></div>
-            <div class="color-harmony-check" id="color-harmony"></div>
-          </div>
+        <div class="mixer-section" id="ms-accessories">
+          <h3 class="mixer-section-title"><span data-i18n="ui.4_choose_accessories">3. Chọn phụ kiện</span></h3>
+          <div class="accessory-grid" id="accessory-grid"></div>
+          <div class="combination-picker" id="accessory-combinations" aria-label="Tổ hợp phụ kiện có ảnh" data-i18n-aria-label="matching.combinations"></div>
+          <p class="accessory-status" id="accessory-status" role="status" aria-live="polite"></p>
         </div>
 
-        <div class="mixer-section" id="ms-accessories">
-          <h3 class="mixer-section-title"><span data-i18n="ui.4_choose_accessories">4. Chọn phụ kiện</span></h3>
-          <p class="accessory-help"><span data-i18n="ui.dimmed_accessories_are_unavailable_for_this_selection_remove_an_accessory_in_the_same_posi_86">Phụ kiện tối màu không dùng được với lựa chọn hiện tại. Bỏ món cùng vị trí để chọn món khác. Tổ hợp chưa có ảnh sẽ dùng mẫu mặc định.</span></p>
-          <div class="accessory-grid" id="accessory-grid"></div>
-          <p class="accessory-status" id="accessory-status" role="status" aria-live="polite"></p>
+        <div class="mixer-section" id="ms-color">
+          <h3 class="mixer-section-title"><span data-i18n="ui.3_lookbook_colour_note_54">4. Chọn màu có ảnh</span></h3>
+          <div class="color-picker-wrap">
+            <div class="color-swatches" id="color-swatches"></div>
+            <div class="color-harmony-check" id="color-harmony" role="status" aria-live="polite"></div>
+          </div>
+          <p class="color-step-status" id="color-step-status" role="status" aria-live="polite"></p>
+          <button type="button" class="text-action" id="btn-color-suggest" onclick="suggestPhotoColor()" data-i18n="harmony.suggest">Gợi ý màu</button>
+          <div id="color-suggestion" class="color-suggestion" aria-live="polite"></div>
         </div>
 
         <div class="mixer-section" id="ms-style">
@@ -220,11 +223,9 @@
           </div>
 
           <div class="studio" id="studio">
-            <div class="studio-top"><strong><span data-i18n="ui.complete_outfit_photo">Bản phối trên body</span></strong><span class="studio-status" id="studio-status" role="status"><span data-i18n="photo.preparing">Minh họa 2D · đang chuẩn bị</span></span></div>
             <div class="studio-stage">
               <div class="studio-fallback" id="studio-fallback" aria-label="Bản minh họa trang phục trên body đã chọn" data-i18n-aria-label="photo.stageAlt"></div>
               <div class="studio-loading" id="studio-loading" hidden><span><span data-i18n="loading.look">Đang chuẩn bị bản phối…</span></span></div>
-              <span class="studio-hint" id="studio-hint"><span data-i18n="ui.existing_outfit_photo_no_image_generation">Ảnh mẫu đã phối · không sinh ảnh mới</span></span>
             </div>
             <div class="studio-options">
               <label class="studio-wide"><span data-i18n="ui.body_76">Body tham chiếu</span><select id="studio-gender"><option value="female" selected data-i18n="gender.female">Nữ</option><option value="male" data-i18n="gender.male">Nam</option></select></label>
@@ -251,8 +252,7 @@
               <textarea id="studio-prompt-text" rows="7" readonly></textarea>
               <button type="button" id="studio-copy-prompt"><span data-i18n="legacy.copyPrompt">Sao chép prompt</span></button>
             </div>
-            <p class="studio-notice"><span data-i18n="ui.colour_and_style_are_lookbook_notes_photos_retain_their_original_fabric_colour_and_shape_c">Màu và phong cách là ghi chú cho lookbook. Ảnh mẫu giữ màu, chất liệu và phom gốc. Tổ hợp chưa có ảnh sẽ dùng ảnh hoàn chỉnh gần nhất.</span><span id="studio-metrics" role="status" aria-live="polite"></span></p>
-            <div class="look-assessment" id="look-assessment" aria-live="polite"></div>
+            <div id="matching-insights" aria-live="polite"></div>
           </div>
           <div class="outfit-display" id="outfit-display">
             <div class="outfit-placeholder" id="outfit-placeholder">
@@ -341,10 +341,10 @@
     <div class="section-header">
       <span class="section-badge"><span data-i18n="ui.culture">Văn hóa</span></span>
       <h2><span data-i18n="ui.explore_the_context">Hiểu đúng</span><br/><span data-i18n="ui.of_vietnamese_dress">về Việt phục</span></h2>
-      <p><span data-i18n="ui.cultural_information_requires_source_verification_before_publication">Nội dung tham khảo — cần đối chiếu nguồn trước khi sử dụng</span></p>
+      <p><span data-i18n="culture.intro">Lịch sử, cấu tạo và cách sử dụng của 7 loại trang phục, kèm nguồn tham khảo và các điểm chưa thống nhất.</span></p>
     </div>
 
-    <p class="culture-verification"><span data-i18n="ui.sources_pending_historical_regional_and_cultural_rules_still_need_verification">Nguồn: chưa có nguồn đối chiếu. Toàn bộ nội dung lịch sử, quy tắc và vùng miền hiện cần xác minh.</span></p>
+    <p class="culture-verification"><span data-i18n="culture.reviewNote">Đã đối chiếu một tập nguồn chọn lọc từ dữ liệu AI Arena. Các ghi chú không chứng nhận phục dựng từng ảnh mẫu.</span></p>
     <div class="culture-tabs" id="culture-tabs">
       <button class="tab-btn active" id="tab-history" onclick="switchTab('history', this)"><span data-i18n="ui.history">Lịch sử</span></button>
       <button class="tab-btn" id="tab-rules" onclick="switchTab('rules', this)"><span data-i18n="ui.rules">Quy tắc</span></button>
@@ -412,12 +412,16 @@
   </div>
 </div>
 
+<script src="js/photoMappingData.js"></script>
+<script src="js/cultureData.js"></script>
 <script src="js/locales.js"></script>
 <script src="js/locale.js"></script>
 <script src="data.js"></script>
+<script src="js/culture.js"></script>
 <script src="js/bodyAvailabilityData.js"></script>
+<script src="js/outfitMatching.js"></script>
+<script src="js/colorHarmony.js"></script>
 <script src="js/compatibility.js"></script>
-<script src="js/photoMappingData.js"></script>
 <script src="js/photoMapping.js"></script>
 <script src="app.js"></script>
 <script src="js/webFeatures.js"></script>

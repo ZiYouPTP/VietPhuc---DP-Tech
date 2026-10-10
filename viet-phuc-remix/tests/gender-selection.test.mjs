@@ -21,16 +21,17 @@ const win={addEventListener(type,callback){if(!listeners.has(type))listeners.set
  dispatchEvent(event){for(const callback of listeners.get(event.type)||[])callback(event);},showToast(){}};
 const context=vm.createContext({window:win,document:{getElementById:get,querySelectorAll:()=>[],addEventListener(){}},
  localStorage:{getItem:()=>null,setItem(){}},structuredClone,performance:{now:()=>1},
- CustomEvent:class{constructor(type,options={}){this.type=type;this.detail=options.detail;}},
+ URL,CustomEvent:class{constructor(type,options={}){this.type=type;this.detail=options.detail;}},
  IntersectionObserver:class{observe(){}},setTimeout:()=>1,clearTimeout(){},
  BODY_PRESETS,drawBodyLook,COSTUME_DETAILS,MATERIAL_NAMES,PATTERN_NAMES,LAYER_ITEMS,buildLayerPrompt,mergeLookLayers,
  layersForLook:()=>[],getLayer:()=>null,loadLibrary:async()=>{},removeLayer:async()=>{},importLayer:async()=>{},
  bodyLookPNG:async config=>structuredClone(config),loadBodyDataURL:async()=>'',drawFallback:drawBodyLook,fallbackPNG:async()=>'',
  Image:class{async decode(){}}});
-for(const path of ['../js/locales.js','../js/locale.js','../data.js','../js/bodyAvailabilityData.js','../js/compatibility.js','../app.js']){
+for(const path of ['../js/photoMappingData.js','../js/locales.js','../js/locale.js','../data.js','../js/bodyAvailabilityData.js','../js/outfitMatching.js','../js/compatibility.js','../js/photoMapping.js','../app.js']){
  vm.runInContext(await readFile(new URL(path,import.meta.url),'utf8'),context);
 }
 const studio=(await readFile(new URL('../js/studio.js',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'');
+win.VietPhucPhotoMapping=Object.freeze({...win.VietPhucPhotoMapping,exportPNG:async config=>structuredClone(config)});
 vm.runInContext(studio,context);
 const run=code=>vm.runInContext(code,context);
 const check=async(id,gender)=>{
@@ -51,6 +52,11 @@ for(const id of ['ao-dai','ao-ba-ba','ao-tu-than','ao-yem','ao-nhat-binh']){
 }
 run("selectCostumePill('ao-giao-linh')");
 await check('ao-giao-linh','male');
+win.VietPhucRemix.setAccessories(['non-la','guoc-moc']);
+await check('ao-giao-linh','male');
+assert.equal(win.VietPhucStudio.getConfig().slots.headwear,'non-la','The complete male giao lĩnh hat/clogs set is photographed');
+assert.equal(win.VietPhucStudio.getConfig().slots.footwear,'guoc-moc');
+assert.deepEqual(Array.from((await win.VietPhucStudio.captureSnapshot(true)).studioConfig.accessories),['non-la','guoc-moc']);
 win.VietPhucStudio.restore({body:{gender:'male'},costumeId:'ao-nhat-binh'});
 await check('ao-ngu-than','male');
 context.badLook={id:99,costumeId:'ao-dai',color:'#C0392B',accessories:[],studioConfig:{costumeId:'ao-dai',body:{gender:'male'}}};

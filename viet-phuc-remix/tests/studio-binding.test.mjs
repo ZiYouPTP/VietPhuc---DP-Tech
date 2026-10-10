@@ -13,7 +13,9 @@ const controls=new Map(),get=id=>{if(!controls.has(id))controls.set(id,new Contr
 get('studio-layer-item').value='ao-dai';
 const events={};let metadata={costumeId:'ao-dai',color:'#C0392B',accessories:[],style:'traditional',event:'festival'};
 const win={addEventListener:(name,fn)=>events[name]=fn,dispatchEvent:event=>events[event.type]?.(event),VietPhucRemix:{getOutfit:()=>structuredClone(metadata)},showToast(){}};
-for(const path of ['../js/locales.js','../js/locale.js'])vm.runInNewContext(await readFile(new URL(path,import.meta.url),'utf8'),{window:win});
+for(const path of ['../js/photoMappingData.js','../js/locales.js','../js/locale.js','../js/outfitMatching.js'])vm.runInNewContext(await readFile(new URL(path,import.meta.url),'utf8'),{window:win});
+vm.runInNewContext(await readFile(new URL('../js/photoMapping.js',import.meta.url),'utf8'),{window:win,URL});
+win.VietPhucPhotoMapping=Object.freeze({...win.VietPhucPhotoMapping,exportPNG:async config=>structuredClone(config)});
 vm.runInNewContext(await readFile(new URL('../js/compatibility.js',import.meta.url),'utf8'),{window:win});
 vm.runInNewContext(await readFile(new URL('../js/bodyAvailabilityData.js',import.meta.url),'utf8'),{window:win});
 const layer={id:'ao-ngu-than',gender:'male',src:'data:image/png;base64,fixture',zIndex:30};
@@ -26,7 +28,7 @@ const context=vm.createContext({window:win,document:{getElementById:get,querySel
 const source=(await readFile(new URL('../js/studio.js',import.meta.url),'utf8')).replace(/^import .*;\r?\n/gm,'');
 vm.runInContext(source,context);
 await get('studio-gender').emit('male');
-assert.ok(get('studio-fallback').innerHTML.includes('base_body_1.png'));
+assert.ok(get('studio-fallback').innerHTML.includes('data-gender="male"'));
 const task=win.VietPhucStudio.captureSnapshot(true);
 metadata={...metadata,costumeId:'ao-yem',color:'#1A7A4C',style:'fusion'};
 events['vietphuc:outfit-change']({detail:metadata});
@@ -40,7 +42,7 @@ assert.ok(!get('studio-fallback').innerHTML.includes('data-costume="ao-yem"'));
 await get('studio-prompt').emit('','click');
 assert.ok(get('studio-prompt-text').value.includes('MỘT món đồ'));
 assert.ok(get('studio-prompt-text').value.includes('base_body_1.png'));
-assert.equal(get('studio-fallback').dataset.renderer,'body-compositor-2d');
+assert.equal(get('studio-fallback').dataset.renderer,'photo-mapping-2d');
 assert.ok(!source.includes("import('./viewer.js')"),'The active studio must not load Three or its viewer');
 win.VietPhucStudio.restore(captured.studioConfig);
 assert.equal(win.VietPhucStudio.getConfig().costumeId,'ao-ngu-than');
@@ -59,6 +61,7 @@ metadata={costumeId:'ao-ngu-than',color:'#1A7A4C',accessories:['bong-tai'],style
 events['vietphuc:outfit-change']({detail:metadata});
 const edited=await win.VietPhucStudio.captureSnapshot(true);
 assert.equal(edited.studioConfig.color,'#1A7A4C');
+assert.deepEqual(Array.from(edited.studioConfig.accessories), [], 'Removed legacy accessories cannot enter a restored studio configuration');
 assert.equal(edited.studioConfig.imageLayers[0].src,savedLayer.src,'Changing color/accessories must retain the matching saved garment PNG');
 await get('studio-gender').emit('female');
 assert.equal((await win.VietPhucStudio.captureSnapshot(true)).studioConfig.imageLayers.length,0,'A male snapshot cannot be rendered on the female body');
@@ -68,8 +71,25 @@ win.VietPhucStudio.restore({costumeId:'ao-dai',body:{gender:'male'},imageLayers:
 assert.equal(win.VietPhucStudio.getConfig().costumeId,'ao-ngu-than','Direct restore must not bypass the male policy');
 assert.ok(!(await win.VietPhucStudio.captureSnapshot(true)).studioConfig.imageLayers.some(item=>item.id==='ao-dai'));
 for(const costumeId of ['ao-ngu-than','ao-giao-linh']){
- win.VietPhucStudio.restore({costumeId,body:{gender:'male'}});
+ win.VietPhucStudio.restore({costumeId,body:{gender:'male'},event:'festival'});
  assert.equal(win.VietPhucStudio.getConfig().costumeId,costumeId);
 }
 assert.equal((get('studio-layer-item').innerHTML.match(/ disabled/g)||[]).length,5,'Male layer selector must lock the other five garments');
-console.log('2D body selection, independent image layers, frozen capture, prompt, restore, saved-layer precedence and stale-layer filtering: PASS');
+// Failed photos must become an explicit empty state, never a composed SVG fallback.
+await get('studio-gender').emit('female');
+metadata={costumeId:'ao-yem',body:{gender:'female'},accessories:[],colorId:null,event:'festival'};
+events['vietphuc:outfit-change']({detail:metadata});
+const engine=win.VietPhucMatching.getEngine(win.VietPhucOutfitCatalogData);
+let current=win.VietPhucPhotoMapping.resolve(metadata);
+engine.markUnavailable(current.key);events['vietphuc:photo-error']();
+assert.match(get('matching-insights').innerHTML,/data-status="reference"/);
+assert.match(get('studio-fallback').innerHTML,/data-costume="ao-yem"/);
+current=win.VietPhucPhotoMapping.resolve(metadata);
+engine.markUnavailable(current.key);events['vietphuc:photo-error']();
+assert.equal(get('studio-fallback').dataset.renderer,'empty');
+assert.ok(!get('studio-fallback').innerHTML.includes('<svg'));
+assert.ok(!get('studio-fallback').innerHTML.includes('<img'));
+assert.equal(get('studio-capture').disabled,true);
+await assert.rejects(()=>win.VietPhucStudio.captureSnapshot(),/ảnh/);
+assert.equal(win.VietPhucStudio.getConfig().costumeId,'ao-yem','Source failures must not silently switch the whole outfit');
+console.log('Complete-photo rendering, frozen capture, legacy metadata round trips, labelled references and fail-closed empty/export states: PASS');

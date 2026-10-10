@@ -126,8 +126,8 @@
     "en": "Regional labels in this demo await source verification."
   },
   "ui.demo_preset_verification_pending": {
-    "vi": "Gợi ý của bản demo, cần xác minh",
-    "en": "Demo preset; verification pending"
+    "vi": "Phụ kiện có trong ảnh dữ liệu; văn hóa cần xác minh",
+    "en": "Accessory present in dataset photos; culture needs verification"
   },
   "ui.create_a_look": {
     "vi": "Tạo outfit",
@@ -158,12 +158,12 @@
     "en": "5. Style note"
   },
   "ui.3_lookbook_colour_note_54": {
-    "vi": "3. Màu ghi chú cho lookbook",
-    "en": "3. Lookbook colour note"
+    "vi": "4. Chọn màu có ảnh",
+    "en": "4. Choose an available photo colour"
   },
   "ui.4_choose_accessories": {
-    "vi": "4. Chọn phụ kiện",
-    "en": "4. Choose accessories"
+    "vi": "3. Chọn phụ kiện",
+    "en": "3. Choose accessories"
   },
   "ui.graduation": {
     "vi": "Lễ tốt nghiệp",
@@ -210,8 +210,8 @@
     "en": "Complete outfit photo"
   },
   "ui.existing_outfit_photo_no_image_generation": {
-    "vi": "Ảnh mẫu đã phối · không sinh ảnh mới",
-    "en": "Existing outfit photo · no image generation"
+    "vi": "Ảnh outfit hoàn chỉnh · ảnh gốc hoặc biến thể đã duyệt",
+    "en": "Complete outfit photo · original or approved variant"
   },
   "ui.body_76": {
     "vi": "Body tham chiếu",
@@ -226,28 +226,28 @@
     "en": "Supplied outfit photo · cultural information awaits verification."
   },
   "ui.colour_and_style_are_lookbook_notes_photos_retain_their_original_fabric_colour_and_shape_c": {
-    "vi": "Màu và phong cách là ghi chú cho lookbook. Ảnh mẫu giữ màu, chất liệu và phom gốc. Tổ hợp chưa có ảnh sẽ dùng ảnh hoàn chỉnh gần nhất.",
-    "en": "Colour and style are lookbook notes. Photos retain their original fabric, colour and shape. Combinations without a matching photo use the closest complete sample."
+    "vi": "Ảnh gốc được ưu tiên. Màu khác chỉ dùng biến thể đã duyệt theo tổ hợp phụ kiện. Phong cách vẫn là ghi chú; tổ hợp thiếu ảnh dùng mẫu tham khảo.",
+    "en": "Original photos are preferred. Other colours use approved variants for the accessory combination. Style remains a note; missing combinations use a reference sample."
   },
   "ui.a_matching_photo_is_available": {
     "vi": "Đã có ảnh tương ứng.",
     "en": "A matching photo is available."
   },
   "ui.male_body_only_male_ngu_than_and_giao_linh_are_available_other_outfits_are_locked": {
-    "vi": "Body nam: chỉ chọn áo ngũ thân nam hoặc áo giao lĩnh. Các áo còn lại đã khóa.",
-    "en": "Male body: only male ngu than and giao linh are available. Other outfits are locked."
+    "vi": "Body nam có ảnh ngũ thân và giao lĩnh; lựa chọn còn phụ thuộc sự kiện.",
+    "en": "Male photos cover ngu than and giao linh; availability also depends on the occasion."
   },
   "ui.female_body_uses_the_female_ngu_than_and_all_seven_supplied_outfit_types": {
     "vi": "Body nữ dùng bản ngũ thân nữ; các mẫu áo nữ được mở để phối.",
     "en": "Female body: uses the female ngu than and all seven supplied outfit types."
   },
   "ui.dimmed_accessories_are_unavailable_for_this_selection_remove_an_accessory_in_the_same_posi_86": {
-    "vi": "Phụ kiện tối màu không dùng được với lựa chọn hiện tại. Bỏ món cùng vị trí để chọn món khác. Tổ hợp chưa có ảnh sẽ dùng mẫu mặc định.",
-    "en": "Dimmed accessories are unavailable for this selection. Remove an accessory in the same position before choosing another. Missing photo combinations use a complete default sample."
+    "vi": "Chỉ chọn hoặc bỏ món khi toàn bộ tập phụ kiện còn lại có ảnh thật. Món tối màu không tạo được tổ hợp hợp lệ. Dùng nút tổ hợp bên dưới để chọn trọn bộ phụ kiện đã có ảnh.",
+    "en": "Add or remove an item only when the entire resulting set has a real photo. Dimmed items would create an unavailable combination. Use a combination button below to select a photographed set at once."
   },
   "ui.no_accessory_notes_selected": {
-    "vi": "Chưa chọn phụ kiện – thêm để hoàn thiện outfit",
-    "en": "No accessory notes selected."
+    "vi": "Không chọn phụ kiện.",
+    "en": "No accessories selected."
   },
   "ui.cultural_information": {
     "vi": "Thông tin văn hóa",
@@ -434,8 +434,8 @@
     "en": "Using this look"
   },
   "ui.choose_an_outfit_occasion_and_accessories_existing_matching_photos_are_shown_missing_combi": {
-    "vi": "Chọn bộ, bối cảnh và phụ kiện. Ảnh tương ứng có sẵn sẽ được hiển thị; tổ hợp thiếu ảnh dùng mẫu hoàn chỉnh gần nhất. Màu và phong cách chỉ là ghi chú, không thay đổi ảnh mẫu.",
-    "en": "Choose an outfit, occasion and accessories. Existing matching photos are shown; missing combinations use the closest complete sample. Colour and style are notes and do not change the photo."
+    "vi": "Chọn bối cảnh, bộ trang phục, phụ kiện rồi màu có ảnh. Màu chỉ thay đổi khi có biến thể đã duyệt; tổ hợp thiếu ảnh được ghi rõ là tham khảo.",
+    "en": "Choose an occasion, complete outfit, accessories, then an available photo colour. Colours change only through approved variants; missing combinations are labelled as references."
   },
   "ui.features": {
     "vi": "Tính năng",
@@ -530,8 +530,8 @@
     "en": "2D sample photo · {name}"
   },
   "photo.alt": {
-    "vi": "{name} · ảnh mẫu có sẵn",
-    "en": "{name} · existing photo sample"
+    "vi": "{name}",
+    "en": "{name}"
   },
   "photo.missingCombination": {
     "vi": "Chưa có ảnh đúng tổ hợp phụ kiện: đang dùng {name} hoàn chỉnh.",
@@ -601,6 +601,14 @@
     "vi": "Chưa dùng trong bộ phối mẫu {name} của ứng dụng.",
     "en": "Not enabled for the {name} app preset."
   },
+  "availability.notInDataset": {
+    "vi": "Chưa có ảnh dữ liệu cho phụ kiện này cùng {name} và body đang chọn.",
+    "en": "No dataset photo shows this accessory with {name} and the selected body."
+  },
+  "availability.costumeDataMissing": {
+    "vi": "Chưa có ảnh trang phục đã kiểm tra cho body đang chọn.",
+    "en": "No reviewed outfit photo is available for the selected body."
+  },
   "availability.conflict": {
     "vi": "Bỏ {name} trước khi chọn phụ kiện này.",
     "en": "Remove {name} before selecting this accessory."
@@ -610,20 +618,48 @@
     "en": "Removed {names} from the new look."
   },
   "availability.maleFallback": {
-    "vi": "Chưa tải được quy tắc body nam. Đang giữ phối đồ trên body nữ.",
-    "en": "Male outfit rules are unavailable. Continuing with the female body."
+    "vi": "Chưa có dữ liệu ảnh đã kiểm tra cho lựa chọn này.",
+    "en": "No reviewed photo data is available for this selection."
   },
   "availability.maleSelected": {
-    "vi": "Đã chuyển sang áo ngũ thân nam phù hợp với body nam.",
-    "en": "Switched to the male ngu than sample."
+    "vi": "Đã chọn mẫu có dữ liệu phù hợp với body.",
+    "en": "Selected an available photo sample for this body."
   },
   "availability.presetLabel": {
-    "vi": "Quy tắc phối mẫu của ứng dụng",
-    "en": "App styling preset rules"
+    "vi": "Ảnh có sẵn và vị trí phụ kiện · văn hóa chưa kiểm chứng",
+    "en": "Available photos and accessory positions · culture unverified"
   },
   "color.custom": {
     "vi": "Màu tùy chọn",
     "en": "Custom colour"
+  },
+  "color.originalPhoto": {
+    "vi": "Ảnh gốc · giữ màu gốc",
+    "en": "Original photo · original colours"
+  },
+  "color.originalShort": {
+    "vi": "Ảnh gốc",
+    "en": "Original"
+  },
+  "color.approvedVariant": {
+    "vi": "Biến thể màu đã duyệt",
+    "en": "Approved colour variant"
+  },
+  "color.originalFallback": {
+    "vi": "Chưa có ảnh màu đã duyệt cho lựa chọn này. Đang giữ ảnh gốc.",
+    "en": "No approved colour photo for this selection. Showing the original photo."
+  },
+  "color.noApprovedImage": {
+    "vi": "Chưa có ảnh cho màu này cùng tổ hợp và bối cảnh đang chọn.",
+    "en": "No photo for this colour, accessory combination and occasion."
+  },
+  "color.demoEventNote": {
+    "vi": "Bảng màu theo bối cảnh là cấu hình demo biên tập, chưa phải quy tắc văn hóa.",
+    "en": "Occasion palettes are editorial demo profiles; cultural rules are unverified."
+  },
+  "color.resetToOriginal": {
+    "vi": "Màu vừa chọn không còn khả dụng; đã trở về ảnh gốc.",
+    "en": "The chosen colour is no longer available; the original photo is restored."
   },
   "color.suggested": {
     "vi": "{name} nằm trong bảng màu gợi ý cho dịp này.",
@@ -896,6 +932,18 @@
   "accessory.tram-cai": {
     "vi": "Trâm Cài",
     "en": "Hairpin"
+  },
+  "accessory.khan-vanh": {
+    "vi": "Khăn Vành",
+    "en": "Vanh headwrap"
+  },
+  "accessory.hai-theu": {
+    "vi": "Hài Thêu",
+    "en": "Embroidered shoes"
+  },
+  "accessory.giay-cao-got": {
+    "vi": "Giày cao gót (phối hiện đại)",
+    "en": "High heels (modern styling)"
   },
   "accessory.vong-co": {
     "vi": "Vòng Cổ",
@@ -1238,8 +1286,119 @@
     "en": "Contemporary styles"
   },
   "ui.lookbook_colour_note_does_not_recolour_the_photo": {
-    "vi": "Màu ghi chú cho lookbook · không đổi màu ảnh mẫu.",
-    "en": "Lookbook colour note · does not recolour the photo."
+    "vi": "Chỉ màu có ảnh gốc hoặc biến thể đã duyệt được chọn. Màu không tương ứng với tổ hợp hiện tại bị làm tối.",
+    "en": "Choose colours with original photos or approved variants. Colours unavailable for the current combination are dimmed."
   }
 });
+ scope.VietPhucMessages=Object.freeze({...scope.VietPhucMessages,
+  'matching.combinations':{vi:'Chọn nguyên tổ hợp có ảnh',en:'Choose a complete photographed combination'},
+  'matching.noAccessories':{vi:'Không phụ kiện',en:'No accessories'},
+  'matching.accessory-unknown':{vi:'Phụ kiện này không được dữ liệu hỗ trợ.',en:'This accessory is not supported by the dataset.'},
+  'matching.whole-set-missing':{vi:'Chưa có ảnh cho toàn bộ tập phụ kiện này. Hãy chọn một tổ hợp có ảnh bên dưới.',en:'No photo contains this complete accessory set. Choose a photographed combination below.'},
+  'matching.removal-breaks-set':{vi:'Bỏ món này sẽ tạo tập phụ kiện chưa có ảnh. Hãy chọn nguyên tổ hợp khác bên dưới.',en:'Removing this item leaves an unphotographed set. Choose another complete combination below.'},
+  'matching.exact':{vi:'Khớp ảnh trong dữ liệu',en:'Exact dataset photo match'},
+  'matching.reference':{vi:'Tham khảo · chưa khớp đầy đủ',en:'Reference · not a complete match'},
+  'matching.score':{vi:'Độ khớp dữ liệu: {score}/100',en:'Dataset similarity: {score}/100'},
+  'matching.scope':{vi:'Điểm đo thuộc tính ảnh đã xác minh; không phải điểm văn hóa, lịch sử hoặc độ hài hòa màu.',en:'The score measures reviewed image attributes, not cultural accuracy, history or colour harmony.'},
+  'matching.empty':{vi:'Không có ảnh hợp lệ cho bộ, body và điều kiện này. Hãy đổi lựa chọn hoặc kiểm tra ảnh nguồn.',en:'No eligible photo for this outfit, body and constraints. Change the selection or check the source images.'},
+  'matching.invalid':{vi:'Lựa chọn chứa thuộc tính không hợp lệ hoặc ảnh chưa được duyệt.',en:'The selection contains an invalid attribute or an unapproved image.'},
+  'matching.unknown':{vi:'Chưa xác minh',en:'Unverified'},
+  'matching.accessories-missing':{vi:'Ảnh không có: {names}',en:'Missing in this photo: {names}'},
+  'matching.accessories-extra':{vi:'Ảnh có thêm: {names}',en:'Additional accessories in the photo: {names}'},
+  'matching.color-different':{vi:'Màu yêu cầu {requested}; ảnh là {actual}',en:'Requested colour {requested}; photo colour {actual}'},
+  'matching.style-different':{vi:'Phong cách được ghi nhận của ảnh chưa khớp yêu cầu.',en:'The recorded photo style differs from the requested style.'},
+  'matching.actualPhoto':{vi:'{name} · {color}',en:'{name} · {color}'},
+  'matching.why':{vi:'Vì sao ảnh này được chọn?',en:'Why was this photo selected?'},
+  'matching.formula':{vi:'Ưu tiên khớp chính xác, rồi điểm có trọng số. Phụ kiện dùng giao/chung của hai tập (Jaccard). Chỉ tính thuộc tính đã biết và được yêu cầu; hòa điểm ưu tiên ảnh gốc rồi ID ổn định.',en:'Exact matches first, then weighted similarity. Accessories use set intersection/union (Jaccard). Only known requested attributes contribute; ties prefer originals, then a stable ID.'},
+  'matching.weight':{vi:'{weight} × {value}%',en:'{weight} × {value}%'},
+  'matching.field.costume':{vi:'Bộ trang phục',en:'Complete outfit'},
+  'matching.field.gender':{vi:'Body của ảnh',en:'Photo body'},
+  'matching.field.accessories':{vi:'Toàn bộ phụ kiện',en:'Complete accessory set'},
+  'matching.field.color':{vi:'Màu áo chính',en:'Primary garment colour'},
+  'matching.field.style':{vi:'Phong cách đã xác minh',en:'Recorded style'},
+  'matching.culture-unverified':{vi:'Chưa có nguồn xác minh phục dựng và quy tắc văn hóa cho ảnh này.',en:'Historical reconstruction and cultural rules for this photo lack verified sources.'},
+  'matching.event-unverified':{vi:'Sự kiện là lựa chọn bối cảnh; dữ liệu chưa xác minh ảnh phù hợp sự kiện đó.',en:'The occasion is a context choice; the dataset has not verified this photo for that occasion.'},
+  'matching.style-unverified':{vi:'Phong cách là ghi chú, không được cộng điểm khi metadata chưa xác minh.',en:'Style is a note and earns no points while its metadata is unverified.'},
+  'matching.modern-heels':{vi:'Giày cao gót là phụ kiện phối hiện đại; không coi là thành phần phục dựng nguyên bản.',en:'High heels are a modern styling accessory, not evidence of an original historical reconstruction.'},
+  'matching.approved-recolor':{vi:'Ảnh chỉnh màu bằng mask đã duyệt; giới hạn sự kiện là phạm vi demo hiện đại.',en:'Approved masked recolor; its occasion limits describe the contemporary demo scope.'}
+ });
+ scope.VietPhucMessages=Object.freeze({...scope.VietPhucMessages,
+  'matching.outside-event-demo':{vi:'Bộ này chưa nằm trong danh sách demo cho sự kiện đang chọn.',en:'This outfit is outside the demo selection for this occasion.'},
+  'eventScope.about':{vi:'Bối cảnh phối đồ',en:'Styling context'},
+  'eventScope.note':{vi:'Danh sách giới hạn cho demo phối hiện đại, không phải quy tắc cấm văn hóa. Với nghi lễ thực tế, cần đối chiếu quy định riêng của nơi tổ chức.',en:'A limited contemporary demo selection, not a cultural prohibition. For an actual ceremony, check the organiser’s specific requirements.'},
+  'eventScope.changedCostume':{vi:'Đã chuyển sang {name} để phù hợp danh sách sự kiện.',en:'Switched to {name} to fit the occasion selection.'},
+  'color.confirmAccessories':{vi:'Chọn phụ kiện hoặc “Không phụ kiện” để mở bảng màu.',en:'Choose accessories or “No accessories” to open the palette.'},
+  'color.outsideDemo':{vi:'Màu này chưa có ảnh được duyệt cho sự kiện đang chọn.',en:'This colour has no approved photo for the selected occasion.'},
+  'color.unreviewed':{vi:'Màu của ảnh chưa được kiểm tra.',en:'The photo’s colour has not been reviewed.'},
+  'color.limit':{vi:'Tổ hợp này đã đạt giới hạn 3 màu.',en:'This combination has reached its three-colour limit.'},
+  'color.imageUnavailable':{vi:'Ảnh màu này hiện không tải được.',en:'This colour photo is currently unavailable.'},
+  'harmony.suggest':{vi:'Gợi ý màu',en:'Suggest a colour'},
+  'harmony.score':{vi:'Hài hòa màu ước tính: {score}/100',en:'Estimated colour harmony: {score}/100'},
+  'harmony.insufficient':{vi:'Chưa đủ màu được ghi nhận để tính điểm.',en:'Not enough recorded colours to score.'},
+  'harmony.details':{vi:'Cách đánh giá màu',en:'How colours are assessed'},
+  'harmony.scope':{vi:'Ước tính từ nhóm màu đã kiểm tra, không phải màu đo trực tiếp từng pixel. Chưa biết diện tích và phân bố màu; các cặp được tính cùng trọng số. Điểm này không chứng nhận lịch sử và không khóa màu.',en:'Estimated from reviewed colour families, not per-pixel measurements. Colour areas and placement are unknown; pairs have equal weight. This score neither certifies history nor disables colours.'},
+  'harmony.relation.neutral':{vi:'Phối với màu trung tính',en:'Neutral pairing'},
+  'harmony.relation.monochromatic':{vi:'Đồng sắc',en:'Monochromatic'},
+  'harmony.relation.analogous':{vi:'Màu tương đồng',en:'Analogous hues'},
+  'harmony.relation.complementary':{vi:'Màu bổ túc',en:'Complementary hues'},
+  'harmony.relation.mixed':{vi:'Tương quan màu hỗn hợp',en:'Mixed hue relationship'},
+  'harmony.proposed':{vi:'Gợi ý: {name}',en:'Suggestion: {name}'},
+  'harmony.apply':{vi:'Áp dụng màu',en:'Apply colour'},
+  'harmony.current':{vi:'Đang dùng màu này',en:'Already using this colour'},
+  'harmony.noSuggestion':{vi:'Chưa có màu thay thế với ảnh đúng tổ hợp này.',en:'No alternative colour has a photo for this exact combination.'},
+  'harmony.stale':{vi:'Lựa chọn đã thay đổi. Hãy lấy gợi ý màu mới.',en:'The selection has changed. Request a new colour suggestion.'},
+  'harmony.reason.event-preference':{vi:'Ưu tiên theo bảng màu demo của sự kiện.',en:'Preferred by the occasion’s editorial palette.'},
+  'harmony.reason.style-preference':{vi:'Phù hợp định hướng phong cách đang chọn.',en:'Fits the selected styling direction.'},
+  'harmony.reason.recorded-harmony':{vi:'Đánh giá cùng các màu đã ghi nhận trên ảnh.',en:'Assessed alongside recorded colours in the photo.'},
+  'harmony.reason.insufficient-colours':{vi:'Chỉ đủ dữ liệu màu chính; chưa tính điểm hài hòa.',en:'Only the main colour is known; no harmony score is assigned.'}
+ });
+ const cultureMessages={
+  'culture.intro':{vi:'Lịch sử, cấu tạo và cách sử dụng của 7 loại trang phục, kèm nguồn tham khảo và các điểm chưa thống nhất.',en:'History, construction and uses of seven garment types, with references and unresolved points.'},
+  'culture.reviewNote':{vi:'Nội dung tham khảo có dẫn nguồn; không xác nhận độ chính xác phục dựng của ảnh.',en:'Source-linked reference notes; the photos are not certified historical reconstructions.'},
+  'culture.compared':{vi:'Đã đối chiếu nguồn',en:'Sources compared'},
+  'culture.reference':{vi:'Tư liệu tổng hợp · cần đối chiếu thêm',en:'Secondary reference · further review needed'},
+  'culture.photoNote':{vi:'Kiến thức về loại trang phục; chất liệu, niên đại và độ chính xác phục dựng của ảnh mẫu vẫn chưa xác minh.',en:'General garment knowledge; the sample photo’s fabric, period and reconstruction accuracy remain unverified.'},
+  'culture.history':{vi:'Lịch sử và bối cảnh',en:'History and context'},
+  'culture.construction':{vi:'Cấu tạo và đặc trưng',en:'Construction and features'},
+  'culture.materials':{vi:'Chất liệu trong tư liệu',en:'Fabrics in the references'},
+  'culture.usage':{vi:'Cách sử dụng và cách tân',en:'Uses and adaptations'},
+  'culture.uncertainty':{vi:'Điểm cần lưu ý hoặc chưa xác minh',en:'Cautions and unresolved points'},
+  'culture.sources':{vi:'Nguồn tham khảo',en:'References'},
+  'culture.sourceLabel':{vi:'Đọc nguồn từ {publisher}',en:'Read the reference from {publisher}'},
+  'culture.readMore':{vi:'Xem lịch sử, chi tiết và nguồn',en:'Read history, details and references'},
+  'culture.accessories':{vi:'Phụ kiện · ghi chú tham khảo',en:'Accessories · reference notes'},
+  'culture.editorial':{vi:'Hướng dẫn biên tập để đọc và sử dụng tư liệu. Đây không phải bộ quy tắc cấm tự động cho ảnh hoặc màu trong demo.',en:'Editorial guidance for reading and using the references. These are not automatic prohibitions on demo photos or colours.'},
+  'culture.regionNote':{vi:'Các liên hệ tiêu biểu trong tư liệu, không phải ranh giới sử dụng độc quyền. Một loại trang phục có thể được mặc ở nhiều vùng.',en:'Representative associations in the sources, not exclusive geographical boundaries. A garment may be worn across regions.'},
+  'culture.modernNote':{vi:'Các bối cảnh sử dụng hiện nay cần phân biệt với quy chế lịch sử. Matching vẫn chỉ chọn tổ hợp có ảnh thật.',en:'Contemporary uses must be distinguished from historical conventions. Matching still selects photographed combinations.'}
+ };
+ for(const [kind,rows] of Object.entries({profile:scope.VietPhucCultureData?.profiles||[],accessory:scope.VietPhucCultureData?.accessories||[],guidance:scope.VietPhucCultureData?.guidance||[]})){
+  for(const row of rows)for(const [field,value] of Object.entries(row)){
+   if(value&&typeof value.vi==='string'&&typeof value.en==='string')cultureMessages['culture.'+kind+'.'+row.id+'.'+field]={vi:value.vi,en:value.en};
+  }
+ }
+ scope.VietPhucMessages=Object.freeze({...scope.VietPhucMessages,...cultureMessages});
+ // Image labels follow the reviewed manifest rather than a fixed ten-photo list.
+ const photoMessages = {};
+ for (const item of [...(scope.VietPhucPhotoMappingData || []), ...(scope.VietPhucColorVariantData || [])]) {
+   if (typeof item.key !== 'string') continue;
+   const labels = ['vi', 'en'].map(language => {
+     const display = item.displayName?.[language];
+     const costume = scope.VietPhucMessages['costume.' + item.costumeId]?.[language];
+     const names = (Array.isArray(item.accessories) ? item.accessories : []).map(id => scope.VietPhucMessages['accessory.' + id]?.[language]).filter(Boolean);
+     const label = typeof display === 'string' && display ? display : [costume || (typeof item.name === 'string' ? item.name : item.key), ...names].join(' + ');
+     const color = (scope.VietPhucOutfitCatalogData?.colors || []).find(row => row.id === item.primaryColorId)?.name?.[language];
+     return item.sourceKind === 'recolor' && color && !label.toLowerCase().includes(color.toLowerCase()) ? label + ' · ' + color : label;
+   });
+   photoMessages['photo.' + item.key] = { vi: labels[0], en: labels[1] };
+ }
+ scope.VietPhucMessages = Object.freeze({ ...scope.VietPhucMessages, ...photoMessages });
+ const colorMessages = {};
+ for (const color of scope.VietPhucOutfitCatalogData?.colors || []) {
+   const vi = color.name?.vi || color.displayName?.vi || color.id;
+   const en = color.name?.en || color.displayName?.en || color.id;
+   colorMessages['color.id.' + color.id] = { vi, en };
+   const hex = color.hex || color.swatchHex;
+   if (/^#[0-9a-f]{6}$/i.test(hex || '')) colorMessages['color.' + hex.slice(1).toUpperCase()] = { vi, en };
+ }
+ scope.VietPhucMessages = Object.freeze({ ...scope.VietPhucMessages, ...colorMessages });
 })(typeof window!=='undefined'?window:globalThis);

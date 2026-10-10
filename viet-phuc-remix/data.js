@@ -132,20 +132,13 @@ const COSTUMES = [
 
 ];
 
-const ACCESSORIES = [
-  { id: 'non-la', name: 'Nón Lá', emoji: '🎩', desc: 'Nón lá truyền thống, tượng trưng cho phụ nữ Việt.' },
-  { id: 'non-quai-thao', name: 'Nón Quai Thao', emoji: '🎀', desc: 'Nón rộng vành của miền Bắc, đặc trưng quan họ.' },
-  { id: 'khan-dong', name: 'Khăn Đóng', emoji: '🧣', desc: 'Khăn vấn truyền thống, trang trọng, lịch sự.' },
-  { id: 'vong-co', name: 'Vòng Cổ', emoji: '📿', desc: 'Trang sức cổ truyền, vàng hoặc bạc.' },
-  { id: 'bong-tai', name: 'Bông Tai', emoji: '💎', desc: 'Hoa tai đặc trưng phong cách Việt cổ.' },
-  { id: 'vong-tay', name: 'Vòng Tay', emoji: '💍', desc: 'Vòng bạc/vàng hoặc ngọc, tượng trưng may mắn.' },
-  { id: 'tui-tay', name: 'Túi Tay', emoji: '👜', desc: 'Túi cầm tay phong cách cổ điển.' },
-  { id: 'guoc-moc', name: 'Guốc Mộc', emoji: '👡', desc: 'Guốc gỗ truyền thống, vừa đẹp vừa bền.' },
-  { id: 'hai-cong', name: 'Hài Cong', emoji: '👟', desc: 'Hài mũi cong cung đình, tinh xảo.' },
-  { id: 'quat-lua', name: 'Quạt Lụa', emoji: '🪭', desc: 'Quạt lụa thêu hoa, nét duyên dáng phụ nữ Việt.' },
-  { id: 'tram-cai', name: 'Trâm Cài', emoji: '🪷', desc: 'Trâm cài tóc bạc/vàng, cổ điển thanh lịch.' },
-  { id: 'day-lung', name: 'Dây Lưng', emoji: '🎗️', desc: 'Thắt lưng bao/thắt lưng bạc, điểm nhấn trang phục.' },
-];
+// Selectable accessories come only from reviewed outfit combinations.
+// Reference images and legacy editorial presets cannot create availability.
+const ACCESSORY_IDS = new Set(['non-la', 'non-quai-thao', 'khan-dong', 'khan-vanh', 'tram-cai', 'guoc-moc', 'hai-theu', 'giay-cao-got']);
+const ACCESSORY_CATALOG = Array.isArray(window.VietPhucOutfitCatalogData?.accessories) ? window.VietPhucOutfitCatalogData.accessories : [];
+const ACCESSORIES = ACCESSORY_CATALOG
+  .filter(item => ACCESSORY_IDS.has(item.id) && item.selectable !== false && Array.isArray(item.supportedCombinationIds) && item.supportedCombinationIds.length > 0)
+  .map(item => ({ ...item, name: item.name.vi, nameEn: item.name.en, desc: '', sources: [], needsVerification: true }));
 
 const COLORS = [
   { hex: '#C0392B', name: 'Đỏ son', meaning: 'Hỷ sự, may mắn, cát tường', good: ['wedding', 'festival', 'tet'] },
@@ -222,12 +215,12 @@ const MODERN_TRENDS = [
 ];
 
 const EVENT_SUGGESTIONS = {
-  festival: { colors: ['#C0392B', '#F5D26E', '#1A7A4C'], costumes: ['ao-dai', 'ao-tu-than', 'ao-ba-ba'], accessories: ['non-la', 'quat-lua', 'vong-co'] },
-  tet: { colors: ['#C0392B', '#F5D26E', '#E8956D'], costumes: ['ao-dai', 'ao-ngu-than', 'ao-tu-than'], accessories: ['non-la', 'vong-co', 'bong-tai'] },
-  wedding: { colors: ['#C0392B', '#F5D26E', '#FFB6C1'], costumes: ['ao-dai', 'ao-nhat-binh'], accessories: ['vong-co', 'bong-tai', 'vong-tay', 'tram-cai'] },
-  school: { colors: ['#FFFFFF', '#F5D26E', '#87CEEB'], costumes: ['ao-dai'], accessories: ['non-la', 'tui-tay'] },
-  street: { colors: ['#2C2C2C', '#9B59B6', '#87CEEB'], costumes: ['ao-dai', 'ao-ba-ba', 'ao-yem'], accessories: ['quat-lua', 'tui-tay', 'vong-tay'] },
-  ceremony: { colors: ['#1A7A4C', '#2C2C2C', '#8B6914'], costumes: ['ao-ngu-than', 'ao-nhat-binh', 'ao-giao-linh'], accessories: ['khan-dong', 'vong-co', 'hai-cong'] },
+  festival: { colors: ['#C0392B', '#F5D26E', '#1A7A4C'], costumes: ['ao-dai', 'ao-tu-than', 'ao-ba-ba'], accessories: [] },
+  tet: { colors: ['#C0392B', '#F5D26E', '#E8956D'], costumes: ['ao-dai', 'ao-ngu-than', 'ao-tu-than'], accessories: [] },
+  wedding: { colors: ['#C0392B', '#F5D26E', '#FFB6C1'], costumes: ['ao-dai', 'ao-nhat-binh'], accessories: [] },
+  school: { colors: ['#FFFFFF', '#F5D26E', '#87CEEB'], costumes: ['ao-dai'], accessories: [] },
+  street: { colors: ['#2C2C2C', '#9B59B6', '#87CEEB'], costumes: ['ao-dai', 'ao-ba-ba', 'ao-yem'], accessories: [] },
+  ceremony: { colors: ['#1A7A4C', '#2C2C2C', '#8B6914'], costumes: ['ao-ngu-than', 'ao-nhat-binh', 'ao-giao-linh'], accessories: [] },
 };
 
 // Editorial content remains unverified; empty sources are an explicit placeholder.

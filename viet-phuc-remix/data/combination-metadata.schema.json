@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visually reviewed outfit combination metadata",
+  "description": "Appearance review is separate from cultural verification. Source hashes bind each review to immutable input bytes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "entries"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "entries": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^assets/web/[^\\\\]+\\.(webp|png|jpg|jpeg|avif|gif|bmp|tiff?)$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/review"
+      }
+    }
+  },
+  "$defs": {
+    "colorId": {
+      "enum": [
+        "ivory",
+        "pink",
+        "burgundy",
+        "gold",
+        "blue",
+        "green"
+      ]
+    },
+    "accessoryId": {
+      "enum": [
+        "non-la",
+        "non-quai-thao",
+        "khan-dong",
+        "khan-vanh",
+        "tram-cai",
+        "guoc-moc",
+        "hai-theu",
+        "giay-cao-got"
+      ]
+    },
+    "review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceSha256",
+        "costumeId",
+        "gender",
+        "accessoryIds",
+        "colors",
+        "appearanceStatus",
+        "notes",
+        "provenance",
+        "eventIds",
+        "styleIds",
+        "material",
+        "culturalSources",
+        "needsCulturalVerification"
+      ],
+      "properties": {
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "costumeId": {
+          "enum": [
+            "ao-dai",
+            "ao-tu-than",
+            "ao-ngu-than",
+            "ao-ba-ba",
+            "ao-nhat-binh",
+            "ao-yem",
+            "ao-giao-linh"
+          ]
+        },
+        "gender": {
+          "enum": [
+            "female",
+            "male"
+          ]
+        },
+        "accessoryIds": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/accessoryId"
+              }
+            }
+          ]
+        },
+        "colors": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "primaryId",
+            "secondaryIds",
+            "status"
+          ],
+          "properties": {
+            "primaryId": {
+              "anyOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/colorId"
+                }
+              ]
+            },
+            "secondaryIds": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/colorId"
+              }
+            },
+            "status": {
+              "enum": [
+                "visually-reviewed",
+                "unknown"
+              ]
+            }
+          }
+        },
+        "appearanceStatus": {
+          "enum": [
+            "visually-reviewed",
+            "needs-review"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "reviewedAt"
+          ],
+          "properties": {
+            "method": {
+              "const": "visual-review"
+            },
+            "reviewedAt": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+          }
+        },
+        "eventIds": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "styleIds": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "material": {
+          "type": [
+            "null",
+            "string"
+          ]
+        },
+        "culturalSources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "needsCulturalVerification": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
+
