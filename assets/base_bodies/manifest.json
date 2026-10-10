@@ -1,0 +1,21 @@
+{
+  "base_bodies": [
+    {
+      "file": "assets\\base_bodies\\base_body_1.png",
+      "size": [
+        118,
+        308
+      ],
+      "score": 0.8257
+    },
+    {
+      "file": "assets\\base_bodies\\base_body_2.png",
+      "size": [
+        105,
+        290
+      ],
+      "score": 0.8112
+    }
+  ],
+  "source": "male.avif"
+}
