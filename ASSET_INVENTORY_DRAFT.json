@@ -1012,5 +1012,7 @@
       }
     }
   ],
-  "duplicateFiles": []
+  "duplicateFiles": [],
+  "archiveStatus": "superseded-by-complete-photo-mapping-2026-10-10",
+  "supersededBy": "assets/web/photo-catalog.json"
 }

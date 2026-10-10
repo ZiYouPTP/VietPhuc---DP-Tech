@@ -13,7 +13,8 @@ export function drawFallback(config = {}, { back = false } = {}) {
     ? `<path d="M197 260L224 265L224 447L164 457Z"/><path d="M256 265L283 260L316 457L256 447Z"/><path d="M195 259L285 259L301 456L179 456Z" opacity=".4"/>`
     : id === 'ao-ba-ba' ? '' : `<path d="M196 268L238 270L233 481L171 472Z"/><path d="M242 270L284 268L309 472L247 481Z"/>`;
   const texture = config.pattern === 'stripes' ? '<path d="M0 0V32M12 0V32" stroke="#fff" opacity=".2"/>' : config.pattern === 'dots' ? '<circle cx="8" cy="8" r="2" fill="#f5d487"/>' : config.pattern !== 'plain' ? '<path d="M8 16Q0 8 8 2Q16 8 8 16Q0 22 8 30Q16 22 8 16" fill="none" stroke="#ebcf90" stroke-width="1"/>' : '';
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 580" role="img" aria-label="Minh họa trang phục hai chiều">
+  const description=globalThis.VietPhucLocale?.t('photo.svgAlt')||'Minh họa trang phục hai chiều';
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 580" role="img" aria-label="${description}">
     <defs><linearGradient id="fabric" x1="0" x2="1"><stop stop-color="${color}"/><stop offset=".45" stop-color="${color}"/><stop offset="1" stop-color="#171622"/></linearGradient><pattern id="motif" width="${24 * (config.patternScale || 1)}" height="${32 * (config.patternScale || 1)}" patternUnits="userSpaceOnUse">${texture}</pattern></defs>
     <ellipse data-studio-shadow="true" cx="240" cy="539" rx="100" ry="10" fill="#171522" opacity=".14"/>
     <g transform="translate(240 0) scale(${width} 1) translate(-240 0)">

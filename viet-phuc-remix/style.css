@@ -1,5 +1,4 @@
 /* ==================== ROOT & RESET ==================== */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap');
 
 :root {
   --c-red: #C0392B;
@@ -33,7 +32,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Be Vietnam Pro', sans-serif;
+  font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
   background: var(--c-dark);
   color: var(--c-text);
   overflow-x: hidden;
@@ -340,6 +339,10 @@ ul { list-style: none; }
   background: rgba(212,160,23,0.15); border-color: var(--c-gold);
   color: var(--c-gold);
 }
+.costume-pill:disabled { opacity: .38; filter: grayscale(1); cursor: not-allowed; }
+.costume-pill:disabled:hover { color: var(--c-text-muted); border-color: var(--c-border); }
+.costume-body-status { margin: 12px 0 0; color: var(--c-text-muted); font-size: 12px; line-height: 1.6; }
+.costume-card-actions button:disabled { opacity: .4; cursor: not-allowed; }
 .event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .event-btn {
   background: var(--c-surface); border: 1px solid var(--c-border);

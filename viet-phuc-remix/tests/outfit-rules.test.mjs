@@ -20,9 +20,9 @@ assert.ok(combinations.every(combination => combination.needsVerification && com
 for (const set of rules.outfitSets) {
   assert.ok(set.palette.maxDistinctColors <= 4);
   assert.deepEqual(set.palette.forbiddenAdjacentPairs, [], 'No historical color bans were supplied.');
-  assert.equal(set.genderPolicy.scope, 'body-preview-only');
+  assert.equal(set.genderPolicy.scope, 'user-body-preview-policy');
   assert.equal(set.genderPolicy.historicalUse, null);
-  for (const combination of set.combinations) for (const gender of rules.genderIds) {
+  for (const combination of set.combinations) for (const gender of set.supportedGenders) {
     const result = validateLook(rules, makeLook(set.id, combination.items, { gender }));
     assert.equal(result.valid, true, JSON.stringify(result.errors));
     assert.ok(warningCodes(result).includes('cultural-needs-verification'));
@@ -30,6 +30,9 @@ for (const set of rules.outfitSets) {
     assert.ok(result.layers.every(item => item.zIndex > 0 && set.layerOrder.includes(item.slot)));
   }
 }
+assert.deepEqual(rules.outfitSets.filter(set=>set.supportedGenders.includes('male')).map(set=>set.id).sort(),['ao-giao-linh','ao-ngu-than']);
+assert.ok(codes(validateLook(rules,{...dai,gender:'male'})).includes('unsupported-gender'));
+assert.equal(validateLook(rules,makeLook('ao-ngu-than',[{id:'ao-ngu-than'},{id:'trousers'}],{gender:'male'})).valid,true);
 
 assert.ok(codes(validateLook(rules, makeLook('ao-dai', [{ id: 'ao-dai' }]))).includes('missing-required-slot'));
 assert.ok(codes(validateLook(rules, makeLook('ao-dai', [{ id: 'ao-dai' }, { id: 'ao-dai' }, { id: 'trousers' }]))).includes('duplicate-slot'));
@@ -68,7 +71,9 @@ assert.ok(warningCodes(colorful).includes('palette-provisional'));
 // Data changes, rather than a hardcoded garment table, change checker behavior.
 const oneBody = clone();
 oneBody.itemRules.find(item => item.id === 'bong-tai').supportedGenders = ['female'];
-assert.equal(getItemAvailability(oneBody, 'bong-tai', { ...dai, gender: 'male' }).available, false);
+const maleNgu=makeLook('ao-ngu-than',[{id:'ao-ngu-than'},{id:'trousers'}],{gender:'male'});
+assert.equal(getItemAvailability(rules, 'bong-tai', maleNgu).available, true);
+assert.equal(getItemAvailability(oneBody, 'bong-tai', maleNgu).available, false);
 assert.equal(getItemAvailability(oneBody, 'bong-tai', dai).available, true);
 const permitted = clone();
 const permittedDai = permitted.outfitSets.find(set => set.id === 'ao-dai');

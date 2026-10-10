@@ -142,8 +142,9 @@ export function drawBodyLook(config = {}) {
     { zIndex: 40, svg: accessoryLayer(selected, p, color) },
     ...layers,
   ].sort((a, b) => a.zIndex - b.zIndex).map(layer => layer.svg).join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 620" role="img" aria-label="${escapeXML(`${LABELS[costumeId]} trên base body ${body.label.toLowerCase()}`)}" data-costume="${costumeId}" data-body="${gender}">
-    <title>${escapeXML(`${LABELS[costumeId]} · Base body ${body.label}`)}</title>
+  const description=globalThis.VietPhucLocale?.t('photo.bodyAlt',{name:{key:'costume.'+costumeId},gender:{key:'gender.'+gender}})||`${LABELS[costumeId]} trên base body ${body.label.toLowerCase()}`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 620" role="img" aria-label="${escapeXML(description)}" data-costume="${costumeId}" data-body="${gender}">
+    <title>${escapeXML(description)}</title>
     <defs>
       <linearGradient id="${key}-fabric" x1="0" x2="1"><stop stop-color="${color}"/><stop offset=".45" stop-color="${color}"/><stop offset="1" stop-color="${color}"/></linearGradient>
       <linearGradient id="${key}-shade" x1="0" x2="1"><stop stop-color="#221624" stop-opacity=".27"/><stop offset=".34" stop-color="#fff" stop-opacity="${sheen}"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#221624" stop-opacity=".26"/></linearGradient>

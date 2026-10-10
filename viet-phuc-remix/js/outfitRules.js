@@ -41,6 +41,12 @@ export function validateRulesDocument(document) {
     checkEntry(item?.culturalInfo, `${path}.culturalInfo`);
     if (!slots.has(item?.slot)) add('unknown-slot', `${path}.slot`);
   });
+  records(document.assetGenderPolicy).forEach((entry,index)=>{
+    const path=`$.assetGenderPolicy[${index}]`;
+    checkEntry(entry,path);
+    if(typeof entry?.sourceFile!=='string'||!entry.sourceFile.startsWith('assets/'))add('invalid-asset-source',path);
+    if(!records(entry?.supportedGenders).length||records(entry?.supportedGenders).some(id=>!genders.has(id)))add('invalid-supported-genders',path);
+  });
   records(document.occasions).forEach((occasion, index) => checkEntry(occasion, `$.occasions[${index}]`, true));
   records(document.exclusiveGroups).forEach((group, index) => {
     checkEntry(group, `$.exclusiveGroups[${index}]`);

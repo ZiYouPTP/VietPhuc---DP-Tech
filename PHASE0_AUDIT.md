@@ -1,4 +1,23 @@
-# Phase 0 — Kiểm toán Việt Phục Remix
+# Kiểm toán Việt phục Remix — trạng thái đến 10/10/2026
+
+**App mapping đã chạy; chưa hoàn tất toàn bộ Mục 1–8.** Lượt hiện tại hoàn tất Mục 4 — VI/EN và dừng để người dùng duyệt. Bảng trạng thái chi tiết ở [PHASE_STATUS.md](PHASE_STATUS.md); báo cáo thay đổi/kiểm thử mới ở [PHASE4_I18N_REPORT.md](PHASE4_I18N_REPORT.md).
+
+## Hiện trạng đang dùng
+
+- Entry chính: `viet-phuc-remix/index.html`, HTML/CSS/JavaScript thuần và ES modules. Giữ thư mục/stack, không cần npm build. Root React cũ giữ nguyên, không phải entry của luồng demo hiện tại.
+- Màn hình: hero có ảnh, khám phá 7 nhóm, phối theo bối cảnh/body, kết quả, so sánh ảnh, Lookbook ảnh, bốn tab văn hóa dùng placeholder nguồn, modal chi tiết. VI/EN dùng catalog khóa chung; không đổi cấu hình look khi chuyển.
+- Theo yêu cầu mới: ảnh **2D hoàn chỉnh mapping theo bộ/body/phụ kiện**, không sinh thêm ảnh. 21 ảnh nguồn trong `assets/`; 10 WebP tối ưu trong `assets/web/`, tổng 401.838 byte. Tổ hợp thiếu ảnh dùng ảnh hoàn chỉnh gần nhất và báo rõ.
+- Body PNG gốc: `assets/base_bodies/base_body_1.png` (nam), `base_body_2.png` (nữ), giữ nguyên. Renderer hiện ưu tiên ảnh mặc hoàn chỉnh; `js/bodyCompositor.js` và `js/fallback2d.js` dùng SVG 2D dự phòng. Không tải model/viewer 3D trong app mapping.
+- Nam chỉ ngũ thân nam/giao lĩnh nam; nữ 7 nhóm và bản ngũ thân nữ. JSON `data/outfit-rules.json` cùng bundle sinh sẵn quản lý giới/phụ kiện; UI có nút tối màu và lý do.
+- Lưu PNG+cấu hình, mở lại/reload, xuất PNG/HTML Lookbook và link cấu hình đang chạy. So sánh và chia sẻ còn thiếu chi tiết theo Mục 5–6. Màu/phong cách là ghi chú; tách mảnh/recolor hoãn để nâng cấp sau.
+- Nhận định văn hóa chưa kiểm chứng không được công bố như kết luận. Dữ liệu có `sources`, `needsVerification` và TODO; điểm văn hóa là “Chưa kiểm chứng”. Điểm palette 90/70 chỉ là demo theo màu ghi chú.
+- Kiểm thử cuối Mục 4: 8/8 file Node, 17/17 case Python, 12 nhóm regression Chrome và 6 nhóm locale. Không console/page error trong lượt cuối bình thường. Desktop và viewport mobile 390×844; tải local 321 ms. Chưa đo Lighthouse/hosting/điện thoại vật lý.
+
+Các quyết định và phát hiện dưới đây là **lưu trữ kiểm toán ngày 08/10**, không phải mô tả hiện trạng cuối. Quyết định dùng body/ảnh đã được thay bằng chỉ dẫn mapping mới của người dùng.
+
+---
+
+# Phase 0 — Kiểm toán gốc, 08/10/2026
 
 Ngày: 08/10/2026. Phạm vi: kiểm toán hiện trạng; chưa triển khai hoặc sửa tính năng.
 

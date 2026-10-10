@@ -2,23 +2,21 @@
 // Review and cite the presets before treating them as cultural guidance.
 (function (scope) {
   'use strict';
-  const costumeNames = Object.freeze({
-    'ao-dai': 'Áo dài', 'ao-tu-than': 'Áo tứ thân', 'ao-ngu-than': 'Áo ngũ thân',
-    'ao-ba-ba': 'Áo bà ba', 'ao-nhat-binh': 'Áo Nhật Bình', 'ao-yem': 'Áo yếm', 'ao-giao-linh': 'Áo giao lĩnh',
-  });
+  const t=(key,params)=>scope.VietPhucLocale.t(key,params);
+  const costumeNames = Object.freeze(Object.fromEntries(['ao-dai','ao-tu-than','ao-ngu-than','ao-ba-ba','ao-nhat-binh','ao-yem','ao-giao-linh'].map(id=>[id,id])));
   const accessories = Object.freeze({
-    'non-la': { name: 'Nón lá', group: 'headwear', type: 'Đội đầu' },
-    'non-quai-thao': { name: 'Nón quai thao', group: 'headwear', type: 'Đội đầu' },
-    'khan-dong': { name: 'Khăn đóng', group: 'headwear', type: 'Đội đầu' },
-    'tram-cai': { name: 'Trâm cài', group: 'headwear', type: 'Cài tóc' },
-    'vong-co': { name: 'Vòng cổ', type: 'Trang sức' },
-    'bong-tai': { name: 'Bông tai', type: 'Trang sức' },
-    'vong-tay': { name: 'Vòng tay', type: 'Trang sức' },
-    'tui-tay': { name: 'Túi tay', type: 'Cầm tay' },
-    'quat-lua': { name: 'Quạt lụa', type: 'Cầm tay' },
-    'guoc-moc': { name: 'Guốc mộc', group: 'footwear', type: 'Giày dép' },
-    'hai-cong': { name: 'Hài cong', group: 'footwear', type: 'Giày dép' },
-    'day-lung': { name: 'Dây lưng', type: 'Thắt lưng' },
+    'non-la': { group: 'headwear', type: 'headwear' },
+    'non-quai-thao': { group: 'headwear', type: 'headwear' },
+    'khan-dong': { group: 'headwear', type: 'headwear' },
+    'tram-cai': { group: 'headwear', type: 'hair' },
+    'vong-co': { type: 'jewellery' },
+    'bong-tai': { type: 'jewellery' },
+    'vong-tay': { type: 'jewellery' },
+    'tui-tay': { type: 'handheld' },
+    'quat-lua': { type: 'handheld' },
+    'guoc-moc': { group: 'footwear', type: 'footwear' },
+    'hai-cong': { group: 'footwear', type: 'footwear' },
+    'day-lung': { type: 'belt' },
   });
   const excludedByCostume = Object.freeze({
     'ao-dai': ['non-quai-thao', 'day-lung'],
@@ -31,15 +29,31 @@
   });
   const idsFrom = values => Array.isArray(values) ? values : values instanceof Set ? [...values] : [];
 
+  function getCostumeAvailability(costumeId, gender = 'female') {
+    if (!Object.hasOwn(costumeNames, costumeId)) return { available: false, reason: t('availability.costumeUnknown') };
+    const supported = scope.VietPhucBodyAvailabilityData?.[costumeId]?.supportedGenders;
+    // If the local policy bundle fails to load, keep the female preview usable
+    // and refuse male choices until its restrictive policy is available.
+    if (!supported) return { available: gender === 'female', reason: gender === 'female' ? '' : t('availability.malePolicyMissing') };
+    const available = supported.includes(gender);
+    return { available, reason: available ? '' : t('availability.maleOnly') };
+  }
+
+  function sanitizeCostume(costumeId, gender = 'female') {
+    if (getCostumeAvailability(costumeId, gender).available) return costumeId;
+    return Object.keys(costumeNames).find(id => getCostumeAvailability(id, gender).available) || null;
+  }
+
   function getAvailability(accessoryId, context = {}) {
-    if (typeof accessoryId !== 'string' || !Object.hasOwn(accessories, accessoryId)) return { available: false, reason: 'Phụ kiện không có trong thư viện.' };
+    if (typeof accessoryId !== 'string' || !Object.hasOwn(accessories, accessoryId)) return { available: false, reason: t('availability.accessoryUnknown') };
     const item = accessories[accessoryId];
-    if (!Object.hasOwn(costumeNames, context.costumeId)) return { available: false, reason: 'Chọn trang phục trước khi thêm phụ kiện.' };
-    if (excludedByCostume[context.costumeId].includes(accessoryId)) {
-      return { available: false, reason: `Chưa dùng trong bộ phối mẫu ${costumeNames[context.costumeId]} của ứng dụng.` };
+    if (!Object.hasOwn(costumeNames, context.costumeId)) return { available: false, reason: t('availability.chooseCostume') };
+    const declared = scope.VietPhucBodyAvailabilityData?.[context.costumeId];
+    if ((declared?.forbiddenItemIds || excludedByCostume[context.costumeId]).includes(accessoryId) || (declared?.allowedAccessoryIds && !declared.allowedAccessoryIds.includes(accessoryId))) {
+      return { available: false, reason: t('availability.notInPreset',{name:{key:'costume.'+context.costumeId}}) };
     }
     const conflict = idsFrom(context.accessories).find(id => id !== accessoryId && item.group && Object.hasOwn(accessories, id) && accessories[id].group === item.group);
-    if (conflict) return { available: false, reason: `Bỏ ${accessories[conflict].name} trước khi chọn phụ kiện này.` };
+    if (conflict) return { available: false, reason: t('availability.conflict',{name:{key:'accessory.'+conflict}}) };
     return { available: true, reason: '' };
   }
 
@@ -64,8 +78,8 @@
   }
 
   scope.VietPhucCompatibility = Object.freeze({
-    getAvailability, sanitizeAccessories, toStudioSlots,
-    getAccessoryType: id => accessories[id]?.type || 'Phụ kiện',
-    presets: Object.freeze({ excludedByCostume, label:'Quy tắc phối mẫu của ứng dụng', ruleType:'styling-preset', needsVerification: true, sources: [] }),
+    getAvailability, sanitizeAccessories, toStudioSlots, getCostumeAvailability, sanitizeCostume,
+    getAccessoryType: id => t('type.'+(accessories[id]?.type||'other')),
+    presets: Object.freeze({ excludedByCostume, get label(){return t('availability.presetLabel');}, ruleType:'styling-preset', needsVerification: true, sources: [] }),
   });
 })(typeof window !== 'undefined' ? window : globalThis);

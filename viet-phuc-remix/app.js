@@ -1,5 +1,5 @@
 // ============================================================
-// APP.JS – Việt phục Remix (full rewrite with AI mockup)
+// APP.JS – complete-photo mapping and local lookbook
 // ============================================================
 
 let storageIssue = '';
@@ -9,24 +9,26 @@ const LOOKBOOK_STUDIO_IDS = {
   headwear: ['non-la', 'non-quai-thao', 'khan-van', 'tram-cai'],
   accessory: ['earrings', 'woven-bag', 'vong-co', 'vong-tay', 'quat-lua'], footwear: ['wooden-clogs', 'hai-cong'],
 };
+const uiT = (key, params) => window.VietPhucLocale.t(key, params);
+const uiLabel = (kind, id) => window.VietPhucLocale.label(kind, id);
 const compatibility = window.VietPhucCompatibility;
-const currentContext = () => ({ costumeId: state.selectedCostume, accessories: [...state.selectedAccessories], style: state.selectedStyle, event: state.selectedEvent });
+const currentContext = () => ({ costumeId: state.selectedCostume, gender: state.selectedGender, accessories: [...state.selectedAccessories], style: state.selectedStyle, event: state.selectedEvent });
 const costumeIllustration = (id, color, gender) => window.VietPhucIllustration?.(id, color, gender) || '<div class="illustration-placeholder" aria-hidden="true"></div>';
 const LOOKBOOK_HAIR_IDS = ['bun', 'bob', 'long', 'braid', 'short', 'ponytail', 'wavy', 'buzz'];
-const LOOKBOOK_STYLE_NAMES = { traditional: 'Truyền thống', fusion: 'Fusion', genz: 'Gen Z Bold' };
+const LOOKBOOK_STYLE_NAMES = { traditional: uiT('style.traditional'), fusion: uiT('style.fusion'), genz: uiT('style.genz') };
 const LOOKBOOK_EVENT_IDS = ['festival', 'tet', 'wedding', 'school', 'street', 'ceremony'];
 const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const safeLookColor = (value, fallback) => typeof value === 'string' && /^#[0-9a-f]{6}$/i.test(value) ? value.toUpperCase() : fallback;
 const safeLookNumber = (value, fallback, min, max) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max, Math.max(min, value)) : fallback;
 
 function safeLookDate(value) {
-  if (typeof value !== 'string') return 'Chưa ghi ngày';
+  if (typeof value !== 'string') return uiT('look.dateMissing');
   const parts = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(value);
-  if (!parts) return 'Chưa ghi ngày';
+  if (!parts) return uiT('look.dateMissing');
   const [, day, month, year] = parts.map(Number);
   const date = new Date(Date.UTC(year, month - 1, day));
   return year >= 1900 && year <= 2200 && date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
-    ? `${day}/${month}/${year}` : 'Chưa ghi ngày';
+    ? `${day}/${month}/${year}` : uiT('look.dateMissing');
 }
 
 function safeLookImage(value) {
@@ -40,6 +42,7 @@ function safeLookImage(value) {
 function normaliseStudioLook(value, costumeId, color, accessories = []) {
   if (!isRecord(value) || !LOOKBOOK_STUDIO_IDS.outer.includes(costumeId)) return null;
   const sourceBody = isRecord(value.body) ? value.body : {};
+  if (!compatibility.getCostumeAvailability(costumeId, sourceBody.gender === 'male' ? 'male' : 'female').available) return null;
   const sourceSlots = isRecord(value.slots) ? value.slots : {};
   const defaultMaterial = { 'ao-dai': 'silk', 'ao-tu-than': 'linen', 'ao-ngu-than': 'brocade', 'ao-ba-ba': 'linen', 'ao-nhat-binh': 'brocade', 'ao-yem': 'silk', 'ao-giao-linh': 'linen' }[costumeId];
   const body = {
@@ -95,7 +98,7 @@ function normaliseStoredLook(value) {
   // Reconstruct display text from trusted catalogs; persisted labels are ignored.
   return {
     id: value.id, costumeId: costume.id, costumeName: costume.name, costumeEmoji: costume.emoji,
-    color, colorName: colorData?.name || 'Màu tùy chọn',
+    color, colorName: colorData?.name || uiT('color.custom'),
     image: safeLookImage(value.image), studioConfig: normaliseStudioLook(value.studioConfig, costume.id, color, accessories),
     accessories, style, styleName: LOOKBOOK_STYLE_NAMES[style], event, eventName: getEventLabel(event), savedAt: safeLookDate(value.savedAt),
   };
@@ -104,20 +107,21 @@ function normaliseStoredLook(value) {
 function readLookbook() {
   try {
     const value = JSON.parse(localStorage.getItem('vietPhucLookbook') || '[]');
-    if (!Array.isArray(value)) { storageIssue = 'Lookbook cũ không đọc được. Bạn vẫn có thể phối và xuất ảnh.'; return []; }
+    if (!Array.isArray(value)) { storageIssue = uiT('storage.readError'); return []; }
     const ids = new Set();
     return value.map(normaliseStoredLook).filter(look => {
       if (!look || ids.has(look.id)) return false;
       ids.add(look.id); return true;
     });
-  } catch { storageIssue = 'Lookbook cũ không đọc được. Bạn vẫn có thể phối và xuất ảnh.'; return []; }
+  } catch { storageIssue = uiT('storage.readError'); return []; }
 }
 function persistLookbook() {
   try { localStorage.setItem('vietPhucLookbook', JSON.stringify(state.lookbook)); return true; }
-  catch { storageIssue = 'Bộ nhớ không lưu được. Lookbook đang giữ trong phiên này; hãy xuất ảnh.'; return false; }
+  catch { storageIssue = uiT('storage.writeError'); return false; }
 }
 let state = {
   selectedCostume: 'ao-dai',
+  selectedGender: 'female',
   selectedEvent: 'festival',
   selectedColor: '#C0392B',
   selectedAccessories: new Set(),
@@ -202,14 +206,14 @@ function renderCostumeGrid(filter = 'all') {
       </div>
       <div class="costume-card-body">
         <div class="costume-card-tags">
-          <span class="costume-card-tag region">${c.regionLabel}</span>
-          ${c.tags.slice(0,2).map(t => `<span class="costume-card-tag">${t}</span>`).join('')}
+          <span class="costume-card-tag region">${c.needsVerification ? uiT('ui.region_verification_pending') : c.regionLabel}</span>
+          ${(c.needsVerification ? [uiT('ui.existing_photo_sample')] : c.tags.slice(0,2)).map(t => `<span class="costume-card-tag">${t}</span>`).join('')}
         </div>
-        <h3>${c.name}</h3>
-        <p>${c.shortDesc}</p>
+        <h3>${uiLabel('costume',c.id)}</h3>
+        <p>${c.needsVerification ? uiT('ui.supplied_outfit_photo_cultural_information_awaits_verification') : c.shortDesc}</p>
         <div class="costume-card-actions">
-          <button class="btn-sm btn-sm-primary" onclick="event.stopPropagation();selectAndMix('${c.id}')">Phối đồ</button>
-          <button class="btn-sm btn-sm-ghost" onclick="event.stopPropagation();openCostumeModal('${c.id}')">Chi tiết</button>
+          <button class="btn-sm btn-sm-primary" ${compatibility.getCostumeAvailability(c.id,state.selectedGender).available ? '' : 'disabled'} onclick="event.stopPropagation();selectAndMix('${c.id}')">${uiT('ui.style')}</button>
+          <button class="btn-sm btn-sm-ghost" onclick="event.stopPropagation();openCostumeModal('${c.id}')">${uiT('ui.details')}</button>
         </div>
       </div>
     </div>
@@ -223,35 +227,32 @@ function filterCostumes(region) {
   renderCostumeGrid(region);
 }
 
+let openedCostumeId=null;
 function openCostumeModal(id) {
+  openedCostumeId=id;
   const c = COSTUMES.find(x => x.id === id);
   if (!c) return;
   document.getElementById('modal-content').innerHTML = `
-    <div class="modal-tag">${c.regionLabel}</div>
-    <h2>${c.name}</h2>
+    <div class="modal-tag">${c.needsVerification ? uiT('ui.region_verification_pending') : c.regionLabel}</div>
+    <h2>${uiLabel('costume',c.id)}</h2>
     <div class="modal-costume-preview costume-illustration">${costumeIllustration(c.id, c.color)}</div>
-    <div class="culture-verification">Cần xác minh · Nguồn: chưa có nguồn đối chiếu cho các nhận định dưới đây.</div>
-    <p>${c.desc}</p>
-    <div class="modal-section"><h3>Nguồn gốc & lịch sử</h3><p>${c.origin}</p></div>
-    <div class="modal-section"><h3>Dịp mặc phù hợp</h3><ul>${c.occasions.map(o=>`<li>${o}</li>`).join('')}</ul></div>
-    <div class="modal-section"><h3>Mẹo văn hóa</h3><ul>${c.culturalTips.map(t=>`<li>${t}</li>`).join('')}</ul></div>
-    ${c.warnings.length ? `<div class="modal-section"><h3 style="color:#FF9800">Lưu ý</h3><ul>${c.warnings.map(w=>`<li style="color:#FF9800">${w}</li>`).join('')}</ul></div>` : ''}
-    <div class="modal-section"><h3>Gợi ý phối theo phong cách</h3><ul>
-      <li>Truyền thống: ${c.styleSuggestions.traditional}</li>
-      <li>Fusion: ${c.styleSuggestions.fusion}</li>
-      <li>Gen Z Bold: ${c.styleSuggestions.genz}</li>
-    </ul></div>
+    <div class="culture-verification">${uiT('ui.verification_needed_sources_pending')}</div>
+    <p>${c.needsVerification ? uiT('ui.a_photo_sample_for_browsing_and_selecting_outfits_historical_reconstruction_is_not_verifie') : c.desc}</p>
+    <div class="modal-section"><h3>${uiT('ui.origins_and_history')}</h3><p>${c.needsVerification ? uiT('ui.todo_add_sources_for_structure_period_and_regional_use_before_publication') : c.origin}</p></div>
+    <div class="modal-section"><h3>${uiT('ui.using_this_look')}</h3><p>${uiT('ui.choose_an_outfit_occasion_and_accessories_existing_matching_photos_are_shown_missing_combi')}</p></div>
     <div style="margin-top:24px;display:flex;gap:12px">
-      <button class="btn-primary" onclick="selectAndMix('${c.id}');closeModal()">Phối đồ ngay</button>
-      <button class="btn-ghost" onclick="closeModal()">Đóng</button>
+      <button class="btn-primary" ${compatibility.getCostumeAvailability(c.id,state.selectedGender).available ? '' : 'disabled'} onclick="selectAndMix('${c.id}');closeModal()">${uiT('ui.start_styling')}</button>
+      <button class="btn-ghost" onclick="closeModal()">${uiT('ui.close')}</button>
     </div>
   `;
   document.getElementById('modal-overlay').classList.remove('hidden');
 }
-function closeModal() { document.getElementById('modal-overlay').classList.add('hidden'); }
+function closeModal() { openedCostumeId=null; document.getElementById('modal-overlay').classList.add('hidden'); }
 
 function selectAndMix(id) {
   if (!COSTUMES.some(costume => costume.id === id)) return;
+  const availability = compatibility.getCostumeAvailability(id,state.selectedGender);
+  if (!availability.available) { showToast(availability.reason); return; }
   state.selectedCostume = id;
   sanitizeSelectedAccessories(true);
   renderCostumePills();
@@ -266,21 +267,41 @@ function selectCostumeById(id) { selectAndMix(id); }
 function renderCostumePills() {
   document.getElementById('costume-pills').innerHTML = COSTUMES.map(c => `
     <button type="button" class="costume-pill ${state.selectedCostume === c.id ? 'selected' : ''}" aria-pressed="${state.selectedCostume === c.id}"
+      ${compatibility.getCostumeAvailability(c.id,state.selectedGender).available ? '' : 'disabled aria-describedby="costume-body-status"'}
       onclick="selectCostumePill('${c.id}')" id="pill-${c.id}">
       <span class="costume-pill-preview costume-illustration">${costumeIllustration(c.id, c.color)}</span>
-      <span class="costume-pill-name">${c.name}</span>
+      <span class="costume-pill-name">${uiLabel('costume',c.id)}</span>
     </button>
   `).join('');
+  const status = document.getElementById('costume-body-status');
+  if (status) status.textContent = state.selectedGender === 'male' ? uiT('ui.male_body_only_male_ngu_than_and_giao_linh_are_available_other_outfits_are_locked') : uiT('ui.female_body_uses_the_female_ngu_than_and_all_seven_supplied_outfit_types');
 }
 
 function selectCostumePill(id) {
   if (!COSTUMES.some(costume => costume.id === id)) return;
+  const availability = compatibility.getCostumeAvailability(id,state.selectedGender);
+  if (!availability.available) { showToast(availability.reason); return; }
   state.selectedCostume = id;
   sanitizeSelectedAccessories(true);
   renderCostumePills();
   const evSugg = EVENT_SUGGESTIONS[state.selectedEvent];
   if (evSugg?.colors?.[0] && !state.selectedColor) selectColorByHex(evSugg.colors[0]);
   generateOutfit();
+}
+
+function setGender(gender, costumeId = state.selectedCostume) {
+  let selectedGender = gender === 'male' ? 'male' : 'female';
+  let selectedCostume = compatibility.sanitizeCostume(costumeId, selectedGender);
+  if (!selectedCostume) {
+    selectedGender = 'female';
+    selectedCostume = compatibility.sanitizeCostume(costumeId, selectedGender);
+    showToast(uiT('availability.maleFallback'));
+  } else if (selectedCostume !== costumeId) showToast(uiT('availability.maleSelected'));
+  state.selectedGender = selectedGender;
+  state.selectedCostume = selectedCostume;
+  sanitizeSelectedAccessories(true);
+  renderCostumePills(); renderCostumeGrid(state.filterRegion); generateOutfit();
+  return selectedGender;
 }
 
 // ============================================================
@@ -303,7 +324,7 @@ function renderColorSwatches() {
   document.getElementById('color-swatches').innerHTML = COLORS.map(c => `
     <button class="color-swatch ${state.selectedColor === c.hex ? 'selected' : ''}"
       style="background:${c.hex};${c.hex==='#FFFFFF'?'border:2px solid #444':''}"
-      title="${c.name}"
+      title="${uiLabel('color',c.hex)}"
       onclick="selectColor('${c.hex}')" id="swatch-${c.hex.replace('#','')}"></button>
   `).join('');
 }
@@ -323,8 +344,8 @@ function updateHarmonyCheck() {
   if (!c) return;
   const good = c.good.includes(state.selectedEvent);
   h.innerHTML = good
-    ? `<span class="harmony-good"><strong>${c.name}</strong> nằm trong bảng màu gợi ý cho dịp này.</span>`
-    : `<span class="harmony-ok"><strong>${c.name}</strong> là lựa chọn phối tự do của bạn.</span>`;
+    ? `<span class="harmony-good"><strong>${uiLabel('color',c.hex)}</strong> ${uiT('color.suggestedSuffix')}</span>`
+    : `<span class="harmony-ok"><strong>${uiLabel('color',c.hex)}</strong> ${uiT('color.freeSuffix')}</span>`;
 }
 
 // ============================================================
@@ -336,9 +357,9 @@ function renderAccessoryGrid() {
     const selected = state.selectedAccessories.has(a.id);
     const { available, reason } = compatibility.getAvailability(a.id, context);
     return `<button type="button" class="acc-btn ${selected ? 'selected' : ''}" aria-pressed="${selected}" aria-disabled="${!available}"
-      ${available ? '' : `disabled aria-describedby="acc-reason-${a.id}"`} title="${reason || a.desc}" onclick="toggleAccessory('${a.id}')" id="acc-${a.id}">
+      ${available ? '' : `disabled aria-describedby="acc-reason-${a.id}"`} title="${reason || (a.needsVerification ? uiT('ui.demo_preset_verification_pending') : a.desc)}" onclick="toggleAccessory('${a.id}')" id="acc-${a.id}">
       <span class="acc-type">${compatibility.getAccessoryType(a.id)}</span>
-      <span class="acc-name">${a.name}</span>
+      <span class="acc-name">${uiLabel('accessory',a.id)}</span>
       ${reason ? `<span class="acc-reason" id="acc-reason-${a.id}">${reason}</span>` : ''}
     </button>`;
   }).join('');
@@ -361,9 +382,9 @@ function sanitizeSelectedAccessories(announce = false) {
   state.selectedAccessories = new Set(clean);
   const removed = ACCESSORIES.filter(item => previous.includes(item.id) && !state.selectedAccessories.has(item.id));
   if (announce && removed.length) {
-    const message = `Đã bỏ ${removed.map(item => item.name).join(', ')} khỏi bộ phối mới.`;
+    const message = uiT('availability.removed',{names:{keys:removed.map(item=>'accessory.'+item.id)}});
     const status = document.getElementById('accessory-status');
-    if (status) status.textContent = message;
+    if (status) window.VietPhucLocale.trackText(status,message);
     showToast(message);
   } else if (announce) document.getElementById('accessory-status')?.replaceChildren();
   return clean;
@@ -384,15 +405,18 @@ function setWeather(weather, btn) {
   state.selectedWeather = weather;
   document.querySelectorAll('.weather-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById('weather-tip').textContent = WEATHER_TIPS[weather].tip;
+  document.getElementById('weather-tip').textContent = uiT('ui.weather_is_a_reference_note_choose_suitable_fabric_when_wearing_an_outfit_app_photos_stay_');
 }
 
 // ============================================================
 // GENERATE OUTFIT
 // ============================================================
 function generateOutfit() {
-  if (!state.selectedCostume) { showToast('Hãy chọn loại trang phục trước!'); return; }
-  if (!state.selectedColor) { showToast('Hãy chọn màu sắc chủ đạo!'); return; }
+  if (!state.selectedCostume) { showToast(uiT('selection.chooseCostume')); return; }
+  if (!state.selectedColor) { showToast(uiT('selection.chooseColor')); return; }
+  if (!compatibility.getCostumeAvailability(state.selectedCostume,state.selectedGender).available) {
+    setGender(state.selectedGender); return;
+  }
 
   const costume  = COSTUMES.find(c => c.id === state.selectedCostume);
   if (!costume) return;
@@ -408,7 +432,7 @@ function generateOutfit() {
 
   showOutfitResult(costume, colorData, accessories, style, event);
   window.dispatchEvent(new CustomEvent('vietphuc:outfit-change', {detail: {
-    costumeId: state.selectedCostume, color: state.selectedColor, accessories: [...state.selectedAccessories], style, event,
+    costumeId: state.selectedCostume, body: {gender: state.selectedGender}, color: state.selectedColor, accessories: [...state.selectedAccessories], style, event,
   }}));
 }
 
@@ -417,7 +441,7 @@ function showOutfitResult(costume, colorData, accessories, style, event) {
   const figCostume = document.getElementById('figure-costume');
   const figAcc = document.getElementById('figure-accessories');
   const hex = colorData?.hex || '#C0392B';
-  const styleLabel = LOOKBOOK_STYLE_NAMES[style];
+  const styleLabel = uiLabel('style',style);
 
 
   figCostume.innerHTML = `
@@ -425,90 +449,82 @@ function showOutfitResult(costume, colorData, accessories, style, event) {
       <div class="mk-photo-wrap mk-fallback-wrap">
         <div class="mk-fallback costume-illustration">${costumeIllustration(costume.id, hex)}</div>
         <div class="mk-badge mk-badge-color" style="background:${hex}ee">
-          <span class="mk-dot"></span>${colorData?.name || 'Màu tùy chọn'}
+          <span class="mk-dot"></span>${colorData ? uiLabel('color',colorData.hex) : uiT('color.custom')}
         </div>
         <div class="mk-badge mk-badge-style">${styleLabel}</div>
       </div>
       <div class="mk-footer">
         <div class="mk-footer-left">
-          <div class="mk-name">${costume.name}</div>
-          <div class="mk-sub">${costume.regionLabel} · ${getEventLabel(event)}</div>
+          <div class="mk-name">${uiLabel('costume',costume.id)}</div>
+          <div class="mk-sub">${uiT('ui.region_verification_pending')} · ${getEventLabel(event)}</div>
         </div>
-        <button class="mk-save-btn" onclick="saveLook()" title="Lưu lookbook">Lưu</button>
+        <button class="mk-save-btn" onclick="saveLook()" title="${uiT('ui.save_looks')}">${uiT('look.save')}</button>
       </div>
     </div>`;
 
   // Accessories bar
   figAcc.innerHTML = accessories.length
     ? `<div class="acc-bar">${accessories.map(a => `
-        <div class="acc-chip" title="${a.desc}">
-          <span class="acc-label">${a.name}</span>
+        <div class="acc-chip" title="${uiT('ui.demo_preset_verification_pending')}">
+          <span class="acc-label">${uiLabel('accessory',a.id)}</span>
         </div>`).join('')}</div>`
-    : `<span class="acc-empty">Chưa chọn phụ kiện – thêm để hoàn thiện outfit</span>`;
+    : `<span class="acc-empty">${uiT('ui.no_accessory_notes_selected')}</span>`;
 
   // Tags
   document.getElementById('outfit-tags').innerHTML = `
     <span class="outfit-tag highlight">${styleLabel}</span>
-    <span class="outfit-tag" style="background:${hex}22;border-color:${hex}55;color:${hex}">${colorData?.name || 'Màu tùy chọn'}</span>
-    ${accessories.slice(0,3).map(a => `<span class="outfit-tag">${a.name}</span>`).join('')}
+    <span class="outfit-tag" style="background:${hex}22;border-color:${hex}55;color:${hex}">${colorData ? uiLabel('color',colorData.hex) : uiT('color.custom')}</span>
+    ${accessories.slice(0,3).map(a => `<span class="outfit-tag">${uiLabel('accessory',a.id)}</span>`).join('')}
     ${accessories.length > 3 ? `<span class="outfit-tag">+${accessories.length-3}</span>` : ''}`;
 
   // Culture card
   document.getElementById('culture-card').classList.remove('hidden');
   document.getElementById('culture-content').innerHTML = `
-    <div class="culture-verification">Cần xác minh · Nguồn: chưa có nguồn. Các gợi ý hiện có là nội dung tham khảo, không phải xác nhận phục dựng.</div>
-    <p><strong>${costume.name}</strong> – ${costume.shortDesc}</p>
-    <p style="margin-top:8px">${costume.culturalTips[0] || ''}</p>
-    ${costume.styleSuggestions[style] ? `<p style="margin-top:8px">Gợi ý ${styleLabel}: <em>${costume.styleSuggestions[style]}</em></p>` : ''}`;
+    <div class="culture-verification">${uiT('ui.verification_needed_sources_pending_these_sample_selections_are_not_verified_historical_re')}</div>
+    <p><strong>${uiLabel('costume',costume.id)}</strong> ${uiT('ui.supplied_sample_photo')}</p>
+    <p>${uiT('ui.todo_add_sources_for_structure_period_region_and_combinations_body_and_accessory_restricti')}</p>`;
 
   // Warnings
-  const warns = [...costume.warnings];
-  if (WEATHER_TIPS[state.selectedWeather]?.avoid?.includes(state.selectedCostume))
-    warns.push(`Trang phục này không phù hợp lắm với thời tiết ${getWeatherLabel(state.selectedWeather)}.`);
+  const warns = costume.needsVerification ? [] : [...costume.warnings];
+  if (!WEATHER_TIPS[state.selectedWeather]?.needsVerification && WEATHER_TIPS[state.selectedWeather]?.avoid?.includes(state.selectedCostume))
+    warns.push(uiT('weather.warning',{weather:{key:'weather.'+state.selectedWeather}}));
   const wc = document.getElementById('warning-card');
   if (warns.length) {
     wc.classList.remove('hidden');
-    document.getElementById('warning-list').innerHTML = warns.map(w => `<li>Cần xác minh nguồn: ${w}</li>`).join('');
+    document.getElementById('warning-list').innerHTML = warns.map(w => `<li>${uiT('culture.needsSource',{text:w})}</li>`).join('');
   } else wc.classList.add('hidden');
 
   // Suggestions
   const evSugg = EVENT_SUGGESTIONS[event];
   document.getElementById('suggestion-section').classList.remove('hidden');
-  const altC = evSugg?.costumes?.filter(id => id !== state.selectedCostume && COSTUMES.some(costume => costume.id === id)).slice(0,2) || [];
+  const altC = evSugg?.costumes?.filter(id => id !== state.selectedCostume && COSTUMES.some(costume => costume.id === id) && compatibility.getCostumeAvailability(id,state.selectedGender).available).slice(0,2) || [];
   const altA = evSugg?.accessories?.filter(id => !state.selectedAccessories.has(id) && compatibility.getAvailability(id, currentContext()).available).slice(0,2) || [];
   document.getElementById('suggestion-chips').innerHTML = [
-    ...altC.map(id => { const c = COSTUMES.find(x=>x.id===id); return c ? `<button class="suggestion-chip" onclick="selectAndMix('${id}')">Thử ${c.name}</button>` : ''; }),
-    ...altA.map(id => { const a = ACCESSORIES.find(x=>x.id===id); return a ? `<button class="suggestion-chip" onclick="toggleAccessory('${id}')">Thêm ${a.name}</button>` : ''; }),
+    ...altC.map(id => { const c = COSTUMES.find(x=>x.id===id); return c ? `<button class="suggestion-chip" onclick="selectAndMix('${id}')">${uiT('selection.try',{name:{key:'costume.'+id}})}</button>` : ''; }),
+    ...altA.map(id => { const a = ACCESSORIES.find(x=>x.id===id); return a ? `<button class="suggestion-chip" onclick="toggleAccessory('${id}')">${uiT('selection.add',{name:{key:'accessory.'+id}})}</button>` : ''; }),
   ].filter(Boolean).join('');
 
   // Compare
   document.getElementById('comparison-section').classList.remove('hidden');
-  const styleNames = { traditional:'Truyền thống', fusion:'Fusion', genz:'Gen Z Bold' };
-  document.getElementById('compare-grid').innerHTML = Object.entries(costume.styleSuggestions)
-    .filter(([s]) => s !== style).slice(0,2)
-    .map(([s, desc]) => `
-      <div class="compare-item" onclick="document.querySelector('[name=style][value=${s}]').checked=true;updateStyle('${s}')">
-        <div class="ci-name">${styleNames[s]}</div>
-        <div class="ci-desc">${desc}</div>
-      </div>`).join('');
+  window.renderCompareBoard?.();
 
 }
 
 function getEventLabel(e) {
-  return { festival:'Lễ hội', tet:'Tết Nguyên Đán', wedding:'Đám cưới', school:'Tốt nghiệp', street:'Street style', ceremony:'Lễ tế' }[e] || e;
+  return { festival:uiT('event.festival'), tet:uiT('event.tet'), wedding:uiT('event.wedding'), school:uiT('event.school'), street:uiT('event.street'), ceremony:uiT('event.ceremony') }[e] || e;
 }
 function getWeatherLabel(w) {
-  return { sunny:'nắng nóng', cool:'mát mẻ', rain:'mưa', winter:'lạnh' }[w] || w;
+  return uiLabel('weather',w);
 }
 
 // ============================================================
 // LOOKBOOK
 // ============================================================
 async function saveLook(snapshot) {
-  if (!state.selectedCostume || !state.selectedColor) { showToast('Tạo outfit trước khi lưu!'); return; }
+  if (!state.selectedCostume || !state.selectedColor) { showToast(uiT('look.saveFirst')); return; }
   if (!snapshot) {
     try { snapshot = await window.VietPhucStudio?.captureSnapshot(); }
-    catch { showToast('Chưa chụp được bản phối. Hãy thử lại hoặc dùng nút Chụp look để tải ảnh.'); return; }
+    catch { showToast(uiT('look.captureError')); return; }
   }
   const costumeId = snapshot?.studioConfig?.costumeId || state.selectedCostume;
   const savedColor = snapshot?.studioConfig?.color || state.selectedColor;
@@ -528,18 +544,21 @@ async function saveLook(snapshot) {
     colorName: colorData?.name || '',
     accessories: snapshot?.outfitMeta?.accessories || [...state.selectedAccessories],
     style: savedStyle,
-    styleName: { traditional:'Truyền thống', fusion:'Fusion', genz:'Gen Z Bold' }[savedStyle],
+    styleName: { traditional:uiT('style.traditional'), fusion:uiT('style.fusion'), genz:uiT('style.genz') }[savedStyle],
     event: savedEvent,
     eventName: getEventLabel(savedEvent),
     savedAt: new Date().toLocaleDateString('vi-VN'),
   });
-  if (!look) { showToast('Chưa lưu được bộ phối. Hãy chọn lại trang phục và màu sắc.'); return; }
+  if (!look) { showToast(uiT('look.invalid')); return; }
   state.lookbook.unshift(look);
   const persisted = persistLookbook();
   renderLookbook();
-  showToast(persisted ? 'Đã lưu ảnh vào lookbook!' : storageIssue);
+  showToast(persisted ? uiT('ui.photo_saved_to_your_lookbook') : storageIssue);
 }
 
+function lookLabels(look) {
+  return {name:uiLabel('costume',look.costumeId),event:getEventLabel(look.event),style:uiLabel('style',look.style),color:COLORS.some(c=>c.hex.toUpperCase()===look.color.toUpperCase())?uiLabel('color',look.color):uiT('color.custom'),date:/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(look.savedAt)?look.savedAt:uiT('look.dateMissing')};
+}
 function renderLookbook() {
   const grid = document.getElementById('lookbook-grid');
   const empty = document.getElementById('lookbook-empty');
@@ -547,25 +566,26 @@ function renderLookbook() {
   if (state.lookbook.length === 0) { empty.classList.remove('hidden'); grid.innerHTML = ''; actions.classList.add('hidden'); return; }
   empty.classList.add('hidden'); actions.classList.remove('hidden');
   grid.innerHTML = state.lookbook.map(look => {
-    const accessoryNames = ACCESSORIES.filter(a => look.accessories.includes(a.id)).map(a => a.name).slice(0,4);
+    const labels=lookLabels(look);
+    const accessoryNames = ACCESSORIES.filter(a => look.accessories.includes(a.id)).map(a => uiLabel('accessory',a.id)).slice(0,4);
     const cover = /^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(look.image || '')
-      ? `<img class="lb-photo" src="${look.image}" alt="${look.costumeName}" loading="lazy" />`
+      ? `<img class="lb-photo" src="${look.image}" alt="${labels.name}" loading="lazy" />`
       : `<div class="lb-illustration-cover costume-illustration" style="background:linear-gradient(135deg,${look.color}44,${look.color}11)">${costumeIllustration(look.costumeId, look.color, look.studioConfig?.body?.gender)}</div>`;
     return `
       <div class="lookbook-item">
         <div class="lookbook-item-cover">
           ${cover}
-          <button class="lookbook-item-delete" aria-label="Xóa ${look.costumeName} khỏi lookbook" onclick="deleteLook(${look.id})">Xóa</button>
-          <div class="lb-style-tag">${look.styleName}</div>
+          <button class="lookbook-item-delete" aria-label="${uiT('look.deleteLabel',{name:{key:'costume.'+look.costumeId}})}" onclick="deleteLook(${look.id})">${uiT('ui.delete')}</button>
+          <div class="lb-style-tag">${labels.style}</div>
         </div>
         <div class="lookbook-item-body">
-          <div class="lookbook-item-name">${look.costumeName}</div>
-          <div class="lookbook-item-event">${look.eventName} · ${look.savedAt}</div>
+          <div class="lookbook-item-name">${labels.name}</div>
+          <div class="lookbook-item-event">${labels.event} · ${labels.date}</div>
           <div class="lookbook-item-tags">
-            <span class="outfit-tag" style="background:${look.color}22;border-color:${look.color}55;color:${look.color};font-size:11px">${look.colorName}</span>
+            <span class="outfit-tag" style="background:${look.color}22;border-color:${look.color}55;color:${look.color};font-size:11px">${labels.color}</span>
             ${accessoryNames.map(name => `<span class="outfit-tag">${name}</span>`).join('')}
           </div>
-          ${look.studioConfig ? `<button class="btn-sm btn-sm-ghost" onclick="restoreLook(${look.id})">Mở lại phối đồ</button>` : ''}
+          ${look.studioConfig ? `<button class="btn-sm btn-sm-ghost" onclick="restoreLook(${look.id})">${uiT('ui.open_this_look')}</button>` : ''}
         </div>
       </div>`;
   }).join('');
@@ -575,43 +595,29 @@ function deleteLook(id) {
   state.lookbook = state.lookbook.filter(l => l.id !== id);
   persistLookbook();
   renderLookbook();
-  showToast('Đã xóa khỏi lookbook');
+  showToast(uiT('ui.look_removed'));
 }
 function clearLookbook() {
-  if (!confirm('Xóa toàn bộ lookbook?')) return;
+  if (!confirm(uiT('look.confirmClear'))) return;
   state.lookbook = [];
   persistLookbook();
   renderLookbook();
-  showToast('Đã xóa lookbook');
-}
-function exportLookbook() {
-  const data = state.lookbook.map(l => `${l.costumeName}\n   Sự kiện: ${l.eventName}\n   Màu sắc: ${l.colorName}\n   Phong cách: ${l.styleName}\n   Ngày lưu: ${l.savedAt}\n`).join('\n');
-  const blob = new Blob([`LOOKBOOK VIỆT PHỤC REMIX\n${'='.repeat(40)}\n\n${data}`], { type:'text/plain;charset=utf-8' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'viet-phuc-lookbook.txt'; a.click();
-  showToast('Đã xuất lookbook!');
-}
-async function shareLook() {
-  const text = state.selectedCostume
-    ? `Tôi vừa phối outfit ${COSTUMES.find(c=>c.id===state.selectedCostume)?.name} trên Việt Phục Remix! #ViệtPhục #GenZ`
-    : 'Khám phá Việt Phục Remix! #ViệtPhục #GenZ';
-  try {
-    if (navigator.share) await navigator.share({ title:'Việt Phục Remix', text });
-    else if (navigator.clipboard) { await navigator.clipboard.writeText(text); showToast('Đã sao chép!'); }
-    else { showToast('Trình duyệt chưa hỗ trợ chia sẻ. Bạn có thể chụp look để tải ảnh.'); }
-  } catch (error) { if (error.name !== 'AbortError') showToast('Chưa chia sẻ được. Bạn có thể chụp look để tải ảnh.'); }
+  showToast(uiT('ui.lookbook_cleared'));
 }
 function restoreLook(id) {
   const look = normaliseStoredLook(state.lookbook.find(l => l.id === id)); if (!look) return;
+  if (!look.studioConfig) { showToast(uiT('look.restoreInvalid')); return; }
+  state.selectedGender = look.studioConfig.body.gender;
   state.selectedCostume = look.costumeId; state.selectedColor = look.color;
   state.selectedAccessories = new Set(look.accessories); state.selectedStyle = look.style;
   state.selectedEvent = look.event;
   document.querySelectorAll('.event-btn').forEach(b=>b.classList.toggle('active',b.dataset.event===look.event));
   document.querySelectorAll('[name=style]').forEach(input=>input.checked=input.value===look.style);
-  renderCostumePills(); renderColorSwatches(); renderAccessoryGrid(); generateOutfit();
+  renderCostumePills(); renderCostumeGrid(state.filterRegion); renderColorSwatches(); renderAccessoryGrid(); generateOutfit();
   if (look.studioConfig) window.VietPhucStudio?.restore(look.studioConfig);
   scrollToMixer();
 }
-window.VietPhucRemix = {setAccessories, getOutfit:()=>({costumeId:state.selectedCostume,color:state.selectedColor,accessories:[...state.selectedAccessories],style:state.selectedStyle,event:state.selectedEvent})};
+window.VietPhucRemix = {setAccessories, setGender, getOutfit:()=>({costumeId:state.selectedCostume,body:{gender:state.selectedGender},color:state.selectedColor,accessories:[...state.selectedAccessories],style:state.selectedStyle,event:state.selectedEvent})};
 
 // ============================================================
 // CULTURE TABS
@@ -624,46 +630,13 @@ function switchTab(tab, btn) {
   });
 }
 
-function renderTimeline() {
-  document.getElementById('timeline').innerHTML = TIMELINE_DATA.map((item, i) => `
-    <div class="timeline-item" style="animation-delay:${i*0.1}s">
-      <div class="timeline-year">${item.year}</div>
-      <div class="timeline-title">${item.title}</div>
-      <div class="timeline-desc">${item.desc}</div>
-    </div>`).join('');
-}
-function renderCultureRules() {
-  document.getElementById('rules-grid').innerHTML = CULTURE_RULES.map((r,i) => `
-    <div class="rule-card rule-type-${r.type}" style="animation-delay:${i*0.07}s">
-      <div class="rule-type-label">${r.type === 'do' ? 'Gợi ý' : 'Lưu ý'}</div>
-      <div class="rule-title">${r.title}</div>
-      <div class="rule-desc">${r.desc}</div>
-    </div>`).join('');
-}
-function renderRegions() {
-  document.getElementById('regions-map').innerHTML = REGIONS.map((r,i) => `
-    <div class="region-card" style="animation-delay:${i*0.08}s">
-      <div class="region-header">
-        <div><div class="region-name">${r.name}</div><div style="font-size:12px;color:rgba(245,237,216,0.5)">${r.desc}</div></div>
-      </div>
-      <div class="region-costumes">${r.costumes.map(c=>`<span class="region-costume-tag">${c}</span>`).join('')}</div>
-    </div>`).join('');
-}
-function renderModernTrends() {
-  document.getElementById('modern-grid').innerHTML = MODERN_TRENDS.map((t,i) => `
-    <div class="modern-card" style="animation-delay:${i*0.08}s">
-      <h3>${t.title}</h3>
-      <p>${t.desc}</p>
-    </div>`).join('');
-}
-
 // ============================================================
 // TOAST
 // ============================================================
 let toastTimeout;
 function showToast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
+  window.VietPhucLocale.trackText(t,msg); t.classList.add('show');
   clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => t.classList.remove('show'), 3500);
 }
@@ -675,3 +648,11 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='none'; } });
 }, { threshold: 0.1 });
 document.querySelectorAll('.costume-card,.rule-card,.region-card,.modern-card,.timeline-item').forEach(el => observer.observe(el));
+
+// Only presentation is rebuilt; selected IDs, snapshot pixels and storage stay intact.
+window.addEventListener('vietphuc:language-change',()=>{
+  renderCostumeGrid(state.filterRegion);renderCostumePills();renderColorSwatches();renderAccessoryGrid();renderLookbook();updateHarmonyCheck();
+  const costume=COSTUMES.find(c=>c.id===state.selectedCostume);
+  if(costume)showOutfitResult(costume,COLORS.find(c=>c.hex===state.selectedColor),ACCESSORIES.filter(a=>state.selectedAccessories.has(a.id)),state.selectedStyle,state.selectedEvent);
+  if(openedCostumeId)openCostumeModal(openedCostumeId);
+});

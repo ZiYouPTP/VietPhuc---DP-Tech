@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Việt Phục Remix – Phối trang phục truyền thống theo phong cách Gen Z</title>
-  <meta name="description" content="Khám phá và phối trang phục truyền thống Việt Nam theo sự kiện, địa phương hoặc phong cách cá nhân. Phối bảy mẫu Việt phục trên body nam, nữ và xuất ảnh minh họa." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:," />
+  <title data-i18n="page.title">Việt Phục Remix – Phối trang phục truyền thống theo phong cách Gen Z</title>
+  <meta name="description" content="Khám phá và phối trang phục truyền thống Việt Nam theo sự kiện, địa phương hoặc phong cách cá nhân. Phối bảy mẫu Việt phục trên body nam, nữ và xuất ảnh minh họa." / data-i18n-content="page.description">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="studio.css" />
 </head>
@@ -17,18 +15,19 @@
 <header class="header" id="header">
   <div class="header-inner">
     <div class="logo">
-      <span class="logo-text">Việt Phục <span class="logo-accent">DPTech</span></span>
+      <span class="logo-text">Việt phục <span class="logo-accent">Remix</span></span>
     </div>
     <nav class="nav" id="nav">
-      <a href="#explore" class="nav-link" id="nav-explore">Khám phá</a>
-      <a href="#mixer" class="nav-link" id="nav-mixer">Phối đồ</a>
-      <a href="#lookbook" class="nav-link" id="nav-lookbook">Lookbook</a>
-      <a href="#culture" class="nav-link" id="nav-culture">Văn hóa</a>
+      <a href="#explore" class="nav-link" id="nav-explore"><span data-i18n="ui.explore">Khám phá</span></a>
+      <a href="#mixer" class="nav-link" id="nav-mixer"><span data-i18n="ui.style">Phối đồ</span></a>
+      <a href="#lookbook" class="nav-link" id="nav-lookbook"><span data-i18n="ui.lookbook">Lookbook</span></a>
+      <a href="#culture" class="nav-link" id="nav-culture"><span data-i18n="ui.culture">Văn hóa</span></a>
     </nav>
+    <button type="button" class="text-action" id="language-toggle" aria-label="Switch to English">EN</button>
     <button class="btn-primary" id="btn-start-mix" onclick="scrollToMixer()">
-      <span>Phối ngay</span>
+      <span><span data-i18n="ui.start_styling">Phối ngay</span></span>
     </button>
-    <button class="hamburger" id="hamburger" aria-label="Mở trình đơn" aria-controls="mobile-menu" onclick="toggleMenu()">
+    <button class="hamburger" id="hamburger" aria-label="Mở trình đơn" aria-controls="mobile-menu" onclick="toggleMenu()" data-i18n-aria-label="menu.open">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -36,10 +35,10 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#explore" onclick="toggleMenu()">Khám phá</a>
-  <a href="#mixer" onclick="toggleMenu()">Phối đồ</a>
-  <a href="#lookbook" onclick="toggleMenu()">Lookbook</a>
-  <a href="#culture" onclick="toggleMenu()">Văn hóa</a>
+  <a href="#explore" onclick="toggleMenu()"><span data-i18n="ui.explore">Khám phá</span></a>
+  <a href="#mixer" onclick="toggleMenu()"><span data-i18n="ui.style">Phối đồ</span></a>
+  <a href="#lookbook" onclick="toggleMenu()"><span data-i18n="ui.lookbook">Lookbook</span></a>
+  <a href="#culture" onclick="toggleMenu()"><span data-i18n="ui.culture">Văn hóa</span></a>
 </div>
 
 <!-- HERO -->
@@ -50,30 +49,21 @@
     <div class="shape shape-3"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-badge">Việt phục · Phối màu · Tạo hình ảnh</div>
-    <h1 class="hero-title">
-      Phối Việt Phục<br/>
-      <span class="gradient-text">theo chất riêng</span><br/>
-      của Gen Z
-    </h1>
-    <p class="hero-desc">
-      Khám phá 7 mẫu Việt phục, từ áo dài đến Nhật Bình, áo yếm và giao lĩnh.
-      Chọn body nam hoặc nữ, phối màu và phụ kiện rồi tạo bản minh họa của riêng bạn.
-    </p>
+    <div class="hero-badge"><span data-i18n="ui.vietnamese_dress_colour_photo_looks">Việt phục · Phối màu · Tạo hình ảnh</span></div>
+    <h1 class="hero-title"><span data-i18n="ui.style_vietnamese_dress">Phối Việt Phục</span><br/>
+      <span class="gradient-text"><span data-i18n="ui.your_own_way">theo chất riêng</span></span><br/><span data-i18n="ui.for_gen_z">của Gen Z</span></h1>
+    <p class="hero-desc"><span data-i18n="ui.explore_seven_vietnamese_outfit_types_choose_a_female_or_male_body_and_view_existing_compl">Khám phá 7 mẫu Việt phục, từ áo dài đến Nhật Bình, áo yếm và giao lĩnh.
+      Chọn body nam hoặc nữ và xem ảnh mẫu đã phối. Lưu, so sánh và xuất lookbook theo chất riêng.</span></p>
     <div class="hero-actions">
-      <button class="btn-primary btn-hero" id="btn-hero-start" onclick="scrollToMixer()">
-        Bắt đầu phối đồ
-      </button>
-      <button class="btn-ghost" id="btn-hero-explore" onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
-        Xem mẫu trang phục
-      </button>
+      <button class="btn-primary btn-hero" id="btn-hero-start" onclick="scrollToMixer()"><span data-i18n="ui.start_styling_9">Bắt đầu phối đồ</span></button>
+      <button class="btn-ghost" id="btn-hero-explore" onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})"><span data-i18n="ui.browse_outfits">Xem mẫu trang phục</span></button>
     </div>
     <div class="hero-stats">
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Loại trang phục</span></div>
+      <div class="stat"><span class="stat-num">7</span><span class="stat-label"><span data-i18n="ui.outfit_types">Loại trang phục</span></span></div>
       <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Body nam / nữ</span></div>
+      <div class="stat"><span class="stat-num">2</span><span class="stat-label"><span data-i18n="ui.female_male_bodies">Body nam / nữ</span></span></div>
       <div class="stat-divider"></div>
-      <div class="stat"><span class="stat-num">PNG</span><span class="stat-label">Xuất bản phối</span></div>
+      <div class="stat"><span class="stat-num">PNG</span><span class="stat-label"><span data-i18n="ui.export_looks">Xuất bản phối</span></span></div>
     </div>
   </div>
   <div class="hero-visual">
@@ -83,9 +73,9 @@
           <div class="costume-illustration" data-costume-illustration="ao-dai"></div>
         </div>
         <div class="showcase-info">
-          <span class="showcase-tag">Mẫu minh họa 01</span>
-          <h3>Áo Dài</h3>
-          <p>Dáng áo dài, cổ đứng và hai tà</p>
+          <span class="showcase-tag"><span data-i18n="ui.outfit_sample_01">Mẫu minh họa 01</span></span>
+          <h3><span data-i18n="costume.ao-dai">Áo Dài</span></h3>
+          <p><span data-i18n="ui.long_silhouette_standing_collar_and_panels">Dáng áo dài, cổ đứng và hai tà</span></p>
         </div>
       </div>
       <div class="showcase-card" data-index="1">
@@ -93,9 +83,9 @@
           <div class="costume-illustration" data-costume-illustration="ao-nhat-binh"></div>
         </div>
         <div class="showcase-info">
-          <span class="showcase-tag">Mẫu minh họa 02</span>
-          <h3>Áo Nhật Bình</h3>
-          <p>Cổ áo chữ nhật, tay rộng và dải màu</p>
+          <span class="showcase-tag"><span data-i18n="ui.outfit_sample_02">Mẫu minh họa 02</span></span>
+          <h3><span data-i18n="costume.ao-nhat-binh">Áo Nhật Bình</span></h3>
+          <p><span data-i18n="ui.rectangular_collar_wide_sleeves_and_colour_bands">Cổ áo chữ nhật, tay rộng và dải màu</span></p>
         </div>
       </div>
       <div class="showcase-card" data-index="2">
@@ -103,16 +93,16 @@
           <div class="costume-illustration" data-costume-illustration="ao-giao-linh"></div>
         </div>
         <div class="showcase-info">
-          <span class="showcase-tag">Mẫu minh họa 03</span>
-          <h3>Áo Giao Lĩnh</h3>
-          <p>Vạt áo giao chéo và phom áo rộng</p>
+          <span class="showcase-tag"><span data-i18n="ui.outfit_sample_03">Mẫu minh họa 03</span></span>
+          <h3><span data-i18n="costume.ao-giao-linh">Áo Giao Lĩnh</span></h3>
+          <p><span data-i18n="ui.crossed_collar_and_loose_silhouette">Vạt áo giao chéo và phom áo rộng</span></p>
         </div>
       </div>
     </div>
     <div class="showcase-dots" id="showcase-dots">
-      <button class="dot active" onclick="changeShowcase(0)" id="dot-0" aria-label="Xem mẫu áo dài"></button>
-      <button class="dot" onclick="changeShowcase(1)" id="dot-1" aria-label="Xem mẫu áo Nhật Bình"></button>
-      <button class="dot" onclick="changeShowcase(2)" id="dot-2" aria-label="Xem mẫu áo giao lĩnh"></button>
+      <button class="dot active" onclick="changeShowcase(0)" id="dot-0" aria-label="Xem mẫu áo dài" data-i18n-aria-label="showcase.dai"></button>
+      <button class="dot" onclick="changeShowcase(1)" id="dot-1" aria-label="Xem mẫu áo Nhật Bình" data-i18n-aria-label="showcase.nhatbinh"></button>
+      <button class="dot" onclick="changeShowcase(2)" id="dot-2" aria-label="Xem mẫu áo giao lĩnh" data-i18n-aria-label="showcase.giaolinh"></button>
     </div>
   </div>
 </section>
@@ -121,19 +111,20 @@
 <section class="section explore" id="explore">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge"> Khám phá</span>
-      <h2>Chọn trang phục<br/>bạn muốn tìm hiểu</h2>
-      <p>Xem hình minh họa, chọn mẫu áo và bắt đầu bản phối của bạn</p>
+      <span class="section-badge"><span data-i18n="ui.explore">Khám phá</span></span>
+      <h2><span data-i18n="ui.choose_an_outfit">Chọn trang phục</span><br/><span data-i18n="ui.to_explore">bạn muốn tìm hiểu</span></h2>
+      <p><span data-i18n="ui.browse_the_supplied_photos_and_choose_an_outfit_to_begin">Xem hình minh họa, chọn mẫu áo và bắt đầu bản phối của bạn</span></p>
     </div>
 
     <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" id="filter-all" data-filter="all" onclick="filterCostumes('all')">Tất cả</button>
-      <button class="filter-btn" id="filter-mien-bac" data-filter="north" onclick="filterCostumes('north')"> Miền Bắc</button>
-      <button class="filter-btn" id="filter-mien-trung" data-filter="central" onclick="filterCostumes('central')"> Miền Trung</button>
-      <button class="filter-btn" id="filter-mien-nam" data-filter="south" onclick="filterCostumes('south')"> Miền Nam</button>
+      <button class="filter-btn active" id="filter-all" data-filter="all" onclick="filterCostumes('all')"><span data-i18n="ui.all">Tất cả</span></button>
+      <button class="filter-btn" id="filter-mien-bac" data-filter="north" onclick="filterCostumes('north')"><span data-i18n="ui.north">Miền Bắc</span></button>
+      <button class="filter-btn" id="filter-mien-trung" data-filter="central" onclick="filterCostumes('central')"><span data-i18n="ui.central">Miền Trung</span></button>
+      <button class="filter-btn" id="filter-mien-nam" data-filter="south" onclick="filterCostumes('south')"><span data-i18n="ui.south">Miền Nam</span></button>
     </div>
 
     <div class="costume-grid" id="costume-grid"></div>
+    <p class="color-note"><span data-i18n="ui.regional_labels_in_this_demo_await_source_verification">Nhãn vùng miền của bản demo đang chờ đối chiếu nguồn.</span></p>
   </div>
 </section>
 
@@ -141,34 +132,36 @@
 <section class="section mixer" id="mixer">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge"> Phối đồ</span>
-      <h2>Tạo outfit<br/>Việt phục của bạn</h2>
-      <p>Chọn trang phục, màu sắc, phụ kiện và xem kết quả ngay</p>
+      <span class="section-badge"><span data-i18n="ui.style">Phối đồ</span></span>
+      <h2><span data-i18n="ui.create_a_look">Tạo outfit</span><br/><span data-i18n="ui.with_vietnamese_dress">Việt phục của bạn</span></h2>
+      <p><span data-i18n="ui.choose_an_occasion_outfit_and_accessories_view_complete_photos_from_the_existing_library">Chọn bối cảnh, trang phục và phụ kiện. Xem ảnh mẫu đã phối từ thư viện có sẵn.</span></p>
     </div>
 
     <div class="mixer-layout">
       <!-- Left: Options -->
       <div class="mixer-panel" id="mixer-panel">
         
-        <div class="mixer-section" id="ms-costume">
-          <h3 class="mixer-section-title">1. Chọn trang phục</h3>
-          <div class="costume-pills" id="costume-pills"></div>
-        </div>
-
         <div class="mixer-section" id="ms-event">
-          <h3 class="mixer-section-title">2. Chọn sự kiện</h3>
+          <h3 class="mixer-section-title"><span data-i18n="ui.1_choose_an_occasion">1. Chọn bối cảnh</span></h3>
           <div class="event-grid" id="event-grid">
-            <button class="event-btn active" id="event-le-hoi" data-event="festival" onclick="selectEvent(this,'festival')"> Lễ hội</button>
-            <button class="event-btn" id="event-tet" data-event="tet" onclick="selectEvent(this,'tet')"> Tết Nguyên Đán</button>
-            <button class="event-btn" id="event-cuoi" data-event="wedding" onclick="selectEvent(this,'wedding')"> Đám cưới</button>
-            <button class="event-btn" id="event-truong" data-event="school" onclick="selectEvent(this,'school')"> Lễ tốt nghiệp</button>
-            <button class="event-btn" id="event-street" data-event="street" onclick="selectEvent(this,'street')"> Street style</button>
-            <button class="event-btn" id="event-tho-cuong" data-event="ceremony" onclick="selectEvent(this,'ceremony')"> Lễ tế/thờ cúng</button>
+            <button class="event-btn active" id="event-le-hoi" data-event="festival" onclick="selectEvent(this,'festival')"><span data-i18n="event.festival">Lễ hội</span></button>
+            <button class="event-btn" id="event-tet" data-event="tet" onclick="selectEvent(this,'tet')"><span data-i18n="event.tet">Tết Nguyên Đán</span></button>
+            <button class="event-btn" id="event-cuoi" data-event="wedding" onclick="selectEvent(this,'wedding')"><span data-i18n="event.wedding">Đám cưới</span></button>
+            <button class="event-btn" id="event-truong" data-event="school" onclick="selectEvent(this,'school')"><span data-i18n="ui.graduation">Lễ tốt nghiệp</span></button>
+            <button class="event-btn" id="event-street" data-event="street" onclick="selectEvent(this,'street')"><span data-i18n="event.street">Street style</span></button>
+            <button class="event-btn" id="event-tho-cuong" data-event="ceremony" onclick="selectEvent(this,'ceremony')"><span data-i18n="ui.ceremony">Lễ tế/thờ cúng</span></button>
           </div>
         </div>
 
+        <div class="mixer-section" id="ms-costume">
+          <h3 class="mixer-section-title"><span data-i18n="ui.2_choose_body_and_outfit">2. Chọn nhân vật và trang phục</span></h3>
+          <label class="body-choice"><span data-i18n="ui.body">Nhân vật</span><select id="mixer-gender" onchange="VietPhucRemix.setGender(this.value)"><option value="female" data-i18n="gender.female">Nữ</option><option value="male" data-i18n="gender.male">Nam</option></select></label>
+          <div class="costume-pills" id="costume-pills"></div>
+          <p class="costume-body-status" id="costume-body-status" aria-live="polite"></p>
+        </div>
+
         <div class="mixer-section" id="ms-color">
-          <h3 class="mixer-section-title">3. Chọn màu sắc chủ đạo</h3>
+          <h3 class="mixer-section-title"><span data-i18n="ui.3_lookbook_colour_note_54">3. Màu ghi chú cho lookbook</span></h3>
           <div class="color-picker-wrap">
             <div class="color-swatches" id="color-swatches"></div>
             <div class="color-harmony-check" id="color-harmony"></div>
@@ -176,96 +169,95 @@
         </div>
 
         <div class="mixer-section" id="ms-accessories">
-          <h3 class="mixer-section-title">4. Chọn phụ kiện</h3>
-          <p class="accessory-help">Phụ kiện tối màu không dùng được với lựa chọn hiện tại. Bỏ món cùng vị trí để chọn món khác.</p>
+          <h3 class="mixer-section-title"><span data-i18n="ui.4_choose_accessories">4. Chọn phụ kiện</span></h3>
+          <p class="accessory-help"><span data-i18n="ui.dimmed_accessories_are_unavailable_for_this_selection_remove_an_accessory_in_the_same_posi_86">Phụ kiện tối màu không dùng được với lựa chọn hiện tại. Bỏ món cùng vị trí để chọn món khác. Tổ hợp chưa có ảnh sẽ dùng mẫu mặc định.</span></p>
           <div class="accessory-grid" id="accessory-grid"></div>
           <p class="accessory-status" id="accessory-status" role="status" aria-live="polite"></p>
         </div>
 
         <div class="mixer-section" id="ms-style">
-          <h3 class="mixer-section-title">5. Phong cách phối</h3>
+          <h3 class="mixer-section-title"><span data-i18n="ui.5_style_note">5. Phong cách ghi chú</span></h3>
           <div class="style-options" id="style-options">
             <label class="style-radio" id="style-traditional">
               <input type="radio" name="style" value="traditional" checked onchange="updateStyle('traditional')" />
               <div class="style-card">
                 
-                <span class="style-name">Truyền thống</span>
-                <span class="style-desc">Giữ nguyên vẹn nét cổ điển</span>
+                <span class="style-name"><span data-i18n="style.traditional">Truyền thống</span></span>
+                <span class="style-desc"><span data-i18n="ui.a_classic_style_note">Giữ nguyên vẹn nét cổ điển</span></span>
               </div>
             </label>
             <label class="style-radio" id="style-fusion">
               <input type="radio" name="style" value="fusion" onchange="updateStyle('fusion')" />
               <div class="style-card">
                 
-                <span class="style-name">Fusion</span>
-                <span class="style-desc">Kết hợp hiện đại nhẹ nhàng</span>
+                <span class="style-name"><span data-i18n="style.fusion">Fusion</span></span>
+                <span class="style-desc"><span data-i18n="ui.a_subtle_modern_style_note">Kết hợp hiện đại nhẹ nhàng</span></span>
               </div>
             </label>
             <label class="style-radio" id="style-genz">
               <input type="radio" name="style" value="genz" onchange="updateStyle('genz')" />
               <div class="style-card">
                 
-                <span class="style-name">Gen Z Bold</span>
-                <span class="style-desc">Cá tính, phá cách đầy sáng tạo</span>
+                <span class="style-name"><span data-i18n="style.genz">Gen Z Bold</span></span>
+                <span class="style-desc"><span data-i18n="ui.a_bold_personal_style_note">Cá tính, phá cách đầy sáng tạo</span></span>
               </div>
             </label>
           </div>
         </div>
 
-        <button class="btn-primary btn-mix" id="btn-generate" onclick="generateOutfit()">
-           Tạo outfit ngay
-        </button>
+        <button class="btn-primary btn-mix" id="btn-generate" onclick="generateOutfit();document.getElementById('studio').scrollIntoView({behavior:'smooth',block:'start'})"><span data-i18n="ui.view_look">Xem bản phối</span></button>
       </div>
 
       <!-- Right: Preview -->
       <div class="mixer-preview" id="mixer-preview">
         <div class="preview-card" id="preview-card">
           <div class="preview-header">
-            <span class="preview-label">Kết quả phối đồ</span>
+            <span class="preview-label"><span data-i18n="ui.your_look">Kết quả phối đồ</span></span>
             <div class="preview-actions-top">
-              <button class="text-action" id="btn-save-look" title="Lưu vào lookbook" onclick="saveLook()">Lưu mẫu</button>
-              <button class="text-action" id="btn-share-look" title="Chia sẻ" onclick="shareLook()">Chia sẻ</button>
+              <button class="text-action" id="btn-save-look" title="Lưu vào lookbook" data-i18n-title="look.saveTitle" onclick="saveLook()"><span data-i18n="ui.save_look">Lưu mẫu</span></button>
+              <button class="text-action" id="btn-share-look" title="Chia sẻ" onclick="shareLook()" data-i18n-title="ui.share"><span data-i18n="ui.share">Chia sẻ</span></button>
             </div>
           </div>
 
           <div class="studio" id="studio">
-            <div class="studio-top"><strong>Bản phối trên body</strong><span class="studio-status" id="studio-status" role="status">Minh họa 2D · đang chuẩn bị</span></div>
+            <div class="studio-top"><strong><span data-i18n="ui.complete_outfit_photo">Bản phối trên body</span></strong><span class="studio-status" id="studio-status" role="status"><span data-i18n="photo.preparing">Minh họa 2D · đang chuẩn bị</span></span></div>
             <div class="studio-stage">
-              <div class="studio-fallback" id="studio-fallback" aria-label="Bản minh họa trang phục trên body đã chọn"></div>
-              <div class="studio-loading" id="studio-loading" hidden><span>Đang chuẩn bị bản phối…</span></div>
-              <span class="studio-hint" id="studio-hint">Bản minh họa 2D trên ảnh body gốc</span>
+              <div class="studio-fallback" id="studio-fallback" aria-label="Bản minh họa trang phục trên body đã chọn" data-i18n-aria-label="photo.stageAlt"></div>
+              <div class="studio-loading" id="studio-loading" hidden><span><span data-i18n="loading.look">Đang chuẩn bị bản phối…</span></span></div>
+              <span class="studio-hint" id="studio-hint"><span data-i18n="ui.existing_outfit_photo_no_image_generation">Ảnh mẫu đã phối · không sinh ảnh mới</span></span>
             </div>
             <div class="studio-options">
-              <label class="studio-wide">Body tham chiếu<select id="studio-gender"><option value="female" selected>Nữ</option><option value="male">Nam</option></select></label>
-              <label>Chất liệu<select id="studio-material"></select></label><label>Họa tiết<select id="studio-pattern"></select></label>
-              <label>Cỡ họa tiết<input id="studio-scale" type="range" min="0.5" max="3" step="0.1" value="1" /></label>
-              <label>Độ đậm họa tiết<input id="studio-strength" type="range" min="0" max="1" step="0.05" value="0.45" /></label>
+              <label class="studio-wide"><span data-i18n="ui.body_76">Body tham chiếu</span><select id="studio-gender"><option value="female" selected data-i18n="gender.female">Nữ</option><option value="male" data-i18n="gender.male">Nam</option></select></label>
+              <label hidden><span data-i18n="legacy.material">Chất liệu</span><select id="studio-material" disabled></select></label><label hidden><span data-i18n="legacy.pattern">Họa tiết</span><select id="studio-pattern" disabled></select></label>
+              <label hidden><span data-i18n="legacy.scale">Cỡ họa tiết</span><input id="studio-scale" type="range" min="0.5" max="3" step="0.1" value="1" disabled /></label>
+              <label hidden><span data-i18n="legacy.strength">Độ đậm họa tiết</span><input id="studio-strength" type="range" min="0" max="1" step="0.05" value="0.45" disabled /></label>
             </div>
-            <div class="studio-actions"><button type="button" id="studio-capture" class="capture">Xuất ảnh PNG</button><label><input type="checkbox" id="studio-transparent" />Nền trong suốt</label></div>
-            <div class="studio-layer-panel">
-              <h4>Ảnh từng món</h4>
-              <p>Chọn món, tạo prompt để sinh ảnh riêng trong công cụ AI, rồi nhập PNG để ghép lên body đang chọn. Mỗi món dùng một ảnh riêng.</p>
-              <label for="studio-layer-item">Món cần tạo hoặc nhập ảnh</label>
+            <div class="studio-actions"><button type="button" id="studio-capture" class="capture"><span data-i18n="ui.export_png">Xuất ảnh PNG</span></button><label hidden><input type="checkbox" id="studio-transparent" disabled /><span data-i18n="legacy.transparent">Nền trong suốt</span></label></div>
+            <div class="studio-layer-panel" hidden>
+              <h4><span data-i18n="legacy.items">Ảnh từng món</span></h4>
+              <p><span data-i18n="legacy.instructions">Chọn món, tạo prompt để sinh ảnh riêng trong công cụ AI, rồi nhập PNG để ghép lên body đang chọn. Mỗi món dùng một ảnh riêng.</span></p>
+              <label for="studio-layer-item"><span data-i18n="legacy.itemLabel">Món cần tạo hoặc nhập ảnh</span></label>
               <select id="studio-layer-item"></select>
-              <div class="studio-ai-actions"><button type="button" id="studio-reference">Tải ảnh body gốc</button><button type="button" id="studio-prompt">Tạo prompt từng món</button></div>
-              <label class="studio-file-label" for="studio-layer-file">Nhập ảnh PNG của món này</label>
+              <div class="studio-ai-actions"><button type="button" id="studio-reference"><span data-i18n="legacy.reference">Tải ảnh body gốc</span></button><button type="button" id="studio-prompt"><span data-i18n="legacy.prompt">Tạo prompt từng món</span></button></div>
+              <label class="studio-file-label" for="studio-layer-file"><span data-i18n="legacy.import">Nhập ảnh PNG của món này</span></label>
               <input type="file" id="studio-layer-file" accept="image/png" />
-              <p class="studio-layer-guidance">PNG nền trong suốt, cùng kích thước và tỉ lệ khung hình với body gốc. Giữ nguyên vị trí món đồ trong khung, không cắt sát món đồ.</p>
-              <button type="button" id="studio-layer-remove">Bỏ ảnh đã nhập</button>
+              <p class="studio-layer-guidance"><span data-i18n="legacy.guidance">PNG nền trong suốt, cùng kích thước và tỉ lệ khung hình với body gốc. Giữ nguyên vị trí món đồ trong khung, không cắt sát món đồ.</span></p>
+              <button type="button" id="studio-layer-remove"><span data-i18n="legacy.remove">Bỏ ảnh đã nhập</span></button>
               <p id="studio-layer-status" class="studio-layer-status" role="status" aria-live="polite"></p>
             </div>
             <div class="studio-prompt-panel" id="studio-prompt-panel" hidden>
-              <label for="studio-prompt-text">Prompt tạo ảnh riêng cho món đã chọn</label>
-              <p>Đính kèm body gốc làm ảnh tham chiếu trong công cụ AI. Chỉ xuất món đồ trên nền trong suốt, giữ đúng vị trí để ghép lên body.</p>
+              <label for="studio-prompt-text"><span data-i18n="legacy.promptLabel">Prompt tạo ảnh riêng cho món đã chọn</span></label>
+              <p><span data-i18n="legacy.promptInstructions">Đính kèm body gốc làm ảnh tham chiếu trong công cụ AI. Chỉ xuất món đồ trên nền trong suốt, giữ đúng vị trí để ghép lên body.</span></p>
               <textarea id="studio-prompt-text" rows="7" readonly></textarea>
-              <button type="button" id="studio-copy-prompt">Sao chép prompt</button>
+              <button type="button" id="studio-copy-prompt"><span data-i18n="legacy.copyPrompt">Sao chép prompt</span></button>
             </div>
-            <p class="studio-notice">Chưa có PNG: dùng lớp minh họa. PNG đã nhập giữ màu và chất liệu gốc; các lựa chọn bên trên dùng cho minh họa và prompt tạo ảnh mới. Body gốc nhỏ, có thể mờ khi phóng lớn. <span id="studio-metrics"></span></p>
+            <p class="studio-notice"><span data-i18n="ui.colour_and_style_are_lookbook_notes_photos_retain_their_original_fabric_colour_and_shape_c">Màu và phong cách là ghi chú cho lookbook. Ảnh mẫu giữ màu, chất liệu và phom gốc. Tổ hợp chưa có ảnh sẽ dùng ảnh hoàn chỉnh gần nhất.</span><span id="studio-metrics" role="status" aria-live="polite"></span></p>
+            <div class="look-assessment" id="look-assessment" aria-live="polite"></div>
           </div>
           <div class="outfit-display" id="outfit-display">
             <div class="outfit-placeholder" id="outfit-placeholder">
               
-              <p>Chọn trang phục và nhấn<br/><strong>"Tạo outfit ngay"</strong></p>
+              <p><span data-i18n="selection.placeholder">Chọn trang phục và nhấn</span><br/><strong><span data-i18n="selection.placeholderButton">"Tạo outfit ngay"</span></strong></p>
             </div>
             <div class="outfit-result hidden" id="outfit-result">
               <div class="outfit-figure" id="outfit-figure">
@@ -279,38 +271,40 @@
           <div class="culture-card hidden" id="culture-card">
             <div class="culture-header">
               
-              <span>Thông tin văn hóa</span>
+              <span><span data-i18n="ui.cultural_information">Thông tin văn hóa</span></span>
             </div>
             <div class="culture-content" id="culture-content"></div>
           </div>
 
           <div class="warning-card hidden" id="warning-card">
             <div class="warning-header">
-              <span>Lưu ý văn hóa</span>
+              <span><span data-i18n="ui.cultural_notes">Lưu ý văn hóa</span></span>
             </div>
             <ul class="warning-list" id="warning-list"></ul>
           </div>
 
           <div class="suggestion-section hidden" id="suggestion-section">
-            <h4> Gợi ý thêm</h4>
+            <h4><span data-i18n="ui.try_another_option">Gợi ý thêm</span></h4>
             <div class="suggestion-chips" id="suggestion-chips"></div>
           </div>
 
           <div class="comparison-section hidden" id="comparison-section">
-            <h4> So sánh phương án</h4>
+            <h4><span data-i18n="ui.compare_looks">So sánh phương án</span></h4>
+            <p class="accessory-help"><span data-i18n="ui.add_up_to_three_looks_to_view_side_by_side">Lưu tối đa 3 mẫu vào bảng để xem cùng nhau.</span></p>
+            <button type="button" class="text-action" onclick="addCompareLook()"><span data-i18n="ui.add_current_look">Thêm mẫu hiện tại</span></button>
             <div class="compare-grid" id="compare-grid"></div>
           </div>
         </div>
 
         <div class="weather-widget" id="weather-widget">
-          <div class="weather-header"> Gợi ý theo thời tiết</div>
+          <div class="weather-header"><span data-i18n="ui.weather_notes">Gợi ý theo thời tiết</span></div>
           <div class="weather-options" id="weather-options">
-            <button class="weather-btn active" id="w-sunny" data-weather="sunny" onclick="setWeather('sunny',this)"> Nắng nóng</button>
-            <button class="weather-btn" id="w-cool" data-weather="cool" onclick="setWeather('cool',this)"> Mát mẻ</button>
-            <button class="weather-btn" id="w-rain" data-weather="rain" onclick="setWeather('rain',this)"> Mưa</button>
-            <button class="weather-btn" id="w-winter" data-weather="winter" onclick="setWeather('winter',this)"> Lạnh</button>
+            <button class="weather-btn active" id="w-sunny" data-weather="sunny" onclick="setWeather('sunny',this)"><span data-i18n="ui.hot">Nắng nóng</span></button>
+            <button class="weather-btn" id="w-cool" data-weather="cool" onclick="setWeather('cool',this)"><span data-i18n="ui.mild">Mát mẻ</span></button>
+            <button class="weather-btn" id="w-rain" data-weather="rain" onclick="setWeather('rain',this)"><span data-i18n="ui.rain">Mưa</span></button>
+            <button class="weather-btn" id="w-winter" data-weather="winter" onclick="setWeather('winter',this)"><span data-i18n="ui.cold">Lạnh</span></button>
           </div>
-          <p class="weather-tip" id="weather-tip">Thời tiết nắng nóng: Chọn vải lụa tơ tằm hoặc voan mỏng, màu sáng để thoáng mát.</p>
+          <p class="weather-tip" id="weather-tip"><span data-i18n="ui.weather_is_a_reference_note_choose_suitable_fabric_when_wearing_an_outfit_app_photos_stay_">Thời tiết là ghi chú tham khảo. Khi mặc thực tế, hãy chọn chất liệu phù hợp; ảnh mẫu trong app giữ nguyên.</span></p>
         </div>
       </div>
     </div>
@@ -321,22 +315,22 @@
 <section class="section lookbook" id="lookbook">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge"> Lookbook</span>
-      <h2>Lookbook<br/>Việt phục của tôi</h2>
-      <p>Các outfit bạn đã tạo và lưu lại</p>
+      <span class="section-badge"><span data-i18n="ui.lookbook">Lookbook</span></span>
+      <h2><span data-i18n="ui.lookbook">Lookbook</span><br/><span data-i18n="ui.my_vietnamese_looks">Việt phục của tôi</span></h2>
+      <p><span data-i18n="ui.your_saved_outfit_photos">Các outfit bạn đã tạo và lưu lại</span></p>
     </div>
 
     <div class="lookbook-empty hidden" id="lookbook-empty">
       
-      <p>Chưa có outfit nào. Hãy tạo và lưu outfit đầu tiên của bạn!</p>
-      <button class="btn-primary" onclick="scrollToMixer()"> Tạo outfit ngay</button>
+      <p><span data-i18n="ui.no_saved_looks_yet_choose_an_outfit_and_save_your_first_look">Chưa có outfit nào. Hãy tạo và lưu outfit đầu tiên của bạn!</span></p>
+      <button class="btn-primary" onclick="scrollToMixer()"><span data-i18n="ui.view_outfit">Tạo outfit ngay</span></button>
     </div>
 
     <div class="lookbook-grid" id="lookbook-grid"></div>
 
     <div class="lookbook-actions hidden" id="lookbook-actions">
-      <button class="btn-primary" id="btn-export" onclick="exportLookbook()"> Xuất Lookbook</button>
-      <button class="btn-ghost" id="btn-clear" onclick="clearLookbook()"> Xóa tất cả</button>
+      <button class="btn-primary" id="btn-export" onclick="exportLookbook()"><span data-i18n="ui.export_lookbook">Xuất Lookbook</span></button>
+      <button class="btn-ghost" id="btn-clear" onclick="clearLookbook()"><span data-i18n="ui.clear_all">Xóa tất cả</span></button>
     </div>
   </div>
 </section>
@@ -345,17 +339,17 @@
 <section class="section culture-section" id="culture">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge"> Văn hóa</span>
-      <h2>Hiểu đúng<br/>về Việt phục</h2>
-      <p>Nội dung tham khảo — cần đối chiếu nguồn trước khi sử dụng</p>
+      <span class="section-badge"><span data-i18n="ui.culture">Văn hóa</span></span>
+      <h2><span data-i18n="ui.explore_the_context">Hiểu đúng</span><br/><span data-i18n="ui.of_vietnamese_dress">về Việt phục</span></h2>
+      <p><span data-i18n="ui.cultural_information_requires_source_verification_before_publication">Nội dung tham khảo — cần đối chiếu nguồn trước khi sử dụng</span></p>
     </div>
 
-    <p class="culture-verification">Nguồn: chưa có nguồn đối chiếu. Toàn bộ nội dung lịch sử, quy tắc và vùng miền hiện cần xác minh.</p>
+    <p class="culture-verification"><span data-i18n="ui.sources_pending_historical_regional_and_cultural_rules_still_need_verification">Nguồn: chưa có nguồn đối chiếu. Toàn bộ nội dung lịch sử, quy tắc và vùng miền hiện cần xác minh.</span></p>
     <div class="culture-tabs" id="culture-tabs">
-      <button class="tab-btn active" id="tab-history" onclick="switchTab('history', this)"> Lịch sử</button>
-      <button class="tab-btn" id="tab-rules" onclick="switchTab('rules', this)"> Quy tắc</button>
-      <button class="tab-btn" id="tab-regions" onclick="switchTab('regions', this)"> Vùng miền</button>
-      <button class="tab-btn" id="tab-modern" onclick="switchTab('modern', this)"> Xu hướng hiện đại</button>
+      <button class="tab-btn active" id="tab-history" onclick="switchTab('history', this)"><span data-i18n="ui.history">Lịch sử</span></button>
+      <button class="tab-btn" id="tab-rules" onclick="switchTab('rules', this)"><span data-i18n="ui.rules">Quy tắc</span></button>
+      <button class="tab-btn" id="tab-regions" onclick="switchTab('regions', this)"><span data-i18n="ui.regions">Vùng miền</span></button>
+      <button class="tab-btn" id="tab-modern" onclick="switchTab('modern', this)"><span data-i18n="ui.modern_styles">Xu hướng hiện đại</span></button>
     </div>
 
     <div class="tab-content" id="tab-history-content">
@@ -379,30 +373,30 @@
     <div class="footer-content">
       <div class="footer-brand">
         
-        <span class="logo-text">Việt Phục <span class="logo-accent">DP Tech</span></span>
+        <span class="logo-text">Việt phục <span class="logo-accent">Remix</span></span>
         <p>phuctrungdvl@gmail.com</p>
         <p>khanhdungtrinh12345@gmail.com</p>
       </div>
       <div class="footer-links">
-        <h4>Tính năng</h4>
-        <a href="#explore">Khám phá trang phục</a>
-        <a href="#mixer">Phối đồ online</a>
-        <a href="#lookbook">Lưu lookbook</a>
-        <a href="#culture">Tìm hiểu văn hóa</a>
+        <h4><span data-i18n="ui.features">Tính năng</span></h4>
+        <a href="#explore"><span data-i18n="ui.browse_outfits_178">Khám phá trang phục</span></a>
+        <a href="#mixer"><span data-i18n="ui.style_outfits">Phối đồ online</span></a>
+        <a href="#lookbook"><span data-i18n="ui.save_looks">Lưu lookbook</span></a>
+        <a href="#culture"><span data-i18n="ui.explore_cultural_context">Tìm hiểu văn hóa</span></a>
       </div>
       <div class="footer-links">
-        <h4>Trang phục</h4>
-        <a href="#" onclick="selectCostumeById('ao-dai')">Áo Dài</a>
-        <a href="#" onclick="selectCostumeById('ao-tu-than')">Áo Tứ Thân</a>
-        <a href="#" onclick="selectCostumeById('ao-ngu-than')">Áo Ngũ Thân</a>
-        <a href="#" onclick="selectCostumeById('ao-ba-ba')">Áo Bà Ba</a>
-        <a href="#" onclick="selectCostumeById('ao-nhat-binh')">Áo Nhật Bình</a>
-        <a href="#" onclick="selectCostumeById('ao-yem')">Áo Yếm</a>
-        <a href="#" onclick="selectCostumeById('ao-giao-linh')">Áo Giao Lĩnh</a>
+        <h4><span data-i18n="ui.outfits">Trang phục</span></h4>
+        <a href="#" onclick="selectCostumeById('ao-dai')"><span data-i18n="costume.ao-dai">Áo Dài</span></a>
+        <a href="#" onclick="selectCostumeById('ao-tu-than')"><span data-i18n="costume.ao-tu-than">Áo Tứ Thân</span></a>
+        <a href="#" onclick="selectCostumeById('ao-ngu-than')"><span data-i18n="costume.ao-ngu-than">Áo Ngũ Thân</span></a>
+        <a href="#" onclick="selectCostumeById('ao-ba-ba')"><span data-i18n="costume.ao-ba-ba">Áo Bà Ba</span></a>
+        <a href="#" onclick="selectCostumeById('ao-nhat-binh')"><span data-i18n="costume.ao-nhat-binh">Áo Nhật Bình</span></a>
+        <a href="#" onclick="selectCostumeById('ao-yem')"><span data-i18n="costume.ao-yem">Áo Yếm</span></a>
+        <a href="#" onclick="selectCostumeById('ao-giao-linh')"><span data-i18n="costume.ao-giao-linh">Áo Giao Lĩnh</span></a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>©  Phát triển bởi PhucTrung và DungKhanh. </p>
+      <p><span data-i18n="ui.created_by_phuctrung_and_dungkhanh">©  Phát triển bởi PhucTrung và DungKhanh.</span></p>
     </div>
   </div>
 </footer>
@@ -413,14 +407,20 @@
 <!-- MODAL -->
 <div class="modal-overlay hidden" id="modal-overlay" onclick="closeModal()">
   <div class="modal" id="modal" onclick="event.stopPropagation()">
-    <button class="modal-close" aria-label="Đóng cửa sổ" onclick="closeModal()">Đóng</button>
+    <button class="modal-close" aria-label="Đóng cửa sổ" onclick="closeModal()" data-i18n-aria-label="modal.close"><span data-i18n="ui.close">Đóng</span></button>
     <div class="modal-content" id="modal-content"></div>
   </div>
 </div>
 
+<script src="js/locales.js"></script>
+<script src="js/locale.js"></script>
 <script src="data.js"></script>
+<script src="js/bodyAvailabilityData.js"></script>
 <script src="js/compatibility.js"></script>
+<script src="js/photoMappingData.js"></script>
+<script src="js/photoMapping.js"></script>
 <script src="app.js"></script>
+<script src="js/webFeatures.js"></script>
 <script type="module" src="js/studio.js"></script>
 </body>
 </html>

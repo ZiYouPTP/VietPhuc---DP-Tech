@@ -112,7 +112,10 @@ class StyleUtils {
 
   /** Kết hợp bold + newline */
   static formatMessage(text) {
-    return StyleUtils.parseNewlines(StyleUtils.parseBold(text || ''));
+    const safeText = String(text || '').replace(/[&<>"']/g, c => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+    return StyleUtils.parseNewlines(StyleUtils.parseBold(safeText));
   }
 
   /** Viết hoa chữ cái đầu của string */

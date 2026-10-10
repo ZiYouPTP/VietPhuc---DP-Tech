@@ -3,7 +3,7 @@
   "status": "needsVerification",
   "sources": [],
   "needsVerification": true,
-  "verificationTodo": "TODO: người dùng duyệt dữ liệu trước khi tích hợp catalog. Chưa có nguồn lịch sử hay palette C2.",
+  "verificationTodo": "TODO: bổ sung nguồn văn hóa. App hiện mapping ảnh hoàn chỉnh theo yêu cầu người dùng 10/10/2026; mở rộng tổ hợp sau.",
   "scope": "application-preview-presets",
   "slotIds": [
     "inner",
@@ -37,18 +37,17 @@
         "en": "Áo dài"
       },
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -282,18 +281,17 @@
         "en": "Áo tứ thân"
       },
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -551,14 +549,14 @@
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -782,18 +780,17 @@
         "en": "Áo bà ba"
       },
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -1022,18 +1019,17 @@
         "en": "Nhật Bình robe"
       },
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -1257,18 +1253,17 @@
         "en": "Yếm top"
       },
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -1526,14 +1521,14 @@
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "requiredSlots": [
         {
@@ -1770,18 +1765,17 @@
       },
       "slot": "outer",
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1804,18 +1798,17 @@
       },
       "slot": "outer",
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1842,14 +1835,14 @@
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1872,18 +1865,17 @@
       },
       "slot": "outer",
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1906,18 +1898,17 @@
       },
       "slot": "outer",
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1940,18 +1931,17 @@
       },
       "slot": "outer",
       "supportedGenders": [
-        "male",
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -1978,14 +1968,14 @@
         "female"
       ],
       "genderPolicy": {
-        "scope": "body-preview-only",
+        "scope": "user-body-preview-policy",
         "historicalUse": null,
-        "unknownGenderPolicy": "allow-preview-with-warning",
+        "unknownGenderPolicy": "disable-unsupported-body",
         "sources": [],
         "needsVerification": true,
         "status": "needsVerification",
-        "origin": "application-styling-proposal",
-        "verificationTodo": "TODO: kiểm chứng giới sử dụng theo từng món, thời kỳ và bối cảnh; hai giới ở đây chỉ là body được phép xem thử."
+        "origin": "user-instruction-2026-10-09",
+        "verificationTodo": "TODO: đây là giới hạn phối ảnh do người dùng chọn, không phải quy tắc lịch sử về giới tính."
       },
       "culturalInfo": {
         "sources": [],
@@ -2711,5 +2701,259 @@
       "vi": "Tổ hợp này chưa được kiểm chứng văn hóa.",
       "en": "This combination has not been culturally verified."
     }
-  }
+  },
+  "assetGenderPolicy": [
+    {
+      "sourceFile": "assets/aobaba.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aobaba_only.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aodai-fit-body2.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aodai1.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aodai2.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aodainone.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aogiaolinh_female.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aogiaolinh_male.png",
+      "supportedGenders": [
+        "male"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aonguthan_female.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aonguthan_male.png",
+      "supportedGenders": [
+        "male"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aonhatbinh.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aotuthan.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/aoyiem.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/guocmoc.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/khandong.jpg",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/nonla.jpg",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/nonquaithao.jpg",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/quan-aodai-fit-body2.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/quanbaba.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/vaydup.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    },
+    {
+      "sourceFile": "assets/vaydup_aoyiem.png",
+      "supportedGenders": [
+        "female"
+      ],
+      "origin": "user-mapping-scope-2026-10-10",
+      "historicalClaim": false,
+      "sources": [],
+      "needsVerification": true,
+      "status": "needsVerification",
+      "verificationTodo": "TODO: giới hạn xem/phối ảnh theo yêu cầu người dùng, không phải khẳng định lịch sử."
+    }
+  ]
 }

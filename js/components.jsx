@@ -21,7 +21,7 @@ const Search = toIcon(lucide.Search), Filter = toIcon(lucide.Filter), ShieldAler
   ChevronDown = toIcon(lucide.ChevronDown), Heart = toIcon(lucide.Heart);
 
 // ─── Thành phần dùng chung: nguồn dữ liệu & kết quả kiểm tra ───────
-const TIER_RANK = { cao: 0, trung_binh: 1, thap: 2 };
+const SOURCE_TIER_RANK = { cao: 0, trung_binh: 1, thap: 2 };
 const TIER_LABEL = { cao: 'Nguồn cao', trung_binh: 'Nguồn trung bình', thap: 'Nguồn thấp' };
 const CONF_LABEL = { trung_binh: 'độ tin cậy trung bình', thap: 'độ tin cậy thấp', rat_thap: 'độ tin cậy rất thấp' };
 
@@ -35,7 +35,7 @@ const SourceList = ({ sourceIds, defaultOpen = false }) => {
   const sources = (sourceIds || [])
     .map(id => window.DB.getSourceById(id))
     .filter(Boolean)
-    .sort((a, b) => TIER_RANK[a.tier] - TIER_RANK[b.tier]);
+    .sort((a, b) => SOURCE_TIER_RANK[a.tier] - SOURCE_TIER_RANK[b.tier]);
   if (sources.length === 0) return null;
   return (
     <div className="src-wrap">

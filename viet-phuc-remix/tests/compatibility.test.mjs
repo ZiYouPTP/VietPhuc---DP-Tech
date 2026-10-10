@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 
-const files = await Promise.all(['../data.js', '../js/compatibility.js', '../app.js'].map(path => readFile(new URL(path, import.meta.url), 'utf8')));
+const files = await Promise.all(['../js/locales.js','../js/locale.js','../data.js', '../js/bodyAvailabilityData.js', '../js/compatibility.js', '../app.js'].map(path => readFile(new URL(path, import.meta.url), 'utf8')));
 class Element {
   constructor() { this.innerHTML = ''; this.textContent = ''; this.dataset = {}; this.classList = {add(){},remove(){},toggle(){}}; }
   scrollIntoView() {}
@@ -71,7 +71,7 @@ assert.ok(!getElementById('suggestion-chips').innerHTML.includes("toggleAccessor
 const record = {
   id: 14, costumeId: 'ao-nhat-binh', color: '#abcdef', costumeName: '<script>bad</script>',
   accessories: ['non-la','guoc-moc','hai-cong','tram-cai','bong-tai','constructor'],
-  studioConfig: {costumeId:'ao-dai',body:{gender:'male'},slots:{outer:'ao-dai',headwear:'non-la',footwear:'wooden-clogs'}},
+  studioConfig: {costumeId:'ao-dai',body:{gender:'female'},slots:{outer:'ao-dai',headwear:'non-la',footwear:'wooden-clogs'}},
   style:'fusion', event:'wedding', savedAt:'8/10/2026', image:'javascript:bad',
 };
 context.testRecord = record;
@@ -80,7 +80,7 @@ assert.deepEqual(array(clean.accessories), ['hai-cong','tram-cai','bong-tai']);
 assert.equal(clean.studioConfig.costumeId,'ao-nhat-binh');
 assert.equal(clean.studioConfig.slots.headwear,'tram-cai');
 assert.equal(clean.studioConfig.slots.footwear,'hai-cong');
-assert.equal(clean.studioConfig.body.gender,'male');
+assert.equal(clean.studioConfig.body.gender,'female');
 assert.equal(clean.color,'#ABCDEF');
 assert.equal(clean.image,null);
 assert.ok(!clean.costumeName.includes('<'));
@@ -92,5 +92,33 @@ const saved = JSON.parse(persisted)[0];
 assert.deepEqual(saved.accessories,['non-la']);
 assert.equal(saved.studioConfig.slots.headwear,'non-la');
 assert.equal(saved.studioConfig.slots.footwear,null);
+
+// The user's male policy applies to all entry points, rather than just CSS.
+window.VietPhucRemix.setGender('male');
+assert.equal(outfit().body.gender,'male');
+assert.equal(outfit().costumeId,'ao-ngu-than');
+assert.equal((getElementById('costume-pills').innerHTML.match(/disabled aria-describedby="costume-body-status"/g)||[]).length,5);
+for(const id of ['ao-dai','ao-ba-ba','ao-tu-than','ao-yem','ao-nhat-binh']){
+ assert.equal(rules.getCostumeAvailability(id,'male').available,false);
+ evaluate(`selectCostumePill('${id}');selectAndMix('${id}');selectCostumeById('${id}')`);
+ assert.equal(outfit().costumeId,'ao-ngu-than','Disabled handlers cannot dress a male body in another garment');
+}
+for(const id of ['ao-ngu-than','ao-giao-linh']){
+ assert.equal(rules.getCostumeAvailability(id,'male').available,true);
+ evaluate(`selectCostumePill('${id}')`);
+ assert.equal(outfit().costumeId,id);
+ assert.equal(dispatched.at(-1).detail.body.gender,'male');
+}
+context.invalidMaleLook={...record,id:15,studioConfig:{...record.studioConfig,body:{gender:'male'}}};
+assert.equal(evaluate('normaliseStoredLook(invalidMaleLook)').studioConfig,null,'Old forbidden male snapshots cannot be restored');
+evaluate('state.lookbook=[invalidMaleLook];restoreLook(15)');
+assert.equal(outfit().costumeId,'ao-giao-linh');
+assert.equal(outfit().body.gender,'male');
+window.VietPhucRemix.setGender('female');
+for(const id of ['ao-dai','ao-ba-ba','ao-tu-than','ao-yem','ao-nhat-binh','ao-ngu-than']){
+ evaluate(`selectCostumePill('${id}')`);
+ assert.equal(outfit().costumeId,id,'Switching to female must reopen the female garment options');
+}
+assert.equal((getElementById('costume-pills').innerHTML.match(/disabled aria-describedby="costume-body-status"/g)||[]).length,0);
 
 console.log('Compatibility, seven garments, disabled controls, selection transitions, and safe lookbook round trips: PASS');
