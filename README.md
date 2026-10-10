@@ -1,69 +1,158 @@
-# Việt phục Remix
+# Việt Phục Remix
 
-Bản web hiện tại dùng **mapping ảnh 2D hoàn chỉnh** từ ảnh người dùng cung cấp. Không sinh ảnh, không gọi API ảnh và không dùng 3D trong luồng app.
+**Khám phá Việt phục, phối theo bối cảnh và lưu lại phong cách của bạn.**
 
-## Chạy app
+Việt Phục Remix là ứng dụng web dành cho người trẻ quan tâm đến trang phục và văn hóa Việt Nam. Dự án kết hợp trải nghiệm phối đồ với kiến thức về lịch sử, cấu tạo và cách sử dụng Việt phục, theo định hướng **Vietnamese Heritage × Modern Gen Z Fashion**.
 
-Từ `D:/VietPhuc-DP-main`, chạy:
+Ứng dụng chọn ảnh bộ trang phục và tổ hợp phụ kiện đã có trong dataset. Mỗi lựa chọn được kiểm tra trước khi tìm ảnh và xếp hạng; những tổ hợp chưa có ảnh không được trình bày như bản phối chính xác.
 
-```powershell
-python -m http.server 8067 --bind 127.0.0.1
-```
+> **Trạng thái:** bản demo đã hoàn thành nền dữ liệu, matching và phối màu (giai đoạn 1–4, gồm 2.5). Outfit Studio đang được hoàn thiện ở giai đoạn 5. Lộ trình, kết quả kiểm chứng và danh sách thay đổi nằm trong [CODEX_PROGRESS.md](CODEX_PROGRESS.md).
 
-Mở **http://127.0.0.1:8067/viet-phuc-remix/**. Cần phục vụ toàn bộ thư mục dự án vì ảnh nằm trong `assets/`. Không mở HTML trực tiếp bằng `file://`.
+## Tính năng
 
-`index.html` tại root là bản React cũ được giữ nguyên. Điểm vào bản Remix đang hoàn thiện là **`viet-phuc-remix/index.html`**, dùng HTML/CSS/JavaScript thuần và ES modules, không cần build hoặc cài npm.
+- **Khám phá 7 loại Việt phục:** áo dài, áo tứ thân, áo ngũ thân, áo bà ba, áo Nhật Bình, áo yếm và áo giao lĩnh.
+- **Phối theo sự kiện:** lựa chọn trang phục, phụ kiện và màu được cập nhật theo bối cảnh và ảnh thực tế.
+- **Matching theo toàn bộ tổ hợp:** ưu tiên ảnh khớp chính xác; kết quả gần nhất có nhãn tham khảo và giải thích khác biệt.
+- **Màu sắc có ảnh hỗ trợ:** dùng ảnh gốc hoặc biến thể chỉnh màu đã kiểm duyệt; mỗi tổ hợp tối đa 3 màu chính.
+- **Gợi ý phối màu:** đánh giá màu ước tính và cho phép xem đề xuất trước khi áp dụng.
+- **Lookbook cá nhân:** lưu trên trình duyệt, mở lại, xóa, so sánh, xuất PNG và chia sẻ lựa chọn qua liên kết.
+- **Kiến thức văn hóa có nguồn:** hồ sơ trang phục, lịch sử, cấu tạo, bối cảnh sử dụng và những điểm còn cần đối chiếu.
+- **Giao diện tiếng Việt và tiếng Anh.**
 
-## Đã có
+## Trải nghiệm phối đồ
 
-- 21 ảnh nguồn trong `assets/`; 10 ảnh WebP tối ưu từ các ảnh mặc hoàn chỉnh, tổng khoảng 402 KB.
-- Nữ: 7 nhóm trang phục. Nam: chỉ ngũ thân nam và giao lĩnh nam; các áo khác disabled và handler/restore/link cũng chặn.
-- Áo dài với nón lá dùng `aodai2.png`; mẫu mặc định dùng `aodai1.png`. Các bộ khác dùng ảnh hoàn chỉnh tương ứng.
-- Tổ hợp phụ kiện chưa có ảnh dùng mẫu hoàn chỉnh gần nhất và hiển thị thông báo. Quy tắc khóa phụ kiện lấy từ JSON, bao gồm xung đột cùng vị trí.
-- Màu và phong cách là ghi chú cho lookbook, **không đổi màu/chất liệu ảnh**. Các công cụ tạo prompt, nhập mảnh và chỉnh chất liệu cũ đã ẩn khỏi luồng mapping.
-- VI/EN, lưu/mở lại ảnh PNG, so sánh tối đa 3 mẫu, xuất PNG 960×1240, xuất lookbook HTML có ảnh và chia sẻ cấu hình bằng URL.
-- Nếu ảnh bị thiếu/lỗi, dùng ảnh hoàn chỉnh khác; nếu toàn bộ ảnh không tải được, dùng minh họa SVG 2D.
+**Sự kiện → Bộ trang phục → Phụ kiện → Màu sắc → Kết quả**
 
-Lookbook và ngôn ngữ lưu trong trình duyệt. Khi bộ nhớ không khả dụng, app giữ lookbook trong phiên và báo để người dùng xuất file. Link chia sẻ chứa lựa chọn, không chứa ảnh riêng đã nhập; link localhost chỉ mở được trên máy chạy server. Khi đưa app lên hosting tĩnh, link dùng địa chỉ hosting đó.
+1. Chọn bối cảnh sử dụng và nhân vật nam hoặc nữ.
+2. Chọn một bộ trang phục hoàn chỉnh.
+3. Chọn phụ kiện có ảnh tương ứng, hoặc **Không phụ kiện** nếu dataset hỗ trợ.
+4. Chọn màu đang khả dụng hoặc dùng **Gợi ý màu**.
+5. Xem ảnh, điểm matching, giải thích và thông tin văn hóa; lưu hoặc xuất bản phối.
 
-**Chưa hoàn tất toàn bộ Mục 1–8.** Đã hoàn tất Mục 4 về VI/EN; xem [PHASE_STATUS.md](PHASE_STATUS.md) để biết phần còn thiếu của so sánh, chia sẻ và bàn giao. Ghép mảnh/đổi màu ảnh được hoãn theo phạm vi mapping mới.
+Tùy chọn bị làm tối không thể chọn và có lý do. Khi thay đổi sự kiện hoặc trang phục, ứng dụng điều chỉnh những lựa chọn phụ thuộc không còn hợp lệ.
 
-## Đổi ngôn ngữ
+**Demo đổi màu:** chọn **Tốt nghiệp → Áo ngũ thân nữ → Guốc Mộc + Khăn Đóng → Fusion → Gợi ý màu → Áp dụng navy**. Chuyển sang **Đám cưới** để kiểm tra màu trở về ảnh gốc và các biến thể chưa hỗ trợ sự kiện này bị khóa.
 
-Nút EN/VI ở header đổi ngôn ngữ và giữ nguyên lựa chọn, ảnh đã lưu và ảnh so sánh. Lần đầu app dùng EN nếu trình duyệt dùng tiếng Anh, còn lại fallback VI; lựa chọn được lưu và ưu tiên ở lần mở tiếp theo. Nếu storage bị chặn, nút vẫn hoạt động trong phiên.
+## Chạy tại máy cá nhân
 
-Thêm/sửa nhãn tại `viet-phuc-remix/js/locales.js`: mỗi khóa có `vi` và `en`, tham số `{name}` phải tương ứng. HTML tĩnh dùng `data-i18n`, JavaScript dùng `VietPhucLocale.t(key, params)` hoặc `label(kind, id)`; tên theo ID giúp đổi ngôn ngữ cả Lookbook cũ. Đọc [PHASE4_I18N_REPORT.md](PHASE4_I18N_REPORT.md) để biết file và kiểm thử của Mục 4.
+Ứng dụng là website tĩnh, không cần backend, npm hoặc bước build. Cần Python để mở HTTP server; Node.js chỉ dùng khi chạy kiểm thử JavaScript.
 
-## Cập nhật ảnh sau này
-
-1. Thêm ảnh hoàn chỉnh vào `assets/`.
-2. Khai báo mapping ở `LOOKS` trong `tools/build_photo_catalog.py`.
-3. Chạy `python tools/build_photo_catalog.py` và kiểm tra `ASSET_REVIEW.html`.
-
-Chỉ resize đồng đều và nén WebP, giữ nguyên ảnh nguồn, nền và hình dáng trang phục. Các ảnh từng mảnh/base body được giữ để nâng cấp sau. `assets/prepared`, `garment_fits.json`, `clothing_manifest.json` và các báo cáo fit 09/10 là thử nghiệm cũ, không được luồng mapping nạp.
-
-Quy tắc chọn ở `viet-phuc-remix/data/outfit-rules.json`. Sau khi đổi giới/phụ kiện, chạy `python tools/build_body_availability.py` để tạo bundle cho classic script. Các tổ hợp mở rộng và checker đầy đủ được giữ trong dữ liệu cho giai đoạn nâng cấp, chưa dùng để khẳng định phục dựng.
-
-## Văn hóa và điểm màu
-
-Nội dung văn hóa có `sources: []`, `needsVerification: true` và chỗ chờ bổ sung nguồn. App không công bố các nhận định lịch sử chưa xác minh, không tự chấm phần trăm tôn trọng văn hóa. Các bản nháp biên tập cũ vẫn ở `data.js` để đối chiếu sau.
-
-Điểm bảng màu là chỉ số demo: 90 nếu màu ghi chú nằm trong bảng sự kiện hiện có, 70 nếu phối tự do. Đây không phải đánh giá màu của ảnh hay tiêu chuẩn văn hóa.
-
-## Kiểm tra
+Mở PowerShell tại thư mục dự án:
 
 ```powershell
-python tools/build_body_availability.py --check
-python -m unittest discover -s tests -p test_asset_preparation.py -v
-python -m unittest discover -s tests -p test_photo_mapping_assets.py -v
+Set-Location -LiteralPath 'D:\VietPhuc-DP-main'
+python -m http.server 8080 --bind 127.0.0.1
 ```
 
-Từ `viet-phuc-remix/`:
+Mở **[http://127.0.0.1:8080/viet-phuc-remix/](http://127.0.0.1:8080/viet-phuc-remix/)**. Giữ PowerShell chạy trong khi sử dụng; nhấn `Ctrl+C` để dừng. Nếu cổng đã được dùng, đổi cổng trong cả lệnh và URL.
+
+Phục vụ **toàn bộ thư mục dự án** để các đường dẫn ảnh hoạt động. Entrypoint hiện hành là `viet-phuc-remix/index.html`; `index.html` ở root thuộc phiên bản React cũ. Không mở ứng dụng bằng đường dẫn `file://`.
+
+## Kiến trúc và cấu trúc thư mục
+
+Ứng dụng hiện hành dùng **HTML, CSS và JavaScript thuần**, với dữ liệu JSON và bundle cho website tĩnh. Pipeline kiểm tra ảnh sử dụng Python, Pillow và NumPy. Không cần dịch vụ AI hoặc mô hình computer vision để chạy matching.
+
+```text
+VietPhuc-DP-main/
+├── viet-phuc-remix/
+│   ├── index.html              # Entrypoint hiện hành
+│   ├── app.js                  # Lựa chọn, giao diện và Lookbook
+│   ├── style.css, studio.css   # Giao diện và responsive
+│   ├── js/                     # Retrieval, phối màu, Studio và VI/EN
+│   ├── data/                   # Metadata được duyệt và kế hoạch màu
+│   └── tests/                  # Kiểm thử JavaScript
+├── assets/
+│   ├── web/                    # Ảnh outfit nguồn và catalog
+│   ├── derived/outfits/        # Ảnh tối ưu dùng trên web
+│   ├── generated/color-variants/ # Biến thể, mask và trang kiểm duyệt
+│   ├── base_bodies/            # Body tham chiếu
+│   └── data/                   # Manifest và báo cáo dữ liệu
+├── tools/                      # Công cụ chuẩn hóa và kiểm tra ảnh
+├── tests/                      # Kiểm thử Python
+└── CODEX_PROGRESS.md           # Tiến độ và báo cáo triển khai
+```
+
+Các module chính:
+
+| Module | Vai trò |
+| --- | --- |
+| `js/outfitMatching.js` | Lọc ràng buộc, truy xuất tổ hợp và xếp hạng |
+| `js/compatibility.js` | Trang phục và tập phụ kiện khả dụng |
+| `js/photoMapping.js` | Chọn, hiển thị và xuất ảnh |
+| `js/colorHarmony.js` | Đánh giá màu và đề xuất từ ảnh hợp lệ |
+| `js/studio.js` | Đồng bộ bản phối và preview |
+| `js/cultureData.js`, `js/culture.js` | Kiến thức biên tập và liên kết nguồn |
+| `js/locales.js`, `js/locale.js` | Nội dung và chuyển đổi VI/EN |
+
+Các đường dẫn module trong bảng thuộc `viet-phuc-remix/`.
+
+## Dữ liệu và nguyên tắc matching
+
+| Thành phần | Quy mô hiện tại |
+| --- | --- |
+| Ảnh outfit gốc | 47: 36 nữ, 11 nam |
+| Loại trang phục | 7 |
+| Nhóm trang phục × nhân vật | 9 |
+| Phụ kiện trong catalog tương tác | 8 |
+| Biến thể màu được duyệt | 4, từ 2 tổ hợp ngũ thân |
+| Hồ sơ kiến thức trang phục | 7, đối chiếu 8 nguồn chọn lọc |
+
+Phụ kiện gồm nón lá, nón quai thao, khăn đóng, khăn vành, trâm cài, guốc mộc, hài thêu và giày cao gót. Sự có mặt của một món trong catalog không đồng nghĩa món đó được chọn với mọi trang phục.
+
+Matching thực hiện hai bước: **lọc điều kiện bắt buộc**, sau đó **xếp hạng ảnh hợp lệ**. Điều kiện gồm bộ trang phục, nhân vật, toàn bộ tập phụ kiện, màu, phạm vi sự kiện demo và trạng thái kiểm duyệt. Điểm tương đồng dựa trên thuộc tính đã biết; không phải chứng nhận lịch sử hoặc độ hài hòa màu.
+
+Ảnh gốc đúng màu được ưu tiên. Navy và tím mận hiện chỉ có cho ngũ thân nam/nữ với **khăn đóng + guốc mộc** ở các bối cảnh demo đã duyệt. Không recolor toàn ảnh bằng CSS và không ghép thành phần rời thành outfit mới. Ảnh nguồn được giữ nguyên; web sử dụng derivative đúng định dạng.
+
+### Cập nhật dataset
+
+Xem [hướng dẫn duyệt metadata](viet-phuc-remix/data/METADATA_REVIEW.md) trước khi thêm ảnh. Chỉnh sidecar metadata đã duyệt, không chỉnh tay catalog hoặc bundle sinh tự động.
 
 ```powershell
-node --test tests/*.test.mjs
+python tools/build_photo_catalog.py
+python tools/build_photo_catalog.py --check
 ```
 
-Kiểm thử Chrome desktop/điện thoại nằm ở `tools/verify_web.mjs` và `tools/verify_locale.mjs`, cần Playwright và Chrome. Chạy tuần tự khi server đang mở; có thể truyền đường dẫn package Playwright làm tham số nếu dùng thư viện có sẵn trong môi trường. Kết quả và ảnh chụp nằm trong `assets/review/browser/`. Đây là kiểm thử headless với viewport mobile, chưa thay cho kiểm thử trên điện thoại vật lý.
+Biến thể màu có mask và kiểm duyệt riêng. Xem [trang so sánh ảnh](assets/generated/color-variants/review.html) và kiểm tra tính nhất quán bằng:
 
-Xem `IMPLEMENTATION_REPORT.md` và `ASSET_INVENTORY.md` để biết dữ liệu, file đổi và giới hạn hiện tại.
+```powershell
+python tools/generate_color_variants.py --check
+```
+
+Ảnh thiếu provenance hoặc chưa được duyệt không trở thành lựa chọn khả dụng.
+
+## Kiểm thử
+
+Môi trường đã dùng để kiểm chứng: **Node.js 24, Python 3.12, Pillow và NumPy**. Từ root dự án:
+
+```powershell
+node --test viet-phuc-remix/tests/*.test.mjs
+python -m unittest discover -s tests -p 'test_*.py' -v
+python tools/build_photo_catalog.py --check
+python tools/generate_color_variants.py --check
+```
+
+JavaScript kiểm retrieval, sự kiện, màu, phụ kiện, VI/EN và khôi phục bản phối. Python kiểm nguồn ảnh, metadata, derivative, provenance, mask và biến thể. Có một nhóm kiểm manifest ghép lớp cũ được bỏ qua vì manifest đó không còn trong dự án. Dự án hiện chưa có lệnh lint, TypeScript hoặc build ứng dụng.
+
+Kết quả từng lần chạy và phạm vi kiểm thử trình duyệt được ghi trong [báo cáo tiến độ](CODEX_PROGRESS.md).
+
+## Đưa lên GitHub và chạy online
+
+Giữ nguyên cấu trúc thư mục. Phần runtime cần:
+
+- Toàn bộ `viet-phuc-remix/`.
+- `assets/derived/outfits/`.
+- `assets/generated/color-variants/`.
+- `assets/base_bodies/`.
+
+Để lưu đầy đủ dự án và tái tạo dataset, đưa thêm toàn bộ `assets/`, `tools/`, `tests/`, các JSON văn hóa tại root và tài liệu. Không đưa cache `__pycache__/`, `.pyc` hoặc log chạy tạm; `.gitignore` đã khai báo các loại này.
+
+Bật GitHub Pages từ nhánh chứa dự án và thư mục `/ (root)`, sau đó mở URL site với hậu tố **`/viet-phuc-remix/`**. Xem [hướng dẫn GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site). Danh sách file thay đổi theo từng giai đoạn nằm trong `CODEX_PROGRESS.md`.
+
+## Giới hạn và hướng phát triển
+
+- Danh sách sự kiện là phạm vi biên tập cho demo hiện đại. Metadata từng ảnh chưa xác minh đầy đủ sự kiện, chất liệu hoặc độ chính xác phục dựng.
+- Điểm phối màu là ước tính từ nhóm màu được ghi nhận; chưa đo diện tích và phân bố màu theo pixel. Một ảnh chỉ có một màu được ghi nhận không được gán điểm hài hòa.
+- Kiến thức văn hóa là bản tổng hợp có dẫn nguồn; một số niên đại và chi tiết còn cần nghiên cứu chuyên ngành. Nội dung AI tự suy luận không được dùng làm quy tắc văn hóa bắt buộc.
+- Lookbook lưu trên trình duyệt hiện tại, chưa có tài khoản hoặc đồng bộ giữa thiết bị.
+
+Các bước tiếp theo tập trung vào Outfit Studio và UI/UX, kiến thức văn hóa chuyên sâu, Lookbook nâng cao và kiểm thử tổng thể. Dự án ưu tiên **chất lượng ảnh, tính nhất quán dữ liệu và khả năng giải thích lựa chọn**.
